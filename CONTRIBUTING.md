@@ -8,6 +8,12 @@ We follow a systematic Git Workflow -
 - **Every change** that you do, it has to be on a branch. Commits on master would directly be closed.
 - Make sure that before you create a new branch for new changes,[syncing with upstream](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) is neccesary.
 
+## Requirements 
+- [Python3.8](https://www.python.org/downloads) and above
+- virtualenv, For installingvirtualenv, type the following command ```pip install virtualenv```
+- [Node.js](https://nodejs.org/en/download/)
+- Yarn package manager, A guide for installation of the yarn package manager for [Windows](https://classic.yarnpkg.com/en/docs/install#windows-stable), [Linux](https://classic.yarnpkg.com/en/docs/install/#debian-stable), [MacOS](https://classic.yarnpkg.com/en/docs/install#mac-stable)
+
 ## Setup and running of project (Backend)
 
 - Create a folder to keep env and clone of the repo.
