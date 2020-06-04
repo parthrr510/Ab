@@ -41,7 +41,7 @@ pre-commit install
      |-
      |-
 ```
-- Create a .env file at the root of the project, and paste the contents of the .env.example file into it. Now generate a new secret key(can be done at [djecrety](https://djecrety.ir/0)) and replace the placeholder text with the newly generated key!
+- Create a .env file at the root of the project, and paste the contents of the .env.example file into it. Now generate a new secret key(can be done at [djecrety](https://djecrety.ir/)) and replace the placeholder text with the newly generated key!
 
 - After the above setup, run <br>
 ```bash
