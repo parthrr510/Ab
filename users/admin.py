@@ -9,7 +9,11 @@ from .models import MyUser, Member
 # Register your models here.
 
 
-class UserAdmin(BaseUserAdmin):
+class MemberInline(admin.TabularInline):
+    model = Member
+
+
+class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
     add_form = UserCreationForm
 
     list_display = ("team_name", "email", "is_admin")
@@ -34,6 +38,10 @@ class UserAdmin(BaseUserAdmin):
     ordering = ("team_name", "email")
 
     filter_horizontal = ()
+
+    inlines = [
+        MemberInline,
+    ]
 
 
 admin.site.register(MyUser, UserAdmin)
