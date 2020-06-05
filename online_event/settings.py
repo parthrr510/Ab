@@ -31,6 +31,7 @@ DEBUG = env.bool("DEBUG", default=True)
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "users.MyUser"
 
 # Application definition
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
