@@ -20,19 +20,24 @@ class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
     list_filter = ("is_admin",)
 
     fieldsets = (
+        (None, {"fields": ("team_name", "email", "password",)},),
+        ("Details", {"fields": ("team_members", "dateJoined",)}),
+        ("Permissions", {"fields": ("is_admin",)}),
+    )
+    add_fieldsets = (
         (
             None,
             {
+                "classes": ("wide",),
                 "fields": (
                     "team_name",
                     "email",
-                    "password",
                     "team_members",
-                    "dateJoined",
-                )
+                    "password1",
+                    "password2",
+                ),
             },
         ),
-        ("Permissions", {"fields": ("is_admin",)}),
     )
     search_fields = ("team_name", "email")
     ordering = ("team_name", "email")

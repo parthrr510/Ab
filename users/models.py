@@ -3,12 +3,24 @@ from django.db import models
 # Create your models here.
 from django.core.validators import RegexValidator
 from django.utils import timezone
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 import uuid
 
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 USERNAME_REGEX = "^[a-zA-Z0-9.+-]*$"
 MOBILE_REGEX = "^(\+\d{1,3}[- ]?)?\d{10}$"  # noqa
+
+
+def validate_team_members(value):
+    if value > 3 or value < 1:
+        raise ValidationError(
+            _(
+                "%(value)s is not a valid number for the team_members field. Note that a team can not have more than 3 members!"
+            ),
+            params={"value": value},
+        )
 
 
 class MyUserManager(BaseUserManager):
@@ -47,7 +59,7 @@ class MyUser(AbstractBaseUser):
         unique=True,
     )
     email = models.EmailField(max_length=255, unique=True, verbose_name="email address")
-    team_members = models.IntegerField()
+    team_members = models.IntegerField(validators=[validate_team_members])
     dateJoined = models.DateTimeField(default=timezone.now)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
