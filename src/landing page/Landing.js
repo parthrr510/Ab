@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./msc_logo.png";
+import Animation from "./Animation.js";
 
 export default function Landing() {
   const [show, setShow] = useState(false);
@@ -13,9 +14,15 @@ export default function Landing() {
   return (
     <div className="landing">
       <div className="image">
-        <div className="logo">
-          <img src={logo} style={{ height: "70px" }} />
+        <div className="logo" position="relative">
+          <img
+            src={logo}
+            style={{
+              height: "70px",
+            }}
+          />
         </div>
+        <Animation />
         <div className="title">CRISIS AHEAD</div>
         <div
           className="square"
@@ -34,11 +41,11 @@ export default function Landing() {
           style={{
             color: "#000",
             marginLeft: "40px",
-            marginTop: "31px",
+            marginTop: "165px",
             zIndex: "-1",
           }}
         ></i>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} className="rulebook">
           <Modal.Header closeButton>
             <Modal.Title>RuleBook</Modal.Title>
           </Modal.Header>
