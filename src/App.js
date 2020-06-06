@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+import Landing from "./landing page/Landing";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Begin Working!</h1>
+        <Landing />
       </div>
     );
   }
