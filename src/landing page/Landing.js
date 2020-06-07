@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./msc_logo.png";
 import Animation from "./Animation.js";
+import scroll from "./scroll.png";
 
 export default function Landing() {
   const [show, setShow] = useState(false);
@@ -35,16 +36,19 @@ export default function Landing() {
         </div>
         <br />
         <br />
-        <i
-          className="fa fa-book fa-3x"
+
+        <img
+          className="scroll"
+          src={scroll}
           onClick={handleShow}
           style={{
             color: "#000",
+            height: "80px",
             marginLeft: "40px",
-            marginTop: "165px",
+            marginTop: "120px",
             zIndex: "-1",
           }}
-        ></i>
+        />
         <Modal show={show} onHide={handleClose} className="rulebook">
           <Modal.Header closeButton>
             <Modal.Title>RuleBook</Modal.Title>
