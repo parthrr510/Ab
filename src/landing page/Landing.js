@@ -38,6 +38,7 @@ export default function Landing() {
         <br />
 
         <img
+          className="scroll"
           src={scroll}
           onClick={handleShow}
           style={{
