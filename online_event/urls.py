@@ -20,4 +20,10 @@ from users import views as user_views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("register/", user_views.register, name="register"),
+    path(
+        "account_activation_sent/",
+        user_views.account_activation_sent,
+        name="account_activation_sent",
+    ),
+    path("activate/<uidb64>/<token>/", user_views.activate, name="activate"),
 ]

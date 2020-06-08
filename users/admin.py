@@ -21,8 +21,8 @@ class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
 
     fieldsets = (
         (None, {"fields": ("team_name", "email", "password",)},),
-        ("Details", {"fields": ("team_members", "dateJoined",)}),
-        ("Permissions", {"fields": ("is_admin",)}),
+        ("Details", {"fields": ("team_members", "dateJoined", "email_confirmed",)}),
+        ("Permissions", {"fields": ("is_admin", "is_active",)}),
     )
     add_fieldsets = (
         (
