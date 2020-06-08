@@ -5,6 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import logo from "./msc_logo.png";
 import Animation from "./Animation.js";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   const [show, setShow] = useState(false);
