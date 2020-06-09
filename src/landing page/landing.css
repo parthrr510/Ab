@@ -55,6 +55,7 @@ body {
 @media only screen and (max-width: 360px) {
   .masthead .jackpots {
     font-size: 240%;
+    font-family: AlphaCentauri;
   }
   #msc_margin {
     /* max-width: 100%; */
@@ -80,9 +81,11 @@ body {
   }
 }
 
-/* #scoll_icon {
-  height: 5000px;
-} */
+#scroll_icon {
+  /* background-color: purple; */
+  height: 80px;
+  padding-top: 2rem;
+}
 
 #scroll_icon:hover {
   -ms-transform: scale(1.4); /* IE 9 */
@@ -96,7 +99,7 @@ body {
   font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 100%;
+  font-size: 120%;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
   border: 0 !important;
@@ -158,7 +161,7 @@ body {
       rgba(0, 0, 0, 0.7) 75%,
       #000000 100%
     ),
-    url("./crisis_d.jpeg");
+    url("./crisis_high.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;

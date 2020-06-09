@@ -23,6 +23,7 @@ export default function Landing() {
             alt="MSC_tiet"
           />
         </a>
+        <Animation />
       </nav>
 
       <section className="masthead">
@@ -30,7 +31,7 @@ export default function Landing() {
           <div className="mx-auto text-center">
             <div id="container">
               <div>
-                <div className="jackpots ">CRISIS AHEAD </div>
+                <div className="jackpots">CRISIS AHEAD </div>
               </div>
             </div>
             <div className="btn-block">
@@ -38,12 +39,7 @@ export default function Landing() {
                 Get Started
               </Button>{" "}
             </div>
-            <img
-              id="scroll_icon"
-              src={scroll}
-              onClick={handleShow}
-              style={{ height: "80px" }}
-            />
+            <img id="scroll_icon" src={scroll} onClick={handleShow} />
             <Modal show={show} onHide={handleClose} className="rulebook">
               <Modal.Header closeButton>
                 <Modal.Title>RuleBook</Modal.Title>
