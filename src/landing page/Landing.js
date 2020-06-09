@@ -14,11 +14,14 @@ export default function Landing() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg fixed-top py-3">
-        <div className="container">
-          <a href="#" className="navbar-brand text-uppercase font-weight-bold">
-            <img className="format_logo" src={logo} alt="MSC_tiet" />
-          </a>
-        </div>
+        <a href="#" className="navbar-brand text-uppercase font-weight-bold">
+          <img
+            className="format_logo"
+            id="msc_margin"
+            src={logo}
+            alt="MSC_tiet"
+          />
+        </a>
       </nav>
 
       <section className="masthead">
