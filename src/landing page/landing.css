@@ -9,7 +9,7 @@ body {
 
 .masthead {
   position: relative;
-  width: 100%;
+  width: auto;
   height: 100vh;
   min-height: 35rem;
   padding: 15rem 0;
@@ -26,24 +26,6 @@ body {
   background-size: cover;
   background-color: black;
 }
-
-/*@media (min-width: 768px) {
-  .masthead .jackpots {
-    font-size: 4rem;
-    line-height: 4rem;
-  }
-}
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-    padding: 0;
-  }
-  .masthead .jackpots {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-}*/
 
 #msc_margin {
   /* max-width: 100%; */
@@ -127,6 +109,73 @@ body {
   /* Safari and Chrome */
   -o-animation: jackpots 1s 0s ease infinite;
   /* Opera */
+}
+/* DROP UP MENU OF CONTACT */
+/* Contact Us button */
+
+.dropbtn {
+  background: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  margin-left: 2rem;
+  margin-bottom: 0.7rem;
+  margin-top: 2.1rem;
+  width: auto;
+  float: left;
+}
+
+@media only screen and (max-width: 438px) {
+  .dropbtn {
+    margin: 2rem 0 0.8rem 2rem;
+  }
+}
+/* Entire div of Contact Us with links */
+.dropup {
+  position: relative;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background: transparent;
+  /* min-width: 160px; */
+  bottom: 1.5rem;
+  z-index: 1;
+  /* margin-bottom: 20px; */
+  padding: 0;
+  /* color: white; */
+}
+/* styling the links */
+.dropup-content a {
+  color: white;
+  padding: 0.2rem 5rem;
+  text-decoration: none;
+  display: block;
+}
+/* effect on link while hovering */
+.dropup-content a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+}
+/* Links inside contact us on hover to be displayed*/
+.dropup:hover .dropup-content {
+  display: block;
+}
+/* Contact Us button on hover */
+.dropup:hover .dropbtn {
+  background-color: transparent;
 }
 
 @keyframes jackpots {
@@ -237,51 +286,4 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.square span:nth-child(1) {
-  position: absolute;
-  margin-top: 130px;
-
-  width: 100%;
-  height: 100%;
-  border: 2px solid #fff;
-  border-radius: 38% 38% 50% 37% / 41% 44% 45% 40%;
-  transition: 0.5s;
-  animation: move 6s linear infinite;
-}
-.square span:nth-child(2) {
-  position: absolute;
-  margin-top: 130px;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #fff;
-  border-radius: 38% 38% 55% 37% / 41% 44% 45% 40%;
-  transition: 0.5s;
-  animation: move 4s linear infinite;
-}
-.square span:nth-child(3) {
-  margin-top: 130px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid #fff;
-  border-radius: 38% 41% 52% 37% / 41% 44% 45% 40%;
-  transition: 0.5s;
-  animation: move2 10s linear infinite;
-}
-@keyframes move {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-@keyframes move2 {
-  0% {
-    transform: rotate(360deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
