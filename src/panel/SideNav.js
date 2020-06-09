@@ -44,31 +44,37 @@ class SideNav extends Component {
               <div className="sidebar-sticky"></div>
               <Nav.Item>
                 <Nav.Link href="/home" style={navStyle}>
+                  <i className="fa fa-home mr-3" style={icon}></i>
                   Home
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="link-1" style={navStyle}>
+                  <i className="fa fa-table mr-3" style={icon}></i>
                   Leaderboard
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="link-2" style={navStyle}>
+                  <i className="fa fa-money mr-3" style={icon}></i>
                   MSC bits
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="link-3" style={navStyle}>
+                  <i className="fa fa-cutlery mr-3" style={icon}></i>
                   Food Resources
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link eventKey="link-4" style={navStyle}>
+                  <i className="fa fa-window-maximize mr-3" style={icon}></i>
                   Example Dropdown
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item style={{ paddingBottom: "20px" }}>
                 <Nav.Link eventKey="link-5" style={navStyle}>
+                  <i className="fa fa-sign-out mr-3" style={icon}></i>
                   Login
                 </Nav.Link>
               </Nav.Item>
@@ -85,5 +91,8 @@ class SideNav extends Component {
 const navStyle = {
   color: "#F8F8FF",
   padding: "22px",
+};
+const icon = {
+  color: "#F8F8FF",
 };
 export default SideNav;
