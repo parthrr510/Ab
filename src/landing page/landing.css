@@ -80,6 +80,16 @@ body {
   }
 }
 
+/* #scoll_icon {
+  height: 5000px;
+} */
+
+#scroll_icon:hover {
+  -ms-transform: scale(1.4); /* IE 9 */
+  -webkit-transform: scale(1.4); /* Safari 3-8 */
+  transform: scale(1.4);
+}
+
 #button_get {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
