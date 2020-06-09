@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Nav } from "react-bootstrap";
 import Media from "react-bootstrap/Media";
 import logo from "./msc_logo.png";
 import team from "./team.PNG";
@@ -14,13 +14,13 @@ class SideNav extends Component {
             <img
               src={logo}
               style={{
-                height: "50px",
+                height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-140px",
+                marginLeft: "-120px",
               }}
             />
-            <Media style={{ marginTop: "6px" }}>
+            <Media style={{ marginTop: "15px" }}>
               <img
                 width={55}
                 height={55}
@@ -37,6 +37,42 @@ class SideNav extends Component {
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
+            <Nav
+              className=" d-md-block  sidebar"
+              style={{ paddingTop: "35px" }}
+            >
+              <div className="sidebar-sticky"></div>
+              <Nav.Item>
+                <Nav.Link href="/home" style={navStyle}>
+                  Home
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="link-1" style={navStyle}>
+                  Leaderboard
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="link-2" style={navStyle}>
+                  MSC bits
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="link-3" style={navStyle}>
+                  Food Resources
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="link-4" style={navStyle}>
+                  Example Dropdown
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item style={{ paddingBottom: "20px" }}>
+                <Nav.Link eventKey="link-5" style={navStyle}>
+                  Login
+                </Nav.Link>
+              </Nav.Item>
+            </Nav>
           </Col>
           <Col sm={9} style={{ backgroundColor: "#2e3036" }}>
             Col 2
@@ -46,4 +82,8 @@ class SideNav extends Component {
     );
   }
 }
+const navStyle = {
+  color: "#F8F8FF",
+  padding: "22px",
+};
 export default SideNav;
