@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
-from .forms import UserCreationForm
+from .forms import UserCreationFormForAdmin
 from .models import MyUser, Member
 
 # Register your models here.
@@ -14,15 +14,15 @@ class MemberInline(admin.TabularInline):
 
 
 class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
-    add_form = UserCreationForm
+    add_form = UserCreationFormForAdmin
 
     list_display = ("team_name", "email", "is_admin")
     list_filter = ("is_admin",)
 
     fieldsets = (
         (None, {"fields": ("team_name", "email", "password",)},),
-        ("Details", {"fields": ("team_members", "dateJoined",)}),
-        ("Permissions", {"fields": ("is_admin",)}),
+        ("Details", {"fields": ("team_members", "dateJoined", "email_confirmed",)}),
+        ("Permissions", {"fields": ("is_admin", "is_active",)}),
     )
     add_fieldsets = (
         (

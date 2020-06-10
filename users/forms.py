@@ -3,11 +3,12 @@ from django.contrib.auth import get_user_model
 # from django.db.models import Q
 
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
 User = get_user_model()
 
 
-class UserCreationForm(forms.ModelForm):
+class UserCreationFormForAdmin(forms.ModelForm):
     password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(
         label="Password confirmation", widget=forms.PasswordInput
@@ -38,3 +39,18 @@ class UserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class UserRegisterForm(UserCreationForm):
+    team_name = forms.CharField(max_length=300, required=True,)
+    email = forms.EmailField(
+        max_length=255,
+        help_text="Required. Details of the event will be sent to this email.",
+    )
+    team_members = forms.IntegerField(
+        help_text="A team cannot have more than 3 members!", max_value=3, min_value=1
+    )
+
+    class Meta:
+        model = User
+        fields = ["team_name", "email", "team_members", "password1", "password2"]
