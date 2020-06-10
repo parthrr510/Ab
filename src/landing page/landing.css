@@ -141,11 +141,26 @@ body {
   padding: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  width: 17%;
   height: 70px;
   background: transparent;
   display: inline-block;
+  /* font-size: 0.5rem; */
 }
+
+@media only screen and (max-width: 500px) {
+  .dropup {
+    width: 38%;
+  }
+}
+/* @media only screen and (min-width:50px) (max-width: 800px){
+  .dropup {
+    width: 50%;
+  }
+  /* .dropbtn {
+    margin-left: 1rem;
+    width: 2rem;
+  } */
 
 .dropup-content {
   display: none;
@@ -158,6 +173,7 @@ body {
   /* margin-bottom: 20px; */
   padding: 0;
   /* color: white; */
+  /* font-size: 0.5rem; */
 }
 
 @media only screen and (min-width: 425px) and (max-width: 1250px) {
@@ -187,6 +203,7 @@ body {
 /* Contact Us button on hover */
 .dropup:hover .dropbtn {
   background-color: transparent;
+  /* color: red; */
 }
 
 @keyframes jackpots {

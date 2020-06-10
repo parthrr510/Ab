@@ -79,19 +79,16 @@ export default function Landing() {
             </div>
             <div className="dropup-content">
               <a href="https://instagram.com/msc_tiet?igshid=16huv4u0jf3ld">
-                Instagram
                 <img
                   src={insta_logo}
                   style={{ height: "20px", width: "20px" }}
                 />
               </a>
               <a href="https://www.facebook.com/msctiet/">
-                Facebook
                 <img src={fb_logo} style={{ height: "20px", width: "20px" }} />
               </a>
               <a href="https://github.com/MicrosoftStudentChapter">
                 {" "}
-                Github
                 <img
                   src={github_logo}
                   style={{ height: "20px", width: "20px" }}
