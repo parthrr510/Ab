@@ -17,7 +17,7 @@ const Animation = () => {
         options={defaultOptions}
         height={100}
         width={100}
-        style={{ marginLeft: "70px" }}
+        style={{ marginRight: "1.4rem" }}
       />
     </Fragment>
   );
