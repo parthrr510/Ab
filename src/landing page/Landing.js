@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 import logo from "./msc_logo.png";
 import Animation from "./Animation.js";
 import scroll from "./scroll.png";
+import fb_logo from "./fb_logo_final.png";
+import insta_logo from "./insta_logo.png";
+import github_logo from "./github_logo_2.png";
 
 export default function Landing() {
   const [show, setShow] = useState(false);
@@ -77,9 +80,23 @@ export default function Landing() {
             <div className="dropup-content">
               <a href="https://instagram.com/msc_tiet?igshid=16huv4u0jf3ld">
                 Instagram
+                <img
+                  src={insta_logo}
+                  style={{ height: "20px", width: "20px" }}
+                />
               </a>
-              <a href="https://www.facebook.com/msctiet/">Facebook</a>
-              <a href="https://github.com/MicrosoftStudentChapter">Github</a>
+              <a href="https://www.facebook.com/msctiet/">
+                Facebook
+                <img src={fb_logo} style={{ height: "20px", width: "20px" }} />
+              </a>
+              <a href="https://github.com/MicrosoftStudentChapter">
+                {" "}
+                Github
+                <img
+                  src={github_logo}
+                  style={{ height: "20px", width: "20px" }}
+                />
+              </a>
             </div>
           </div>
         </div>
