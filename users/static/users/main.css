@@ -74,12 +74,18 @@ ul {
   display:table; 
   height:100%; 
   margin: 0 auto;
-}
+} */
 
-.content-section {
+/* .content-section {
   display:table-cell; 
   vertical-align:middle;
 }	 */
+.parent {
+  box-shadow: 0 0 0.7rem #01c5c4;
+  -moz-box-shadow: 0 0 0.7rem #01c5c4;
+  -webkit-box-shadow: 0 0 0.7rem #01c5c4;
+  -o-box-shadow: 0 0 0.7rem #01c5c4;
+}
 
 .article-title {
   color: #444444;
