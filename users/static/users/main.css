@@ -65,6 +65,8 @@ ul {
   margin-bottom: 20px;
   /* align-self: center;
   vertical-align: center; */
+  overflow: auto;
+  max-height: 80vh;
 }
 
 /* .parent{
