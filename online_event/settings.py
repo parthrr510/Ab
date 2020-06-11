@@ -135,3 +135,6 @@ EMAIL_USE_TLS = True
 
 EMAIL_HOST_USER = "sshrivastav_be19@thapar.edu"
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
