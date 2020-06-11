@@ -16,17 +16,74 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!-- CSS FILE -->
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'users/main.css' %}"
     />
-
+    <!-- JS FILE -->
+    <script src="{% static 'users/app.js' %}"></script>
     <title>Abhyudaya Registeration</title>
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <!-- Navbar -->
+      <nav
+        id="mainNavbar"
+        class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"
+      >
+        <div class="container-fluid">
+          <!-- Brand -->
+          <!-- <a class="navbar-brand" href="#" target="_blank"> -->
+          <!-- <img class="navbar-brand" src="./crisis_d.jpeg" alt="MSC"> -->
+          <a class="navbar-brand" href="#">
+            <img
+              src="{%static 'users/msc_logo.png'%}"
+              alt="MSC_Logo"
+              id="msc_logo"
+            />
+          </a>
+          <!-- Collapse -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Links -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Sign Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br />
+      <!-- Navbar -->
+      <!-- <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="#">Abhyudaya</a>
           <button
@@ -46,16 +103,17 @@
               <a class="nav-item nav-link" href="#">About</a>
             </div>
             <!-- Navbar Right Side -->
-            <div class="navbar-nav">
+      <!-- <div class="navbar-nav">
               <a class="nav-item nav-link" href="#">Login</a>
               <a class="nav-item nav-link" href="#">Register</a>
             </div>
           </div>
         </div>
-      </nav>
+      </nav> -->
     </header>
     <main role="main" class="container">
       <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-8">
           {% if messages %} {% for message in messages %}
           <div class="alert alert-{{ message.tags }}">
@@ -64,6 +122,7 @@
           {% endfor %} {% endif %} {% block content %}{% endblock %}
         </div>
       </div>
+      <div class="col-md-2"></div>
     </main>
 
     <!-- Optional JavaScript -->
@@ -83,5 +142,19 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $("#mainNavbar");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+      });
+      // $(function () {
+      //   $(document).scroll(function () {
+      //     var $nav = $(".navbar-fixed-top");
+      //     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      //   });
+      // });
+    </script>
   </body>
 </html>

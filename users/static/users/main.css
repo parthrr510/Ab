@@ -11,14 +11,17 @@ body {
       rgba(0, 0, 0, 0.7) 75%,
       #000000 100%
     ),
-    url("./crisis_d.jpeg");
+    url("./crisis_blur.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: black;
+  /* background-color: black; */
 }
 
+#msc_logo {
+  height: 50px;
+}
 h1,
 h2,
 h3,
@@ -26,6 +29,12 @@ h4,
 h5,
 h6 {
   color: #444444;
+}
+
+#mainNavbar {
+  /* background: blue; */
+  /* padding-bottom: 100px; */
+  height: 50px;
 }
 
 ul {
@@ -49,12 +58,25 @@ ul {
 }
 
 .content-section {
-  background: #ffffff;
+  background: rgba(47, 48, 53, 0.8);
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
+  /* align-self: center;
+  vertical-align: center; */
 }
+
+/* .parent{
+  display:table; 
+  height:100%; 
+  margin: 0 auto;
+}
+
+.content-section {
+  display:table-cell; 
+  vertical-align:middle;
+}	 */
 
 .article-title {
   color: #444444;
@@ -101,4 +123,9 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 400ms;
 }
