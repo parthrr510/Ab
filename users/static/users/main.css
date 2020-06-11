@@ -125,6 +125,8 @@ a.article-title:hover {
   -moz-box-shadow: 0 0 1.5rem #01c5c4;
   -webkit-box-shadow: 0 0 1.5rem #01c5c4;
   -o-box-shadow: 0 0 1.5rem #01c5c4;
+  position: relative;
+  top: 120%;
 }
 
 .confirm {
