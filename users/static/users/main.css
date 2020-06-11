@@ -150,4 +150,6 @@ a.article-title:hover {
 
 .confirm {
   background-color: rgba(47, 48, 53, 0.8);
+  color: white;
+  padding: 1rem 0.1rem;
 }
