@@ -1,3 +1,4 @@
 {% autoescape off %} Hi {{ user.team_name }}, Please click on the link below to
-confirm your registration: http://{{ domain }}{% url 'activate' uidb64=uid
-token=token %} {% endautoescape %}
+<!-- prettier-ignore -->
+confirm your registration: http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}
