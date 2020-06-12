@@ -183,6 +183,7 @@ li {
 /* Track */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
@@ -193,6 +194,7 @@ li {
   border-radius: 5px;
   background: rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0, 0, 0, 0.2);
