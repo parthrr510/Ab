@@ -2,8 +2,12 @@ import React, { Component } from "react";
 import { Row, Col, Nav } from "react-bootstrap";
 import Media from "react-bootstrap/Media";
 import logo from "./msc_logo.png";
+import notepad from "./note.png";
+import mail from "./email.png";
+import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
+import {Link} from 'react-router-dom';
 
 class SideNav extends Component {
   render() {
@@ -20,6 +24,17 @@ class SideNav extends Component {
                 marginLeft: "-120px",
               }}
             />
+            <Link to="/logout">     
+            <img
+              src={arrow}
+              style={{
+                height: "35px",
+                float: "right",
+                marginRight: "40px",
+                marginTop: "10px"
+              }}
+            />
+          </Link>
             <Media style={{ marginTop: "15px" }}>
               <img
                 width={55}
@@ -84,8 +99,40 @@ class SideNav extends Component {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={9} style={{ backgroundColor: "#2e3036" }}>
-            Col 2
+          <Col sm={9} style={{ backgroundColor: "#484a4f" }}>
+            <Link to="/logout">
+                <p style={{ 
+                float: "right", 
+                color: "darkgrey", 
+                marginRight: "20px",  
+                marginTop: "10px"
+                }}>Logout</p>
+            </Link>
+          
+          <Link to="/logout">     
+            <img
+              src={notepad}
+              style={{
+                height: "25px",
+                float: "right", 
+                marginRight: "20px",  
+                marginTop: "10px"
+              }}
+            />
+          </Link>
+
+          <Link to="/logout">     
+            <img
+              src={mail}
+              style={{
+                height: "25px",
+                float: "right",
+                marginRight: "20px",  
+                marginTop: "10px"
+              }}
+            />
+          </Link>
+          <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
       </div>

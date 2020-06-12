@@ -18,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/panel" component={SideNav} />
+            <Route exact path="/logout" component={Landing} />
             <Route exact path="/leaderboard" component={LeaderBoard} />
             <Route exact path="/mscbits" component={MSCBits} />
             <Route exact path="/food" component={FoodResources} />
