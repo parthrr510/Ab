@@ -74,27 +74,31 @@ class SideNav extends Component {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/mscbits" eventKey="link-2" style={navStyle}>
+                <Nav.Link href="/updates" eventKey="link-2" style={navStyle}>
                   <i className="fa fa-money mr-3" style={icon}></i>
-                  MSC bits
+                  Updates
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/food" eventKey="link-3" style={navStyle}>
+                <Nav.Link href="/trading" eventKey="link-3" style={navStyle}>
                   <i className="fa fa-cutlery mr-3" style={icon}></i>
-                  Food Resources
+                  Trading
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/dropdown" eventKey="link-4" style={navStyle}>
+                <Nav.Link
+                  href="/traderulebook"
+                  eventKey="link-4"
+                  style={navStyle}
+                >
                   <i className="fa fa-window-maximize mr-3" style={icon}></i>
-                  Example Dropdown
+                  Trade Rulebook
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item style={{ paddingBottom: "20px" }}>
-                <Nav.Link href="/login" eventKey="link-5" style={navStyle}>
-                  <i className="fa fa-sign-out mr-3" style={icon}></i>
-                  Login
+                <Nav.Link href="/discord" eventKey="link-5" style={navStyle}>
+                  <i className="fa fa-discord mr-3" style={icon}></i>
+                  Discord
                 </Nav.Link>
               </Nav.Item>
             </Nav>

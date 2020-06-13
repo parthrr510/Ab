@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-export default class Login extends Component {
+export default class TradeRulebook extends Component {
   render() {
     return (
       <div>
-        <h1>To the Login Page</h1>
+        <h1>Trade Rulebook</h1>
       </div>
     );
   }
