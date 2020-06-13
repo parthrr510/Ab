@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 import logo from "./msc_logo.png";
 import Animation from "./Animation.js";
 import scroll from "./scroll.png";
+import fb_logo from "./fb_logo_final.png";
+import insta_logo from "./insta_logo.png";
+import github_logo from "./github_logo_2.png";
 
 export default function Landing() {
   const [show, setShow] = useState(false);
@@ -13,67 +16,88 @@ export default function Landing() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="landing">
-      <div className="image">
-        <div className="logo" position="relative">
+    <div>
+      <nav className="navbar navbar-expand-lg fixed-top py-3">
+        <a href="#" className="navbar-brand text-uppercase font-weight-bold">
           <img
+            className="format_logo"
+            id="msc_margin"
             src={logo}
-            style={{
-              height: "70px",
-            }}
+            alt="MSC_tiet"
           />
-        </div>
+        </a>
         <Animation />
-        <div className="title">CRISIS AHEAD</div>
-        <div
-          className="square"
-          style={{ marginLeft: "630px", marginTop: "40px" }}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-          <button className="btn">Get Started</button>
-        </div>
-        <br />
-        <br />
+      </nav>
 
-        <img
-          className="scroll"
-          src={scroll}
-          onClick={handleShow}
-          style={{
-            color: "#000",
-            height: "80px",
-            marginLeft: "40px",
-            marginTop: "120px",
-            zIndex: "-1",
-          }}
-        />
-        <Modal show={show} onHide={handleClose} className="rulebook">
-          <Modal.Header closeButton>
-            <Modal.Title>RuleBook</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              XYZ
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </div>
+      <section className="masthead">
+        <div className="d-flex align-item-end">
+          <div className="container d-flex h-100 align-items-center">
+            <div className="mx-auto text-center">
+              <div id="container">
+                <div>
+                  <div className="jackpots">CRISIS AHEAD </div>
+                </div>
+              </div>
+              <div className="btn-block">
+                <Button variant="outline-light" id="button_get">
+                  Get Started
+                </Button>{" "}
+              </div>
+              <img id="scroll_icon" src={scroll} onClick={handleShow} />
+              <Modal show={show} onHide={handleClose} className="rulebook">
+                <Modal.Header closeButton>
+                  <Modal.Title>RuleBook</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                  <Button variant="primary" onClick={handleClose}>
+                    XYZ
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+            </div>
+          </div>
+        </div>
+        <div className="d-flex align-item-end">
+          <div className="dropup">
+            <div className="dropbtn d-flex justify-content-start">
+              Contact Us
+            </div>
+            <div className="dropup-content">
+              <a href="https://instagram.com/msc_tiet?igshid=16huv4u0jf3ld">
+                <img
+                  src={insta_logo}
+                  style={{ height: "20px", width: "20px" }}
+                />
+              </a>
+              <a href="https://www.facebook.com/msctiet/">
+                <img src={fb_logo} style={{ height: "20px", width: "20px" }} />
+              </a>
+              <a href="https://github.com/MicrosoftStudentChapter">
+                {" "}
+                <img
+                  src={github_logo}
+                  style={{ height: "20px", width: "20px" }}
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -33,6 +33,7 @@ class MyUserManager(BaseUserManager):
             email=self.normalize_email(email),
             team_members=team_members,
         )
+        user.is_active = True
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -61,6 +62,8 @@ class MyUser(AbstractBaseUser):
     email = models.EmailField(max_length=255, unique=True, verbose_name="email address")
     team_members = models.IntegerField(validators=[validate_team_members])
     dateJoined = models.DateTimeField(default=timezone.now)
+    email_confirmed = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
