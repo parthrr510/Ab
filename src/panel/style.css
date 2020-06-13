@@ -2,3 +2,15 @@
   padding: 0;
   margin: 0;
 }
+
+.title{
+  color: rgb(233, 161, 29);
+  text-align: center;
+  text-shadow: 10px 12px 8px rgb(31, 27, 4);
+  margin-top: 10px;
+  font-size: 70px;
+  font-weight: 300;
+  font-family: AlphaCentauri;
+  margin-right: 20px;
+  width: 800px;
+}
