@@ -15,7 +15,7 @@ import update from "./updates.png";
 import trade from "./trade.png";
 import {AiOutlineTable} from 'react-icons/ai';
 import {FaWindowMaximize} from 'react-icons/fa';
-import {FaHandsHelping} from 'react-icons/fa';
+import {FaHandshake} from 'react-icons/fa';
 import {MdUpdate} from 'react-icons/md';
 
 
@@ -144,7 +144,7 @@ class SideNav extends Component {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link href="/trading" eventKey="link-3" className="navStyle">
-                <FaHandsHelping className="icon" />
+                <FaHandshake className="icon" />
                   {/* <i className="fa fa-cutlery mr-3" aria-hidden="true" style={icon,{float:"left"}}></i> */}
                   {/* <img
               src={trade}
