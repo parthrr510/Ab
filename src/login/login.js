@@ -72,7 +72,8 @@ class Login extends Component {
                             <br></br>
                                     
                                         TEAM-NAME
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <br></br>
+                                    
                                         <input type="text"
                                          style={{
                                             backgroundColor:"#2f3035",
@@ -82,7 +83,8 @@ class Login extends Component {
                                     <br></br>
                                     <br></br>
                                         PASSWORD
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <br></br>
+                                        
                                         <input type="password" 
                                         style={{
                                                 backgroundColor:"#2f3035",
@@ -91,7 +93,8 @@ class Login extends Component {
                                         </input>
                                    <br></br>
                                    <br></br>
-                                    <br></br>
+                                   <br></br>
+                                    
                                         <input type="submit" value="LOGIN" className="login-btn"></input>
                                     
                                 

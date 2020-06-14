@@ -9,8 +9,10 @@ import scroll from "./scroll.png";
 import fb_logo from "./fb_logo_final.png";
 import insta_logo from "./insta_logo.png";
 import github_logo from "./github_logo_2.png";
+import { connect } from "react-redux";
+import { complicatedStuff } from "../redux/actions";
 
-export default function Landing() {
+const Landing = ({ Auth: { user }, complicatedStuff }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -39,9 +41,13 @@ export default function Landing() {
                 </div>
               </div>
               <div className="btn-block">
-                <Button variant="outline-light" id="button_get">
+                <Button
+                  variant="outline-light"
+                  id="button_get"
+                  onClick={() => complicatedStuff()}
+                >
                   Get Started
-                </Button>{" "}
+                </Button>
               </div>
               <img id="scroll_icon" src={scroll} onClick={handleShow} />
               <Modal show={show} onHide={handleClose} className="rulebook">
@@ -100,4 +106,8 @@ export default function Landing() {
       </section>
     </div>
   );
-}
+};
+const mapStateToProps = (state) => ({
+  Auth: state.Auth,
+});
+export default connect(mapStateToProps, { complicatedStuff })(Landing);
