@@ -8,13 +8,24 @@ import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
 import {Link} from 'react-router-dom';
+import {RiHome2Line} from 'react-icons/ri';
+import {FaDiscord} from 'react-icons/fa';
+import {GrAnnounce} from 'react-icons/gr';
+import update from "./updates.png";
+import trade from "./trade.png";
+import {AiOutlineTable} from 'react-icons/ai';
+import {FaWindowMaximize} from 'react-icons/fa';
+import {FaHandsHelping} from 'react-icons/fa';
+import {MdUpdate} from 'react-icons/md';
+
+
 
 class SideNav extends Component {
   render() {
     return (
       <div>
         <Row>
-          <Col sm={3} style={{ backgroundColor: "#484a4f" }} className="logo">
+          <Col sm={3} style={{ backgroundColor: "#2D3135"}} className="logo">
             <img
               src={logo}
               style={{
@@ -47,7 +58,7 @@ class SideNav extends Component {
                   marginLeft: "28px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-100px", color: "#F8F8FF" }}>
+              <Media.Body style={{ marginLeft: "-100px", color: "#8A8D92" }}>
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
@@ -58,8 +69,9 @@ class SideNav extends Component {
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
-                <Nav.Link href="/" style={navStyle}>
-                  <i className="fa fa-home mr-3" style={icon}></i>
+                <Nav.Link href="/" className="navStyle">
+                  <RiHome2Line className="icon" />
+                  {/* <i className="fa fa-home mr-3" style={icon,{float:"left"}}></i> */}
                   Home
                 </Nav.Link>
               </Nav.Item>
@@ -67,21 +79,44 @@ class SideNav extends Component {
                 <Nav.Link
                   href="/leaderboard"
                   eventKey="link-1"
-                  style={navStyle}
+                  className="navStyle"
                 >
-                  <i className="fa fa-table mr-3" style={icon}></i>
+                  <AiOutlineTable className="icon"/>
+                  {/* <i className="fa fa-table mr-3" style={{marginRight:"50px"}}></i> */}
                   Leaderboard
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/updates" eventKey="link-2" style={navStyle}>
-                  <i className="fa fa-money mr-3" style={icon}></i>
+                <Nav.Link href="/updates" eventKey="link-2" className="navStyle">
+                  {/* <i className="fa fa-money mr-3" style={icon,{float:"left"}}></i> */}
+                  <MdUpdate className="icon" />
+                  {/* <img
+              src={update}
+              style={{
+                height: "27px",
+                width:"30px",
+                marginRight:"70px",
+                borderRight:"1px #8A8D92 solid",
+                paddingRight:"10px"
+              }}
+            /> */}
                   Updates
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/trading" eventKey="link-3" style={navStyle}>
-                  <i className="fa fa-cutlery mr-3" style={icon}></i>
+                <Nav.Link href="/trading" eventKey="link-3" className="navStyle">
+                <FaHandsHelping className="icon" />
+                  {/* <i className="fa fa-cutlery mr-3" aria-hidden="true" style={icon,{float:"left"}}></i> */}
+                  {/* <img
+              src={trade}
+              style={{
+                height: "30px",
+                width:"30px",
+                marginRight:"70px",
+                borderRight:"1px #8A8D92 solid",
+                paddingRight:"10px"
+              }}
+            /> */}
                   Trading
                 </Nav.Link>
               </Nav.Item>
@@ -89,21 +124,23 @@ class SideNav extends Component {
                 <Nav.Link
                   href="/traderulebook"
                   eventKey="link-4"
-                  style={navStyle}
+                  className="navStyle"
                 >
-                  <i className="fa fa-window-maximize mr-3" style={icon}></i>
+                  <FaWindowMaximize className="icon" />
+                  {/* <i className="fa fa-window-maximize mr-3" style={icon,{marginRight:"50px"}}></i> */}
                   Trade Rulebook
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item style={{ paddingBottom: "20px" }}>
-                <Nav.Link href="/discord" eventKey="link-5" style={navStyle}>
-                  <i className="fa fa-discord mr-3" style={icon}></i>
+                <Nav.Link href="/discord" eventKey="link-5" className="navStyle">
+                  {/* <i className="fa fa-discord mr-3" style={icon,{float:"left"}}></i> */}
+                  <FaDiscord className="icon" />
                   Discord
                 </Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={9} style={{ backgroundColor: "#484a4f" }}>
+          <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
                 <p style={{ 
                 float: "right", 
@@ -143,11 +180,19 @@ class SideNav extends Component {
     );
   }
 }
-const navStyle = {
-  color: "#F8F8FF",
-  padding: "22px",
-};
-const icon = {
-  color: "#F8F8FF",
-};
+// const navStyle = {
+//   color: "#8A8D92",
+//   padding: "22px",
+//   textAlign:"left"
+// };
+
+// const icon = {
+//   marginRight:"70px",
+//   borderRight:"1px #8A8D92 solid",
+//   paddingRight:"10px",
+//   fontSize:"30px"
+// }
+
+
+
 export default SideNav;
