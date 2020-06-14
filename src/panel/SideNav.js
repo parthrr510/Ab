@@ -24,7 +24,7 @@ class SideNav extends Component {
   render() {
     return (
       <div>
-        <Row>
+        <Row style={{borderBottom:"1px #8A8D92 solid"}}>
           <Col sm={3} style={{ backgroundColor: "#2D3135"}} className="logo">
             <img
               src={logo}
@@ -46,7 +46,46 @@ class SideNav extends Component {
               }}
             />
           </Link>
-            <Media style={{ marginTop: "15px" }}>
+          </Col>
+          <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
+            <Link to="/logout">
+                <p style={{ 
+                float: "right", 
+                color: "darkgrey", 
+                marginRight: "20px",  
+                marginTop: "10px"
+                }}>Logout</p>
+            </Link>
+          
+          <Link to="/logout">     
+            <img
+              src={notepad}
+              style={{
+                height: "25px",
+                float: "right", 
+                marginRight: "20px",  
+                marginTop: "10px"
+              }}
+            />
+          </Link>
+
+          <Link to="/logout">     
+            <img
+              src={mail}
+              style={{
+                height: "25px",
+                float: "right",
+                marginRight: "20px",  
+                marginTop: "10px"
+              }}
+            />
+          </Link>
+          <div className="title">ABHYUDAYA</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={3} style={{backgroundColor: "#2D3135",borderRight:"1px #8A8D92 solid"}}>
+          <Media style={{ marginTop: "15px" }}>
               <img
                 width={55}
                 height={55}
@@ -139,41 +178,6 @@ class SideNav extends Component {
                 </Nav.Link>
               </Nav.Item>
             </Nav>
-          </Col>
-          <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
-            <Link to="/logout">
-                <p style={{ 
-                float: "right", 
-                color: "darkgrey", 
-                marginRight: "20px",  
-                marginTop: "10px"
-                }}>Logout</p>
-            </Link>
-          
-          <Link to="/logout">     
-            <img
-              src={notepad}
-              style={{
-                height: "25px",
-                float: "right", 
-                marginRight: "20px",  
-                marginTop: "10px"
-              }}
-            />
-          </Link>
-
-          <Link to="/logout">     
-            <img
-              src={mail}
-              style={{
-                height: "25px",
-                float: "right",
-                marginRight: "20px",  
-                marginTop: "10px"
-              }}
-            />
-          </Link>
-          <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
       </div>
