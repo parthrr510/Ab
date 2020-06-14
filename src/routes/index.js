@@ -15,12 +15,8 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={Landing} />
-<<<<<<< HEAD
         <Route exact path="/login" component={Login} />
         <Route exact path="/panel" component={SideNav} isPrivate />
-=======
-        <Route exact path="/panel" component={SideNav} />
->>>>>>> origin/master
         <Route exact path="/leaderboard" component={LeaderBoard} />
         <Route exact path="/updtes" component={Updates} />
         <Route exact path="/trading" component={Trading} />
