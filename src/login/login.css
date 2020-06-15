@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera");
+
 body {
   background-image: url("./bg.jpg") !important;
   background-position: center;
@@ -20,7 +22,39 @@ body {
 }
 
 #form {
-  background-color: black;
+  background-color: rgba(47, 48, 53, 0.8);
+  box-shadow: 0 0 1.5rem #01c5c4;
+  -moz-box-shadow: 0 0 1.5rem #01c5c4;
+  -webkit-box-shadow: 0 0 1.5rem #01c5c4;
+  -o-box-shadow: 0 0 1.5rem #01c5c4;
+}
+
+h3 {
+  text-align: center;
+  color: #01c5c4;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Lexend Tera", sans-serif;
+  /* letter-spacing: 1rem; */
+  text-shadow: 0 0 10px #01c5c4;
+}
+
+hr {
+  background-color: white;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.form_field {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: #ff6666;
+  text-transform: uppercase;
+}
+
+.sub_btn {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 /* .login-div {
   height: 600px;
@@ -38,12 +72,12 @@ body {
   margin-left: 0px !important;
 } */
 
-.navStyle:hover {
+/* .navStyle:hover {
   box-shadow: 0px 0px 10px silver;
   text-shadow: 0px 0px 15px silver;
   color: #01c5c4 !important;
   border-left: 3px #01c5c4 solid;
-}
+} */
 .login-btn {
   background-color: #ff6666;
   height: 70px;
