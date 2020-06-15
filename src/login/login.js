@@ -32,7 +32,7 @@ class Login extends Component {
         <div className="container">
           <Row>
             <Col></Col>
-            <Col md={8}>
+            <Col md={6}>
               <Form id="form">
                 <h3>Login</h3>
                 <hr></hr>
