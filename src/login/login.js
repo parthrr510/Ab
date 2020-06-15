@@ -37,7 +37,7 @@ class Login extends Component {
                 <h3>Login</h3>
                 <hr></hr>
                 <Form.Group className="form_field" controlId="formBasicEmail">
-                  <Form.Label className="form_inp">Email address</Form.Label>
+                  <Form.Label className="form_inp">Team Name</Form.Label>
                   <Form.Control className="form_inpField" type="email" />
                 </Form.Group>
 
