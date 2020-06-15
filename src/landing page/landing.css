@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix");
 
+@font-face {
+  font-family: alpha;
+  /* prettier-ignore */
+  src: url(fonts/AlphaCentauri\ 500.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -37,7 +43,7 @@ body {
 @media only screen and (max-width: 360px) {
   .masthead .jackpots {
     font-size: 240%;
-    font-family: AlphaCentauri;
+    /* font-family: AlphaCentauri; */
   }
   #msc_margin {
     /* max-width: 100%; */
@@ -96,7 +102,7 @@ body {
 }
 
 .jackpots {
-  font-family: "alphacentaurimedium";
+  font-family: alpha;
   font-size: 6.3vw;
   margin-left: 1.5vw;
 }

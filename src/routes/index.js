@@ -8,12 +8,14 @@ import TradeRulebook from "../panel/pages/TradeRulebook";
 import Discord from "../panel/pages/Discord";
 import Landing from "../landing page/Landing";
 import SideNav from "../panel/SideNav";
+import Login from "../login/login";
 
 const Routes = () => {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/panel" component={SideNav} />
         <Route exact path="/leaderboard" component={LeaderBoard} />
         <Route exact path="/updtes" component={Updates} />

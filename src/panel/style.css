@@ -3,14 +3,45 @@
   margin: 0;
 }
 
+@font-face{
+      font-family: alpha;
+      src: url(fonts/AlphaCentauri\ 500.ttf);
+}
+
 .title{
-  color: rgb(233, 161, 29);
+  color:#FF2482;
   text-align: center;
   text-shadow: 10px 12px 8px rgb(31, 27, 4);
-  margin-top: 10px;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 300;
-  font-family: AlphaCentauri;
+  font-family: alpha;
   margin-right: 20px;
   width: 800px;
+}
+
+.navStyle{
+  color: #8A8D92 !important;
+  padding: 22px !important;
+  text-align: left !important;
+  font-family: "Muli", sans-serif;
+  /* background-color: red; */
+}
+
+.icon{
+  margin-right: 80px !important;
+  border-right: 1px #8A8D92 solid !important;
+  padding-right: 10px !important;
+  font-size: 30px !important;
+}
+
+.navStyle:hover{
+  box-shadow: 0px 0px 10px silver;
+  text-shadow: 0px 0px 15px silver;
+  color: #FF2482 !important;
+  border-left: 3px #FF2482 solid ;
+}
+
+
+.icon:hover{
+  /* color: #FF2482 !important; */
 }
