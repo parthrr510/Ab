@@ -1,43 +1,46 @@
-body{
-    background-image: url("./bg.jpg") !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: black;
+body {
+  background-image: url("./bg.jpg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: black;
 }
 
-.login-div{
-    height: 600px;
-    width: 50%;
-    background-color: #2f3035;
-    text-align: center;
-    margin: auto;
-    margin-top: 80px;
-    box-shadow: 0px 0px 20px #01c5c4;
-    color:  #ff6666;
-    font-size: 30px;
-}
-.row{
-    margin-right: 0px !important;
-    margin-left: 0px !important;
+.MSC_Logo {
+  height: 50px;
 }
 
-.navStyle:hover{
-    box-shadow: 0px 0px 10px silver;
-    text-shadow: 0px 0px 15px silver;
-    color: #01c5c4 !important;
-    border-left: 3px #01c5c4 solid ;
- 
+.login-div {
+  height: 600px;
+  width: 50%;
+  background-color: #2f3035;
+  text-align: center;
+  margin: auto;
+  margin-top: 80px;
+  box-shadow: 0px 0px 20px #01c5c4;
+  color: #ff6666;
+  font-size: 30px;
 }
-.login-btn{
-    background-color: #ff6666;
-    height: 70px;
-    width: 200px;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 0px 0px 10px #ff6666;
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
 }
 
-.td{
-    height: 20px !important;
+.navStyle:hover {
+  box-shadow: 0px 0px 10px silver;
+  text-shadow: 0px 0px 15px silver;
+  color: #01c5c4 !important;
+  border-left: 3px #01c5c4 solid;
+}
+.login-btn {
+  background-color: #ff6666;
+  height: 70px;
+  width: 200px;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0px 0px 10px #ff6666;
+}
+
+.td {
+  height: 20px !important;
 }
