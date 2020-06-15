@@ -27,35 +27,35 @@ class Login extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Row>
-          <Col md={2}></Col>
-          <Col md={8}>
-            <Form id="form">
-              <h3>Login</h3>
-              <hr></hr>
-              <Form.Group className="form_field" controlId="formBasicEmail">
-                <Form.Label className="form_inp">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
+        <br />
+        <br />
+        <div className="container">
+          <Row>
+            <Col></Col>
+            <Col md={8}>
+              <Form id="form">
+                <h3>Login</h3>
+                <hr></hr>
+                <Form.Group className="form_field" controlId="formBasicEmail">
+                  <Form.Label className="form_inp">Email address</Form.Label>
+                  <Form.Control className="form_inpField" type="email" />
+                </Form.Group>
 
-              <Form.Group className="form_field" controlId="formBasicPassword">
-                <Form.Label className="form_inp">Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group className="form_field" controlId="formBasicCheckbox">
-                <Form.Check
-                  className="form_inp"
-                  type="checkbox"
-                  label="Keep me signed in"
-                />
-              </Form.Group>
-              <Button className="form_inp sub_btn" type="submit">
-                Submit
-              </Button>
-            </Form>
-          </Col>
-          <Col md={2}></Col>
-        </Row>
+                <Form.Group
+                  className="form_field"
+                  controlId="formBasicPassword"
+                >
+                  <Form.Label className="form_inp">Password</Form.Label>
+                  <Form.Control className="form_inpField" type="password" />
+                </Form.Group>
+                <Button className="form_inp sub_btn" type="submit">
+                  Login
+                </Button>
+              </Form>
+            </Col>
+            <Col></Col>
+          </Row>
+        </div>
       </div>
     );
   }

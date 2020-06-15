@@ -7,6 +7,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-color: black;
+  overflow-x: hidden;
 }
 
 .MSC_Logo {
@@ -27,9 +28,11 @@ body {
   -moz-box-shadow: 0 0 1.5rem #01c5c4;
   -webkit-box-shadow: 0 0 1.5rem #01c5c4;
   -o-box-shadow: 0 0 1.5rem #01c5c4;
+  border-radius: 0.3rem;
 }
 
 h3 {
+  padding-top: 0.5rem;
   text-align: center;
   color: #01c5c4;
   text-align: center;
@@ -43,11 +46,13 @@ hr {
   background-color: white;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  margin-top: 0;
 }
 
 .form_field {
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-top: 2rem;
   color: #ff6666;
   text-transform: uppercase;
 }
@@ -55,37 +60,32 @@ hr {
 .sub_btn {
   margin-left: 1rem;
   margin-bottom: 1rem;
-}
-/* .login-div {
-  height: 600px;
-  width: 50%;
-  background-color: #2f3035;
-  text-align: center;
-  margin: auto;
-  margin-top: 80px;
-  box-shadow: 0px 0px 20px #01c5c4;
-  color: #ff6666;
-  font-size: 30px;
-}
-.row {
-  margin-right: 0px !important;
-  margin-left: 0px !important;
-} */
-
-/* .navStyle:hover {
-  box-shadow: 0px 0px 10px silver;
-  text-shadow: 0px 0px 15px silver;
-  color: #01c5c4 !important;
-  border-left: 3px #01c5c4 solid;
-} */
-.login-btn {
+  color: #2f3035;
   background-color: #ff6666;
-  height: 70px;
-  width: 200px;
-  border-radius: 20px 20px 20px 20px;
-  box-shadow: 0px 0px 10px #ff6666;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: 0 0 0.4rem #ff6666;
+  -moz-box-shadow: 0 0 0.4rem #ff6666;
+  -webkit-box-shadow: 0 0 0.4rem #ff6666;
+  -o-box-shadow: 0 0 0.4rem #ff6666;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
-.td {
-  height: 20px !important;
+.form_inpField {
+  background: transparent;
+  border-bottom: 1px solid #ff6666;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #cbd5db;
+}
+
+.form_inpField:focus {
+  background: transparent;
+  color: #cbd5db;
+  box-shadow: 0 0 0.4rem #01c5c4;
+  -moz-box-shadow: 0 0 0.4rem #01c5c4;
+  -webkit-box-shadow: 0 0 0.4rem #01c5c4;
+  -o-box-shadow: 0 0 0.4rem #01c5c4;
 }
