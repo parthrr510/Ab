@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { Row, Col, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Nav,
+  Navbar,
+  NavDropdown,
+  Form,
+  Button,
+} from "react-bootstrap";
 import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import logo from "../panel/msc_logo.png";
@@ -29,44 +37,31 @@ class Login extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Row>
-          <Col sm={12}>
-            <div className="login-div">
-              <p
-                style={{
-                  color: "#01c5c4",
-                  fontWeight: "700",
-                  fontSize: "50px",
-                }}
-              >
-                LOGIN
-              </p>
-              <br></br>
-              TEAM-NAME
-              <br></br>
-              <input
-                type="text"
-                style={{
-                  backgroundColor: "#2f3035",
-                  borderBottom: "1px  #ff6666 solid",
-                }}
-              ></input>
-              <br></br>
-              <br></br>
-              PASSWORD
-              <br></br>
-              <input
-                type="password"
-                style={{
-                  backgroundColor: "#2f3035",
-                  borderBottom: "1px  #ff6666 solid",
-                }}
-              ></input>
-              <br></br>
-              <br></br>
-              <br></br>
-              <input type="submit" value="LOGIN" className="login-btn"></input>
-            </div>
+          <Col md={2}></Col>
+          <Col md={8}>
+            <Form id="form">
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label className="form_inp">Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
+
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label className="form_inp">Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  className="form_inp"
+                  type="checkbox"
+                  label="Keep me signed in"
+                />
+              </Form.Group>
+              <Button className="form_inp" variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
           </Col>
+          <Col md={2}></Col>
         </Row>
       </div>
     );

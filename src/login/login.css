@@ -11,7 +11,18 @@ body {
   height: 50px;
 }
 
-.login-div {
+.form_inp {
+  text-align: left !important;
+}
+
+.App {
+  text-align: left !important;
+}
+
+#form {
+  background-color: black;
+}
+/* .login-div {
   height: 600px;
   width: 50%;
   background-color: #2f3035;
@@ -25,7 +36,7 @@ body {
 .row {
   margin-right: 0px !important;
   margin-left: 0px !important;
-}
+} */
 
 .navStyle:hover {
   box-shadow: 0px 0px 10px silver;
