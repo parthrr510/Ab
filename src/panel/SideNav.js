@@ -30,14 +30,14 @@ class SideNav extends Component {
                 height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-120px",
+                marginLeft: "-100px",
               }}
             />
             <Link to="/logout">
               <img
                 src={arrow}
                 style={{
-                  height: "35px",
+                  height: "25px",
                   float: "right",
                   marginRight: "40px",
                   marginTop: "10px",
@@ -102,17 +102,17 @@ class SideNav extends Component {
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
-                  marginLeft: "28px",
+                  marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-100px", color: "#8A8D92" }}>
+              <Media.Body style={{ marginLeft: "-30px", color: "#8A8D92" }}>
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
             <Nav
               className=" d-md-block  sidebar"
-              style={{ paddingTop: "35px" }}
+              style={{ paddingTop: "32px" }}
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
@@ -186,11 +186,12 @@ class SideNav extends Component {
                   Trade Rulebook
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item style={{ paddingBottom: "20px" }}>
+              <Nav.Item>
                 <Nav.Link
                   href="/discord"
                   eventKey="link-5"
                   className="navStyle"
+                  style={{ paddingBottom: "44px" }}
                 >
                   {/* <i className="fa fa-discord mr-3" style={icon,{float:"left"}}></i> */}
                   <FaDiscord className="icon" />
