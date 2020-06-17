@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera");
 
 body {
-  background-image: url("./bg.jpg") !important;
+  background-image: url("./bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -19,7 +19,7 @@ body {
 }
 
 .App {
-  text-align: left !important;
+  text-align: left;
 }
 
 #form {

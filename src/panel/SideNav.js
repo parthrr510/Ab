@@ -23,29 +23,29 @@ class SideNav extends Component {
     return (
       <div>
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
-          <Col sm={3} style={{ backgroundColor: "#2D3135" }} className="logo">
+          <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img
               src={logo}
               style={{
                 height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-100px",
+                marginLeft: "-13px",
               }}
             />
             <Link to="/logout">
               <img
                 src={arrow}
                 style={{
-                  height: "25px",
+                  height: "27px",
                   float: "right",
-                  marginRight: "40px",
-                  marginTop: "10px",
+                  marginRight: "5px",
+                  marginTop: "12px",
                 }}
               />
             </Link>
           </Col>
-          <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
+          <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
               <p
                 style={{
@@ -85,7 +85,7 @@ class SideNav extends Component {
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
-        <Row>
+        <Row >
           <Col
             sm={2}
             style={{
@@ -93,7 +93,7 @@ class SideNav extends Component {
               borderRight: "1px #8A8D92 solid",
             }}
           >
-            <Media style={{ marginTop: "15px" }}>
+            <Media style={{ marginTop: "45px" }}>
               <img
                 width={55}
                 height={55}
@@ -199,6 +199,20 @@ class SideNav extends Component {
                 </Nav.Link>
               </Nav.Item>
             </Nav>
+          </Col>
+          <Col sm={10}>
+            <Row>
+              <Col sm={12} 
+              style={{
+                backgroundColor:"#2D3135",
+                color:"#8A8D92",
+                height:"40px",
+                fontSize:"20px",
+                textAlign:"left",
+                paddingTop:"5px"
+                }}>Dashboard
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>
