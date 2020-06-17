@@ -212,6 +212,19 @@ class SideNav extends Component {
                 paddingTop:"5px"
                 }}>Dashboard
               </Col>
+              </Row>
+        
+            <Row>
+              <Col>Comp 3 part 1 (MSC Bits)</Col>
+              <Col>Comp 3 part 2 (Food)</Col>
+              <Col>Comp 3 part 3 (Medicines)</Col>
+              <Col>Comp 3 part 4 (Technology)</Col>
+            </Row>
+            <Row>
+              <Col sm={8} style={{ backgroundColor: "#fff" }}>
+                Notifications
+              </Col>
+              <Col sm={4}>Leaderboard</Col>
             </Row>
           </Col>
         </Row>
