@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera");
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix");
+
+@font-face {
+  font-family: alpha;
+  /* prettier-ignore */
+  src: url(fonts/AlphaCentauri\ 500.ttf);
+}
 
 body {
   margin: 0;
@@ -95,9 +101,8 @@ body {
 }
 
 .jackpots {
-  font-family: "Alpha", sans-serif;
+  font-family: alpha;
   font-size: 6.3vw;
-  margin-left: 1.5vw;
 }
 
 .jackpots {
