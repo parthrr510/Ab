@@ -200,6 +200,20 @@ class SideNav extends Component {
               </Nav.Item>
             </Nav>
           </Col>
+          <Col sm={10} style={{ backgroundColor: "#2D3135", color: "#fff" }}>
+            <Row>
+              <Col>Comp 3 part 1 (MSC Bits)</Col>
+              <Col>Comp 3 part 2 (Food)</Col>
+              <Col>Comp 3 part 3 (Medicines)</Col>
+              <Col>Comp 3 part 4 (Technology)</Col>
+            </Row>
+            <Row>
+              <Col sm={8} style={{ backgroundColor: "#fff" }}>
+                Notifications
+              </Col>
+              <Col sm={4}>Leaderboard</Col>
+            </Row>
+          </Col>
         </Row>
       </div>
     );
