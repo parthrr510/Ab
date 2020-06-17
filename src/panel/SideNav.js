@@ -17,8 +17,34 @@ import { AiOutlineTable } from "react-icons/ai";
 import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
+import Leaderboard from './Components/Leaderboard.js';
+// import logo from './logo.svg';
+import Box from './Components/Box/Box.js';
+import Updates from "./Components/Updates.js";
 
 class SideNav extends Component {
+
+  state={
+    resource:'MSC BITS',
+    done:'70',
+
+    food:'FOOD RESOURCES',
+    donef:'50',
+
+    medicine:'MEDICINES',
+    donem:'20',
+
+    technology:'TECHNOLOGY',
+    donet:'90',
+
+  }
+  //For change in value function call when extracting data
+  change = (res,value) => {
+    this.setState({
+      resource:res,
+      done:value
+    })
+  }
   render() {
     return (
       <div>
@@ -214,18 +240,19 @@ class SideNav extends Component {
               </Col>
               </Row>
         
-            <Row>
-              <Col>Comp 3 part 1 (MSC Bits)</Col>
-              <Col>Comp 3 part 2 (Food)</Col>
-              <Col>Comp 3 part 3 (Medicines)</Col>
-              <Col>Comp 3 part 4 (Technology)</Col>
+            <Row style={{ backgroundColor: "#23252a",paddingBottom:"1rem"}}>
+              <Col style={{paddingLeft:"0px",marginLeft:"1rem",marginTop:"1rem"}}><Box res ={this.state.resource} val={this.state.done}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.food} val={this.state.donef}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.medicine} val={this.state.donem}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginRight:"2rem",marginTop:"1rem"}}><Box res ={this.state.technology} val={this.state.donet}></Box></Col>
             </Row>
-            <Row>
-              <Col sm={8} style={{ backgroundColor: "#fff" }}>
-                Notifications
+            <Row style={{height:"30.5rem"}}>
+              <Col sm={8} style={{ backgroundColor: "#23252a", paddingLeft:"0px"}}>
+               <Updates />
               </Col>
-              <Col sm={4}>Leaderboard</Col>
+              <Col sm={4} style={{backgroundColor:"#2D3135",color:"white",paddingTop:"1rem"}}>LEADERBOARD<Leaderboard /></Col>
             </Row>
+            
           </Col>
         </Row>
       </div>
