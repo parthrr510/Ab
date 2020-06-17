@@ -30,7 +30,7 @@ class SideNav extends Component {
                 height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-13px",
+                marginLeft: "-1rem",
               }}
             />
             <Link to="/logout">
@@ -93,7 +93,7 @@ class SideNav extends Component {
               borderRight: "1px #8A8D92 solid",
             }}
           >
-            <Media style={{ marginTop: "45px" }}>
+            <Media style={{ marginTop: "3rem" }}>
               <img
                 width={55}
                 height={55}
@@ -105,14 +105,14 @@ class SideNav extends Component {
                   marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-30px", color: "#8A8D92" }}>
+              <Media.Body style={{ marginLeft: "-3rem", color: "#8A8D92" }}>
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
             <Nav
               className=" d-md-block  sidebar"
-              style={{ paddingTop: "32px" }}
+              style={{ paddingTop: "2rem" }}
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
@@ -206,7 +206,7 @@ class SideNav extends Component {
               style={{
                 backgroundColor:"#2D3135",
                 color:"#8A8D92",
-                height:"40px",
+                height:"3rem",
                 fontSize:"20px",
                 textAlign:"left",
                 paddingTop:"5px"

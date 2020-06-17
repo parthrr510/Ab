@@ -5,10 +5,10 @@
   margin: 0;
 }
 
-/* @font-face {
+@font-face {
   font-family: alpha;
   src: url(fonts/AlphaCentauri\ 500.ttf);
-} */
+}
 
 .title {
   color: #ff2482;
@@ -16,23 +16,23 @@
   text-shadow: 10px 12px 8px rgb(31, 27, 4);
   font-size: 35px;
   font-weight: 300;
-  font-family: "AlphaCentauri", sans serif ;
-  margin-right: 20px;
-  width: 1111px;
+  font-family: alpha ;
+  margin-right: 2rem;
+  width: 100rem;
 }
 
 .navStyle {
   color: #8a8d92 !important;
-  padding: 32px;
+  padding: 2rem;
   text-align: left !important;
   font-family: "Muli", sans-serif;
   /* background-color: red; */
 }
 
 .icon {
-  margin-right: 10px;
+  margin-right: 1rem;
   border-right: 1px #8a8d92 solid !important;
-  padding-right: 8px !important;
+  padding-right: 0.5rem !important;
   font-size: 30px !important;
 }
 
