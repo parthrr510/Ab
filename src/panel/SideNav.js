@@ -7,85 +7,93 @@ import mail from "./email.png";
 import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
-import {Link} from 'react-router-dom';
-import {RiHome2Line} from 'react-icons/ri';
-import {FaDiscord} from 'react-icons/fa';
-import {GrAnnounce} from 'react-icons/gr';
+import { Link } from "react-router-dom";
+import { RiHome2Line } from "react-icons/ri";
+import { FaDiscord } from "react-icons/fa";
+import { GrAnnounce } from "react-icons/gr";
 import update from "./updates.png";
 import trade from "./trade.png";
-import {AiOutlineTable} from 'react-icons/ai';
-import {FaWindowMaximize} from 'react-icons/fa';
-import {FaHandshake} from 'react-icons/fa';
-import {MdUpdate} from 'react-icons/md';
-
-
+import { AiOutlineTable } from "react-icons/ai";
+import { FaWindowMaximize } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
+import { MdUpdate } from "react-icons/md";
 
 class SideNav extends Component {
   render() {
     return (
       <div>
-        <Row style={{borderBottom:"1px #8A8D92 solid"}}>
-          <Col sm={3} style={{ backgroundColor: "#2D3135"}} className="logo">
+        <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
+          <Col sm={3} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img
               src={logo}
               style={{
                 height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-120px",
+                marginLeft: "-100px",
               }}
             />
-            <Link to="/logout">     
-            <img
-              src={arrow}
-              style={{
-                height: "35px",
-                float: "right",
-                marginRight: "40px",
-                marginTop: "10px"
-              }}
-            />
-          </Link>
+            <Link to="/logout">
+              <img
+                src={arrow}
+                style={{
+                  height: "25px",
+                  float: "right",
+                  marginRight: "40px",
+                  marginTop: "10px",
+                }}
+              />
+            </Link>
           </Col>
           <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
-                <p style={{ 
-                float: "right", 
-                color: "darkgrey", 
-                marginRight: "20px",  
-                marginTop: "10px"
-                }}>Logout</p>
+              <p
+                style={{
+                  float: "right",
+                  color: "darkgrey",
+                  marginRight: "20px",
+                  marginTop: "10px",
+                }}
+              >
+                Logout
+              </p>
             </Link>
-          
-          <Link to="/logout">     
-            <img
-              src={notepad}
-              style={{
-                height: "25px",
-                float: "right", 
-                marginRight: "20px",  
-                marginTop: "10px"
-              }}
-            />
-          </Link>
 
-          <Link to="/logout">     
-            <img
-              src={mail}
-              style={{
-                height: "25px",
-                float: "right",
-                marginRight: "20px",  
-                marginTop: "10px"
-              }}
-            />
-          </Link>
-          <div className="title">ABHYUDAYA</div>
+            <Link to="/logout">
+              <img
+                src={notepad}
+                style={{
+                  height: "25px",
+                  float: "right",
+                  marginRight: "20px",
+                  marginTop: "10px",
+                }}
+              />
+            </Link>
+
+            <Link to="/logout">
+              <img
+                src={mail}
+                style={{
+                  height: "25px",
+                  float: "right",
+                  marginRight: "20px",
+                  marginTop: "10px",
+                }}
+              />
+            </Link>
+            <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
         <Row>
-          <Col sm={3} style={{backgroundColor: "#2D3135",borderRight:"1px #8A8D92 solid"}}>
-          <Media style={{ marginTop: "15px" }}>
+          <Col
+            sm={2}
+            style={{
+              backgroundColor: "#2D3135",
+              borderRight: "1px #8A8D92 solid",
+            }}
+          >
+            <Media style={{ marginTop: "15px" }}>
               <img
                 width={55}
                 height={55}
@@ -94,17 +102,17 @@ class SideNav extends Component {
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
-                  marginLeft: "28px",
+                  marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-100px", color: "#8A8D92" }}>
+              <Media.Body style={{ marginLeft: "-30px", color: "#8A8D92" }}>
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
             <Nav
               className=" d-md-block  sidebar"
-              style={{ paddingTop: "35px" }}
+              style={{ paddingTop: "32px" }}
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
@@ -120,13 +128,17 @@ class SideNav extends Component {
                   eventKey="link-1"
                   className="navStyle"
                 >
-                  <AiOutlineTable className="icon"/>
+                  <AiOutlineTable className="icon" />
                   {/* <i className="fa fa-table mr-3" style={{marginRight:"50px"}}></i> */}
                   Leaderboard
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/updates" eventKey="link-2" className="navStyle">
+                <Nav.Link
+                  href="/updates"
+                  eventKey="link-2"
+                  className="navStyle"
+                >
                   {/* <i className="fa fa-money mr-3" style={icon,{float:"left"}}></i> */}
                   <MdUpdate className="icon" />
                   {/* <img
@@ -143,8 +155,12 @@ class SideNav extends Component {
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/trading" eventKey="link-3" className="navStyle">
-                <FaHandshake className="icon" />
+                <Nav.Link
+                  href="/trading"
+                  eventKey="link-3"
+                  className="navStyle"
+                >
+                  <FaHandshake className="icon" />
                   {/* <i className="fa fa-cutlery mr-3" aria-hidden="true" style={icon,{float:"left"}}></i> */}
                   {/* <img
               src={trade}
@@ -170,8 +186,13 @@ class SideNav extends Component {
                   Trade Rulebook
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item style={{ paddingBottom: "20px" }}>
-                <Nav.Link href="/discord" eventKey="link-5" className="navStyle">
+              <Nav.Item>
+                <Nav.Link
+                  href="/discord"
+                  eventKey="link-5"
+                  className="navStyle"
+                  style={{ paddingBottom: "44px" }}
+                >
                   {/* <i className="fa fa-discord mr-3" style={icon,{float:"left"}}></i> */}
                   <FaDiscord className="icon" />
                   Discord
@@ -196,7 +217,5 @@ class SideNav extends Component {
 //   paddingRight:"10px",
 //   fontSize:"30px"
 // }
-
-
 
 export default SideNav;

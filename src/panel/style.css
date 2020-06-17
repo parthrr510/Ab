@@ -1,47 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix");
+
 * {
   padding: 0;
   margin: 0;
 }
 
-@font-face{
-      font-family: alpha;
-      src: url(fonts/AlphaCentauri\ 500.ttf);
-}
+/* @font-face {
+  font-family: alpha;
+  src: url(fonts/alphacentauri\500ttf);
+} */
 
-.title{
-  color:#FF2482;
+.title {
+  color: #ff2482;
   text-align: center;
   text-shadow: 10px 12px 8px rgb(31, 27, 4);
-  font-size: 38px;
+  font-size: 35px;
   font-weight: 300;
   font-family: alpha;
   margin-right: 20px;
   width: 800px;
 }
 
-.navStyle{
-  color: #8A8D92 !important;
-  padding: 22px !important;
+.navStyle {
+  color: #8a8d92 !important;
+  padding: 20px;
   text-align: left !important;
   font-family: "Muli", sans-serif;
   /* background-color: red; */
 }
 
-.icon{
-  margin-right: 80px !important;
-  border-right: 1px #8A8D92 solid !important;
-  padding-right: 10px !important;
+.icon {
+  margin-right: 10px;
+  border-right: 1px #8a8d92 solid !important;
+  padding-right: 8px !important;
   font-size: 30px !important;
 }
 
-.navStyle:hover{
+.navStyle:hover {
   box-shadow: 0px 0px 10px silver;
   text-shadow: 0px 0px 15px silver;
-  color: #FF2482 !important;
-  border-left: 3px #FF2482 solid ;
+  color: #ff2482 !important;
+  border-left: 3px #ff2482 solid;
 }
-
-
-.icon:hover{
+.icon:hover {
   /* color: #FF2482 !important; */
 }
