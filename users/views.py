@@ -9,6 +9,7 @@ from django.utils.encoding import force_text
 from django.contrib.auth import get_user_model
 from .forms import UserRegisterForm
 from .tokens import account_activation_token
+from django.utils.html import strip_tags
 
 # Create your views here.
 User = get_user_model()
@@ -23,7 +24,7 @@ def register(request):
             user.save()
             current_site = get_current_site(request)
             subject = "Activate Your Abhyudaya Account"
-            message = render_to_string(
+            html_message = render_to_string(
                 "users/account_activation_email.html",
                 {
                     "user": user,
@@ -32,11 +33,18 @@ def register(request):
                     "token": account_activation_token.make_token(user),
                 },
             )
+            plain_message = strip_tags(html_message)
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [
                 user.email,
             ]
-            send_mail(subject, message, email_from, recipient_list)
+            send_mail(
+                subject,
+                plain_message,
+                email_from,
+                recipient_list,
+                html_message=html_message,
+            )
             return redirect("account_activation_sent")
     else:
         form = UserRegisterForm()
