@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import MyUser
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils import timezone
 
 
 class Resource(models.Model):
@@ -40,3 +41,46 @@ class Resource(models.Model):
 
     def save(self, **args):
         super().save()
+
+
+class Trade(models.Model):
+    from_team = models.ForeignKey(
+        MyUser, on_delete=models.CASCADE, related_name="from_team"
+    )
+    to_team = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name="to")
+    mscBits = models.DecimalField(
+        "MSCBits",
+        max_digits=5,
+        decimal_places=2,
+        validators=[MaxValueValidator(500), MinValueValidator(0)],
+        blank=True,
+        null=True,
+    )
+    food = models.DecimalField(
+        "Food",
+        max_digits=5,
+        decimal_places=2,
+        validators=[MaxValueValidator(500), MinValueValidator(0)],
+        blank=True,
+        null=True,
+    )
+    technology = models.DecimalField(
+        "Technology",
+        max_digits=5,
+        decimal_places=2,
+        validators=[MaxValueValidator(100), MinValueValidator(0)],
+        blank=True,
+        null=True,
+    )
+    medicine = models.DecimalField(
+        "Medicine",
+        max_digits=5,
+        decimal_places=2,
+        validators=[MaxValueValidator(500), MinValueValidator(0)],
+        blank=True,
+        null=True,
+    )
+    timestamp = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f"Trade from {self.from_team} to {self.to_team}"
