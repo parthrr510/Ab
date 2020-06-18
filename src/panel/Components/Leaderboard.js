@@ -1,35 +1,91 @@
-import React,{ Component } from 'react';
-import Entry from './Entry';
-import "./Leaderboard.css";
-import "./Entry.css";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import Divider from "@material-ui/core/Divider";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
 
-class Leaderboard extends Component{
-    state = {
-        info : {continent: "America",
-                team_name: "Abhyudaya",
-                rank: 1,
-                resources: 100}
-        } 
-    render(){
-        return(
-            <div className="table-head">
-                <table>
-                    <thead>
-                    <tr>
-                        <th >Continent</th>
-                        <th >Team Name</th>
-                        <th >Rank</th>
-                        <th>Resources</th>
-                    </tr>
-                    </thead>
-                    <tr>
-                    <Entry item = {this.state.info} />
-                    </tr>
-                    
-                </table>
-            </div>
-        )
-    }
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: "36ch",
+    // backgroundColor: theme.palette.background.paper,
+  },
+  inline: {
+    display: "inline",
+  },
+}));
+
+export default function AlignItemsList() {
+  const classes = useStyles();
+
+  return (
+    <List className={classes.root}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="I" src="randomImage" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="India"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                style={{ color: "#fff" }}
+              >
+                Rank 1
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="A" src="randomImage" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="America"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                style={{ color: "#fff" }}
+              >
+                Rank 1
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="C" src="randomImage" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="China"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                style={{ color: "#fff" }}
+              >
+                Rank 1
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    </List>
+  );
 }
-
-export default Leaderboard;

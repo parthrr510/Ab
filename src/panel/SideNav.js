@@ -17,34 +17,32 @@ import { AiOutlineTable } from "react-icons/ai";
 import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
-import Leaderboard from './Components/Leaderboard.js';
+import Leaderboard from "./Components/Leaderboard.js";
 // import logo from './logo.svg';
-import Box from './Components/Box/Box.js';
+import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
 
 class SideNav extends Component {
+  state = {
+    resource: "MSC BITS",
+    done: "70",
 
-  state={
-    resource:'MSC BITS',
-    done:'70',
+    food: "FOOD RESOURCES",
+    donef: "50",
 
-    food:'FOOD RESOURCES',
-    donef:'50',
+    medicine: "MEDICINES",
+    donem: "20",
 
-    medicine:'MEDICINES',
-    donem:'20',
-
-    technology:'TECHNOLOGY',
-    donet:'90',
-
-  }
+    technology: "TECHNOLOGY",
+    donet: "90",
+  };
   //For change in value function call when extracting data
-  change = (res,value) => {
+  change = (res, value) => {
     this.setState({
-      resource:res,
-      done:value
-    })
-  }
+      resource: res,
+      done: value,
+    });
+  };
   render() {
     return (
       <div>
@@ -111,7 +109,7 @@ class SideNav extends Component {
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
-        <Row >
+        <Row>
           <Col
             sm={2}
             style={{
@@ -228,31 +226,67 @@ class SideNav extends Component {
           </Col>
           <Col sm={10}>
             <Row>
-              <Col sm={12} 
-              style={{
-                backgroundColor:"#2D3135",
-                color:"#8A8D92",
-                height:"3rem",
-                fontSize:"20px",
-                textAlign:"left",
-                paddingTop:"5px"
-                }}>Dashboard
+              <Col
+                sm={12}
+                style={{
+                  backgroundColor: "#2D3135",
+                  color: "#8A8D92",
+                  height: "3rem",
+                  fontSize: "20px",
+                  textAlign: "left",
+                  paddingTop: "5px",
+                }}
+              >
+                Dashboard
               </Col>
-              </Row>
-        
-            <Row style={{ backgroundColor: "#23252a",paddingBottom:"1rem"}}>
-              <Col style={{paddingLeft:"0px",marginLeft:"1rem",marginTop:"1rem"}}><Box res ={this.state.resource} val={this.state.done}></Box></Col>
-              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.food} val={this.state.donef}></Box></Col>
-              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.medicine} val={this.state.donem}></Box></Col>
-              <Col style={{paddingLeft:"0px",marginRight:"2rem",marginTop:"1rem"}}><Box res ={this.state.technology} val={this.state.donet}></Box></Col>
             </Row>
-            <Row style={{height:"30.5rem"}}>
-              <Col sm={8} style={{ backgroundColor: "#23252a", paddingLeft:"0px"}}>
-               <Updates />
+
+            <Row style={{ backgroundColor: "#23252a", paddingBottom: "1rem" }}>
+              <Col
+                style={{
+                  paddingLeft: "0px",
+                  marginLeft: "1rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <Box res={this.state.resource} val={this.state.done}></Box>
               </Col>
-              <Col sm={4} style={{backgroundColor:"#2D3135",color:"white",paddingTop:"1rem"}}>LEADERBOARD<Leaderboard /></Col>
+              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                <Box res={this.state.food} val={this.state.donef}></Box>
+              </Col>
+              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                <Box res={this.state.medicine} val={this.state.donem}></Box>
+              </Col>
+              <Col
+                style={{
+                  paddingLeft: "0px",
+                  marginRight: "2rem",
+                  marginTop: "1rem",
+                }}
+              >
+                <Box res={this.state.technology} val={this.state.donet}></Box>
+              </Col>
             </Row>
-            
+            <Row style={{ height: "30.5rem" }}>
+              <Col
+                sm={8}
+                style={{ backgroundColor: "#23252a", paddingLeft: "0px" }}
+              >
+                <Updates />
+              </Col>
+              <Col
+                sm={4}
+                style={{
+                  backgroundColor: "#2D3135",
+                  color: "white",
+                  paddingTop: "1rem",
+                  float: "left",
+                }}
+              >
+                LEADERBOARD
+                <Leaderboard />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </div>
