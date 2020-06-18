@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "users.apps.UsersConfig",
+    "panel.apps.PanelConfig",
 ]
 
 MIDDLEWARE = [
