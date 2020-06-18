@@ -17,35 +17,61 @@ import { AiOutlineTable } from "react-icons/ai";
 import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
+import Leaderboard from './Components/Leaderboard.js';
+// import logo from './logo.svg';
+import Box from './Components/Box/Box.js';
+import Updates from "./Components/Updates.js";
 
 class SideNav extends Component {
+
+  state={
+    resource:'MSC BITS',
+    done:'70',
+
+    food:'FOOD RESOURCES',
+    donef:'50',
+
+    medicine:'MEDICINES',
+    donem:'20',
+
+    technology:'TECHNOLOGY',
+    donet:'90',
+
+  }
+  //For change in value function call when extracting data
+  change = (res,value) => {
+    this.setState({
+      resource:res,
+      done:value
+    })
+  }
   render() {
     return (
       <div>
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
-          <Col sm={3} style={{ backgroundColor: "#2D3135" }} className="logo">
+          <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img
               src={logo}
               style={{
                 height: "60px",
                 left: "0",
                 top: "0",
-                marginLeft: "-100px",
+                marginLeft: "-1rem",
               }}
             />
             <Link to="/logout">
               <img
                 src={arrow}
                 style={{
-                  height: "25px",
+                  height: "27px",
                   float: "right",
-                  marginRight: "40px",
-                  marginTop: "10px",
+                  marginRight: "5px",
+                  marginTop: "12px",
                 }}
               />
             </Link>
           </Col>
-          <Col sm={9} style={{ backgroundColor: "#2D3135" }}>
+          <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
               <p
                 style={{
@@ -85,7 +111,7 @@ class SideNav extends Component {
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
-        <Row>
+        <Row >
           <Col
             sm={2}
             style={{
@@ -93,7 +119,7 @@ class SideNav extends Component {
               borderRight: "1px #8A8D92 solid",
             }}
           >
-            <Media style={{ marginTop: "15px" }}>
+            <Media style={{ marginTop: "3rem" }}>
               <img
                 width={55}
                 height={55}
@@ -105,14 +131,14 @@ class SideNav extends Component {
                   marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-30px", color: "#8A8D92" }}>
+              <Media.Body style={{ marginLeft: "-3rem", color: "#8A8D92" }}>
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
             <Nav
               className=" d-md-block  sidebar"
-              style={{ paddingTop: "32px" }}
+              style={{ paddingTop: "2rem" }}
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
@@ -200,19 +226,33 @@ class SideNav extends Component {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={10} style={{ backgroundColor: "#2D3135", color: "#fff" }}>
+          <Col sm={10}>
             <Row>
-              <Col>Comp 3 part 1 (MSC Bits)</Col>
-              <Col>Comp 3 part 2 (Food)</Col>
-              <Col>Comp 3 part 3 (Medicines)</Col>
-              <Col>Comp 3 part 4 (Technology)</Col>
-            </Row>
-            <Row>
-              <Col sm={8} style={{ backgroundColor: "#fff" }}>
-                Notifications
+              <Col sm={12} 
+              style={{
+                backgroundColor:"#2D3135",
+                color:"#8A8D92",
+                height:"3rem",
+                fontSize:"20px",
+                textAlign:"left",
+                paddingTop:"5px"
+                }}>Dashboard
               </Col>
-              <Col sm={4}>Leaderboard</Col>
+              </Row>
+        
+            <Row style={{ backgroundColor: "#23252a",paddingBottom:"1rem"}}>
+              <Col style={{paddingLeft:"0px",marginLeft:"1rem",marginTop:"1rem"}}><Box res ={this.state.resource} val={this.state.done}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.food} val={this.state.donef}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginTop:"1rem"}}><Box res ={this.state.medicine} val={this.state.donem}></Box></Col>
+              <Col style={{paddingLeft:"0px",marginRight:"2rem",marginTop:"1rem"}}><Box res ={this.state.technology} val={this.state.donet}></Box></Col>
             </Row>
+            <Row style={{height:"30.5rem"}}>
+              <Col sm={8} style={{ backgroundColor: "#23252a", paddingLeft:"0px"}}>
+               <Updates />
+              </Col>
+              <Col sm={4} style={{backgroundColor:"#2D3135",color:"white",paddingTop:"1rem"}}>LEADERBOARD<Leaderboard /></Col>
+            </Row>
+            
           </Col>
         </Row>
       </div>

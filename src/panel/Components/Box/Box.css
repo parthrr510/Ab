@@ -1,0 +1,21 @@
+.Box {
+    /* width: 18rem; */
+    /* height: 9rem; */
+    margin: 1.5rem 0rem 1.5rem 1.5rem;
+    text-align: left;
+    background-color: white;
+    color:black;
+    padding: 1rem;
+  }
+
+  
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+.clear{
+  clear:both;
+}
