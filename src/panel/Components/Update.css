@@ -22,3 +22,17 @@
   font-weight: bold;
   text-align: left;
 }
+
+@media only screen and (min-width: 1024px) {
+
+  .Update{
+    width: 52vw;
+  }
+}
+
+/* @media only screen and (min-width: 1221px) and (max-width: 1320px) {
+
+  .Update{
+    width: 52vw;
+  }
+} */
