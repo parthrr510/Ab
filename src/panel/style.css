@@ -1,13 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix");
 /* @import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera") */
-*{
+* {
   padding: 0;
   margin: 0;
-}
-
-@font-face {
-  font-family: alpha;
-  src: url(fonts/AlphaCentauri\ 500.ttf);
 }
 
 .title {
@@ -16,14 +11,14 @@
   text-shadow: 10px 12px 8px rgb(31, 27, 4);
   font-size: 35px;
   font-weight: 300;
-  font-family: alpha ;
+  font-family: "Alpha Centauri";
   margin-right: 2rem;
   width: 100rem;
 }
 
 .navStyle {
   color: #8a8d92 !important;
-  padding: 2rem;
+  padding: 1rem;
   text-align: left !important;
   font-family: "Muli", sans-serif;
   /* background-color: red; */
