@@ -4,31 +4,31 @@ import Progress from '../Progress/Progress';
 
 const Box = (props) =>{
     //MAX Will BE DEFINED AND THEN WILL BE REPLACED
-    //let maxbits=500;
-    //let maxfood=1000;
-    //let maxmed=600;
-    //let maxtech = 1500;
+    let maxbits=500;
+    let maxfood=1000;
+    let maxmed=600;
+    let maxtech = 100;
 
-    let max=100; // General Will change after Finalizing
+    // let max=100; // General Will change after Finalizing
 
     //THIS IF FOR CONVERSION OF VALUE IN PERCENTAGE TO FILL BAR
     //Add icons also in the if condition.
     let done=0;
     if(props.res==='MSC BITS')
-    {
-        done=(props.val/max)*100;
+    {   
+        done=(props.val/maxbits)*100;
     }
     if(props.res==='FOOD RESOURCES')
     {
-        done=(props.val/max)*100;
+        done=(props.val/maxfood)*100;
     }
     if(props.res==='MEDICINES')
     {
-        done=(props.val/max)*100;
+        done=(props.val/maxmed)*100;
     }
     if(props.res==='TECHNOLOGY')
     {
-        done=(props.val/max)*100;
+        done=(props.val/maxtech)*100;
     }
     let color="#cf53f9";
     const style ={

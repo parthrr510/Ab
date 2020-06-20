@@ -8,7 +8,7 @@ import "./login.css";
 class Login extends Component {
   render() {
     return (
-      <div>
+      <div className="bgi">
         <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
           <Navbar.Brand href="#">
             <img className="MSC_Logo" src={logo} alt="MSC_Logo" />

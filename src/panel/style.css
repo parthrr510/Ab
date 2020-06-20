@@ -5,6 +5,36 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: alpha;
+  src: url(fonts/AlphaCentauri\ 500.ttf);
+}
+
+.error {
+  display: none;
+  color: #ff2482;
+  font-size: 45px;
+  text-shadow: 5px 2px 8px #8A8D92;
+  font-family: alpha ;
+  height: 100vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+
+  .panel {
+    display: none;
+    background-color: black;
+  }
+
+  .error {
+    display: block;
+    text-align: center;
+    /* margin-left: -100px; */
+  }
+}
+
 .title {
   color: #ff2482;
   text-align: center;
