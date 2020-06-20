@@ -2,6 +2,11 @@ import React from "react";
 import { Row, Col, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
+import Paper from "@material-ui/core/Paper";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
 import { AiOutlineTable } from "react-icons/ai";
 import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
@@ -13,8 +18,33 @@ import notepad from "../note.png";
 import mail from "../email.png";
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
+import flag from "../flag.PNG";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+
+    padding: theme.spacing(0, 3),
+  },
+  paper: {
+    maxWidth: "auto",
+    margin: `${theme.spacing(1.5)}px auto`,
+    padding: theme.spacing(1.25),
+    backgroundColor: "#2e3036",
+    color: "#dcdcdc",
+    fontSize: "21px",
+  },
+  heading: {
+    color: "#ed6a7a",
+    fontSize: "27px",
+    alignContent: "center",
+  },
+  avatar: {
+    width: "5rem",
+  },
+}));
 function ComLeaderboard() {
+  const classes = useStyles();
   return (
     <div>
       <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
@@ -71,7 +101,6 @@ function ComLeaderboard() {
               marginTop: "10px",
             }}
           />
-          <div className="title">ABHYUDAYA</div>
         </Col>
       </Row>
       <Row>
@@ -151,6 +180,192 @@ function ComLeaderboard() {
               </Nav.Link>
             </Nav.Item>
           </Nav>
+        </Col>
+        <Col sm={10}>
+          <Row>
+            <Col
+              sm={12}
+              style={{
+                backgroundColor: "#2D3135",
+                color: "#8A8D92",
+                height: "3rem",
+                fontSize: "20px",
+                textAlign: "left",
+                paddingTop: "5px",
+              }}
+            >
+              Leaderboard
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={12}>
+              <div className={classes.root}>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        <img src={flag} />
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+                <p className={classes.heading}>GLOBAL RANKINGS</p>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        W
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        W
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        W
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        W
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+                <Paper className={classes.paper}>
+                  <Grid
+                    container
+                    wrap="nowrap"
+                    spacing={1}
+                    style={{ justifyContent: "space-between" }}
+                  >
+                    <Grid
+                      item
+                      style={{ display: "flex", flexDirection: "row" }}
+                    >
+                      <Avatar variant="square" className={classes.avatar}>
+                        W
+                      </Avatar>
+                      <Grid>
+                        <Typography noWrap>COUNTRY NAME</Typography>
+                      </Grid>
+                    </Grid>
+
+                    <Grid item>
+                      <Typography noWrap>RANK 6</Typography>
+                    </Grid>
+                    <Grid>
+                      <Typography>GDP-X BITS</Typography>
+                    </Grid>
+                  </Grid>
+                </Paper>
+              </div>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>
