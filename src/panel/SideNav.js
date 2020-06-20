@@ -46,6 +46,10 @@ class SideNav extends Component {
   render() {
     return (
       <div>
+        <div className="container">
+        <div className="error">Please use our desktop site</div>
+        </div>
+      <div className="panel">
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img
@@ -289,6 +293,7 @@ class SideNav extends Component {
             </Row>
           </Col>
         </Row>
+      </div>
       </div>
     );
   }

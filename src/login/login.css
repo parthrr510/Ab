@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera");
 
-body {
+.bgi {
   background-image: url("./bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -8,6 +8,7 @@ body {
   background-size: cover;
   background-color: black;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 .MSC_Logo {
