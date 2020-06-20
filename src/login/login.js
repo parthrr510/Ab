@@ -37,7 +37,7 @@ class Login extends Component {
                 <h3>Login</h3>
                 <hr></hr>
                 <Form.Group className="form_field" controlId="formBasicEmail">
-                  <Form.Label className="form_inp">Team Name</Form.Label>
+                  <Form.Label>Team Name</Form.Label>
                   <Form.Control className="form_inpField" type="email" />
                 </Form.Group>
 
@@ -45,7 +45,7 @@ class Login extends Component {
                   className="form_field"
                   controlId="formBasicPassword"
                 >
-                  <Form.Label className="form_inp">Password</Form.Label>
+                  <Form.Label>Password</Form.Label>
                   <Form.Control className="form_inpField" type="password" />
                 </Form.Group>
                 <Button className="form_inp sub_btn" type="submit">
