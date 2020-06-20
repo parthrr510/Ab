@@ -43,7 +43,7 @@
   text-shadow: 10px 12px 8px rgb(31, 27, 4);
   font-size: 35px;
   font-weight: 300;
-  font-family: "Alpha Centauri";
+  font-family: "alpha";
   margin-right: 2rem;
   width: 100rem;
 }
@@ -196,7 +196,7 @@
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
 
   .navStyle{
-    font-size: 23.1px;
+    font-size: 22.5px;
   }
   .team{
     font-size: 28px;
@@ -217,12 +217,15 @@
   .dashboard{
     font-size: 40px;
    }
+   .icon {
+    font-size: 35px !important;
+  }
 }
 
 @media only screen and (min-width: 2001px) {
 
   .navStyle{
-    font-size: 32px;
+    font-size: 30px;
   }
   .team{
     font-size: 32px;
@@ -243,4 +246,7 @@
   .dashboard{
     font-size: 45px;
    }
+   .icon {
+    font-size: 40px !important;
+  }
 }
