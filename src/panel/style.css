@@ -7,7 +7,8 @@
 
 @font-face {
   font-family: alpha;
-  src: url(fonts/alphacentauri\500ttf);
+  /* prettier-ignore */
+  src: url(fonts/AlphaCentauri\ 500.ttf);
 }
 
 .error {
@@ -19,7 +20,6 @@
   height: 100vh;
   padding-top: 30vh;
   text-align: center;
-  text-shadow: 0 10px 100px #01c5c4;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 1023px) {
