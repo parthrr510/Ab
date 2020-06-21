@@ -197,6 +197,7 @@
   }
   .arrow {
     height: 30px;
+    margin-right: 0;
   }
   .dashboard {
     font-size: 35px;
