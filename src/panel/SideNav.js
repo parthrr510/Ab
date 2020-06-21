@@ -54,34 +54,19 @@ class SideNav extends Component {
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img
               src={logo}
-              style={{
-                height: "60px",
-                left: "0",
-                top: "0",
-                marginLeft: "-1rem",
-              }}
+              className="msc-logo"
             />
-            <Link to="/logout">
+            <Link to="/logout" className="arrow">
               <img
                 src={arrow}
-                style={{
-                  height: "27px",
-                  float: "right",
-                  marginRight: "5px",
-                  marginTop: "12px",
-                }}
+                className="arrow"
               />
             </Link>
           </Col>
           <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
               <p
-                style={{
-                  float: "right",
-                  color: "darkgrey",
-                  marginRight: "20px",
-                  marginTop: "10px",
-                }}
+                className="head-icons"
               >
                 Logout
               </p>
@@ -90,24 +75,14 @@ class SideNav extends Component {
             <Link to="/logout">
               <img
                 src={notepad}
-                style={{
-                  height: "25px",
-                  float: "right",
-                  marginRight: "20px",
-                  marginTop: "10px",
-                }}
+                className="head-icons"
               />
             </Link>
 
             <Link to="/logout">
               <img
                 src={mail}
-                style={{
-                  height: "25px",
-                  float: "right",
-                  marginRight: "20px",
-                  marginTop: "10px",
-                }}
+                className="head-icons"
               />
             </Link>
             <div className="title">ABHYUDAYA</div>
@@ -116,10 +91,7 @@ class SideNav extends Component {
         <Row>
           <Col
             sm={2}
-            style={{
-              backgroundColor: "#2D3135",
-              borderRight: "1px #8A8D92 solid",
-            }}
+            className="side-nav"
           >
             <Media style={{ marginTop: "3rem" }}>
               <img
@@ -133,7 +105,7 @@ class SideNav extends Component {
                   marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-3rem", color: "#8A8D92" }}>
+              <Media.Body className="team">
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
@@ -202,18 +174,11 @@ class SideNav extends Component {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={10}>
+          <Col sm={10} className="dv">
             <Row>
               <Col
                 sm={12}
-                style={{
-                  backgroundColor: "#2D3135",
-                  color: "#8A8D92",
-                  height: "3rem",
-                  fontSize: "20px",
-                  textAlign: "left",
-                  paddingTop: "5px",
-                }}
+                className="dashboard"
               >
                 Dashboard
               </Col>
@@ -245,7 +210,7 @@ class SideNav extends Component {
                 <Box res={this.state.technology} val={this.state.donet}></Box>
               </Col>
             </Row>
-            <Row style={{ height: "30.5rem" }}>
+            <Row className="component">
               <Col
                 sm={8}
                 style={{ backgroundColor: "#23252a", paddingLeft: "0px" }}

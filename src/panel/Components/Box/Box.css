@@ -19,3 +19,52 @@
 .clear{
   clear:both;
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1220px) {
+
+  .alignleft{
+    font-size: 12px;
+  }
+  .alignright {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 1350px) {
+
+  .alignleft{
+    font-size: 16px;
+  }
+  .alignright {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1351px) and (max-width: 1600px) {
+
+  .alignleft{
+    font-size: 18px;
+  }
+  .alignright {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 2000px) {
+
+  .alignleft{
+    font-size: 22px;
+  }
+  .alignright {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 2001px) {
+
+  .alignleft{
+    font-size: 30px;
+  }
+  .alignright {
+    font-size: 30px;
+  }
+}
