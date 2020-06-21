@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#2e3036",
     color: "#dcdcdc",
     fontSize: "21px",
+    borderRadius: "8px",
   },
   heading: {
     color: "#ed6a7a",
@@ -209,7 +210,10 @@ function ComLeaderboard() {
                   >
                     <Grid
                       item
-                      style={{ display: "flex", flexDirection: "row" }}
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                      }}
                     >
                       <Avatar variant="square" className={classes.avatar}>
                         <img src={flag} />
