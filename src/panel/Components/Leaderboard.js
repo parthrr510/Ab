@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
+import "./Leaderboard.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +26,7 @@ export default function AlignItemsList() {
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="I" src="randomImage" />
+          <Avatar alt="I" src="randomImage" className="ListItemAvatars" />
         </ListItemAvatar>
         <ListItemText
           primary="India"
@@ -35,7 +36,6 @@ export default function AlignItemsList() {
                 component="span"
                 variant="body2"
                 className={classes.inline}
-                style={{ color: "#fff" }}
               >
                 Rank 1
               </Typography>
@@ -56,7 +56,6 @@ export default function AlignItemsList() {
                 component="span"
                 variant="body2"
                 className={classes.inline}
-                style={{ color: "#fff" }}
               >
                 Rank 1
               </Typography>
@@ -77,7 +76,6 @@ export default function AlignItemsList() {
                 component="span"
                 variant="body2"
                 className={classes.inline}
-                style={{ color: "#fff" }}
               >
                 Rank 1
               </Typography>

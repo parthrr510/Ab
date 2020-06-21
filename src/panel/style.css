@@ -146,6 +146,17 @@
   }
 }
 
+.lead {
+  color: #8a8d92;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.lead:hover {
+  color: #8a8d92;
+}
+
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
   .msc-logo {
     height: 3rem;
