@@ -130,7 +130,7 @@
     height: 14.19vh;
   }
   .side-nav {
-    height: 113.5vh;
+    height: 106vh;
   }
 
   .team {
@@ -138,12 +138,23 @@
   }
 
   .component {
-    height: 78.5vh;
+    height: 77.7vh;
   }
   .arrow {
     height: 22px;
     margin-top: 3px;
   }
+}
+
+.lead {
+  color: #8a8d92;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.lead:hover {
+  color: #8a8d92;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
@@ -156,10 +167,10 @@
   }
 
   .side-nav {
-    height: 112.5vh;
+    height: 112.9vh;
   }
   .component {
-    height: 77vh;
+    height: 84vh;
   }
   .team {
     margin-left: -0.5rem;
@@ -172,7 +183,7 @@
   }
 }
 
-@media only screen and (min-width: 1351px) and (max-width: 1600px) {
+@media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
     font-size: 17px;
   }
@@ -198,14 +209,17 @@
   }
 
   .side-nav {
-    height: 119vh;
+    height: 114.4vh;
   }
   .component {
-    height: 79vh;
+    height: 82vh;
+  }
+  .lead {
+    font-size: 2.2rem;
   }
 }
 
-@media only screen and (min-width: 1601px) and (max-width: 2000px) {
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
   .navStyle {
     font-size: 22.5px;
   }
@@ -233,10 +247,13 @@
   }
 
   .side-nav {
-    height: 122.7vh;
+    height: 109.5vh;
   }
   .component {
     height: 81vh;
+  }
+  .lead {
+    font-size: 2.5rem;
   }
 }
 
@@ -267,7 +284,7 @@
     font-size: 40px !important;
   }
   .side-nav {
-    height: 95vh;
+    height: 112.5vh;
   }
 
   .component {
@@ -276,5 +293,8 @@
 
   body {
     overflow: hidden;
+  }
+  .lead {
+    font-size: 2.6rem;
   }
 }

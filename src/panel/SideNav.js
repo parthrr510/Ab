@@ -47,197 +47,174 @@ class SideNav extends Component {
     return (
       <div>
         <div className="container">
-        <div className="error">Please use our desktop site</div>
+          <div className="error">Please use our desktop site</div>
         </div>
-      <div className="panel">
-        <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
-          <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
-            <img
-              src={logo}
-              className="msc-logo"
-            />
-            <Link to="/logout" className="arrow">
-              <img
-                src={arrow}
-                className="arrow"
-              />
-            </Link>
-          </Col>
-          <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
-            <Link to="/logout">
-              <p
-                className="head-icons"
-              >
-                Logout
-              </p>
-            </Link>
+        <div className="panel">
+          <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
+            <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
+              <img src={logo} className="msc-logo" />
+              <Link to="/logout" className="arrow">
+                <img src={arrow} className="arrow" />
+              </Link>
+            </Col>
+            <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
+              <Link to="/logout">
+                <p className="head-icons">Logout</p>
+              </Link>
 
-            <Link to="/logout">
-              <img
-                src={notepad}
-                className="head-icons"
-              />
-            </Link>
+              <Link to="/logout">
+                <img src={notepad} className="head-icons" />
+              </Link>
 
-            <Link to="/logout">
-              <img
-                src={mail}
-                className="head-icons"
-              />
-            </Link>
-            <div className="title">ABHYUDAYA</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            sm={2}
-            className="side-nav"
-          >
-            <Media style={{ marginTop: "3rem" }}>
-              <img
-                width={55}
-                height={55}
-                className="team"
-                src={team}
-                alt="Generic placeholder"
-                style={{
-                  borderRadius: "50%",
-                  marginLeft: "12px",
-                }}
-              />
-              <Media.Body className="team">
-                <h5>Team 1</h5>
-                <p>Rank 1</p>
-              </Media.Body>
-            </Media>
-            <Nav
-              className=" d-md-block  sidebar"
-              style={{ paddingTop: "2rem" }}
-            >
-              <div className="sidebar-sticky"></div>
-              <Nav.Item>
-                <Nav.Link href="/" className="navStyle">
-                  <RiHome2Line className="icon" />
-                  Home
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  href="/leaderboard"
-                  eventKey="link-1"
-                  className="navStyle"
-                >
-                  <AiOutlineTable className="icon" />
-                  Leaderboard
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  href="/updates"
-                  eventKey="link-2"
-                  className="navStyle"
-                >
-                  <MdUpdate className="icon" />
-                  Updates
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  href="/trading"
-                  eventKey="link-3"
-                  className="navStyle"
-                >
-                  <FaHandshake className="icon" />
-                  Trading
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  href="/traderulebook"
-                  eventKey="link-4"
-                  className="navStyle"
-                >
-                  <FaWindowMaximize className="icon" />
-                  Trade Rulebook
-                </Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link
-                  href="/discord"
-                  eventKey="link-5"
-                  className="navStyle"
-                  style={{ paddingBottom: "44px" }}
-                >
-                  <FaDiscord className="icon" />
-                  Discord
-                </Nav.Link>
-              </Nav.Item>
-            </Nav>
-          </Col>
-          <Col sm={10} className="dv">
-            <Row>
-              <Col
-                sm={12}
-                className="dashboard"
+              <Link to="/logout">
+                <img src={mail} className="head-icons" />
+              </Link>
+              <div className="title">ABHYUDAYA</div>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={2} className="side-nav">
+              <Media style={{ marginTop: "3rem" }}>
+                <img
+                  width={55}
+                  height={55}
+                  className="team"
+                  src={team}
+                  alt="Generic placeholder"
+                  style={{
+                    borderRadius: "50%",
+                    marginLeft: "12px",
+                  }}
+                />
+                <Media.Body className="team">
+                  <h5>Team 1</h5>
+                  <p>Rank 1</p>
+                </Media.Body>
+              </Media>
+              <Nav
+                className=" d-md-block  sidebar"
+                style={{ paddingTop: "2rem" }}
               >
-                Dashboard
-              </Col>
-            </Row>
+                <div className="sidebar-sticky"></div>
+                <Nav.Item>
+                  <Nav.Link href="/" className="navStyle">
+                    <RiHome2Line className="icon" />
+                    Home
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/leaderboard"
+                    eventKey="link-1"
+                    className="navStyle"
+                  >
+                    <AiOutlineTable className="icon" />
+                    Leaderboard
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/updates"
+                    eventKey="link-2"
+                    className="navStyle"
+                  >
+                    <MdUpdate className="icon" />
+                    Updates
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/trading"
+                    eventKey="link-3"
+                    className="navStyle"
+                  >
+                    <FaHandshake className="icon" />
+                    Trading
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/traderulebook"
+                    eventKey="link-4"
+                    className="navStyle"
+                  >
+                    <FaWindowMaximize className="icon" />
+                    Trade Rulebook
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/discord"
+                    eventKey="link-5"
+                    className="navStyle"
+                    style={{ paddingBottom: "44px" }}
+                  >
+                    <FaDiscord className="icon" />
+                    Discord
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col sm={10} className="dv">
+              <Row>
+                <Col sm={12} className="dashboard">
+                  Dashboard
+                </Col>
+              </Row>
 
-            <Row style={{ backgroundColor: "#23252a", paddingBottom: "1rem" }}>
-              <Col
-                style={{
-                  paddingLeft: "0px",
-                  marginLeft: "1rem",
-                  marginTop: "1rem",
-                }}
+              <Row
+                style={{ backgroundColor: "#23252a", paddingBottom: "1rem" }}
               >
-                <Box res={this.state.resource} val={this.state.done}></Box>
-              </Col>
-              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
-                <Box res={this.state.food} val={this.state.donef}></Box>
-              </Col>
-              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
-                <Box res={this.state.medicine} val={this.state.donem}></Box>
-              </Col>
-              <Col
-                style={{
-                  paddingLeft: "0px",
-                  marginRight: "2rem",
-                  marginTop: "1rem",
-                }}
-              >
-                <Box res={this.state.technology} val={this.state.donet}></Box>
-              </Col>
-            </Row>
-            <Row className="component">
-              <Col
-                sm={8}
-                style={{ backgroundColor: "#23252a", paddingLeft: "0px" }}
-              >
-                <Updates />
-              </Col>
-              <Col
-                sm={4}
-                style={{
-                  backgroundColor: "#2D3135",
-                  color: "white",
-                  paddingTop: "1rem",
-                  float: "left",
-                }}
-              >
-                <Link
-                  to="/leaderboard"
-                  style={{  color: "#fff" }}
+                <Col
+                  style={{
+                    paddingLeft: "0px",
+                    marginLeft: "1rem",
+                    marginTop: "1rem",
+                  }}
                 >
-                  LEADERBOARD
-                </Link>
-                <Leaderboard />
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </div>
+                  <Box res={this.state.resource} val={this.state.done}></Box>
+                </Col>
+                <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                  <Box res={this.state.food} val={this.state.donef}></Box>
+                </Col>
+                <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                  <Box res={this.state.medicine} val={this.state.donem}></Box>
+                </Col>
+                <Col
+                  style={{
+                    paddingLeft: "0px",
+                    marginRight: "2rem",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Box res={this.state.technology} val={this.state.donet}></Box>
+                </Col>
+              </Row>
+              <Row className="component">
+                <Col
+                  sm={8}
+                  style={{ backgroundColor: "#23252a", paddingLeft: "0px" }}
+                >
+                  <Updates />
+                </Col>
+                <Col
+                  sm={4}
+                  style={{
+                    backgroundColor: "#2D3135",
+                    color: "white",
+                    paddingTop: "1rem",
+                    float: "left",
+                  }}
+                >
+                  <Link to="/leaderboard" className="lead">
+                    LEADERBOARD
+                  </Link>
+                  <Leaderboard />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </div>
       </div>
     );
   }
