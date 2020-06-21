@@ -138,14 +138,11 @@
   }
 
   .component {
-    height: 89vh;
+    height: 78.5vh;
   }
   .arrow {
     height: 22px;
     margin-top: 3px;
-  }
-  body {
-    overflow: hidden;
   }
 }
 
@@ -206,9 +203,6 @@
   .component {
     height: 79vh;
   }
-  /* body {
-    overflow: hidden;
-  } */
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
