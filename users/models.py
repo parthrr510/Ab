@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 import uuid
+from PIL import Image
 
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
@@ -63,6 +64,16 @@ class MyUser(AbstractBaseUser):
     team_members = models.IntegerField(validators=[validate_team_members])
     dateJoined = models.DateTimeField(default=timezone.now)
     email_confirmed = models.BooleanField(default=False)
+    country_name = models.CharField(max_length=10, blank=True, null=True)
+    continent_choices = (
+        ("Asia", "Asia"),
+        ("America", "America"),
+        ("Europe", "Europe"),
+    )
+    continent = models.CharField(
+        max_length=10, choices=continent_choices, blank=True, null=True
+    )
+    flag = models.ImageField(upload_to="flags/", blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -74,6 +85,19 @@ class MyUser(AbstractBaseUser):
 
     def __str__(self):
         return self.team_name
+
+    def save(self, *args, **kwargs):
+        super().save()
+
+        if self.flag:
+            img = Image.open(self.flag.path)
+        else:
+            return
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.flag.path)
 
     def get_short_name(self):
         # The user is identified by their email address

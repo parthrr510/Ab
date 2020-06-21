@@ -1,5 +1,5 @@
 # module level imports
-from .serializers import ResourceSerializer
+from .serializers import ResourceSerializer, LeaderBoardSerializer
 from .permissions import IsOwnerOrReadOnly
 from panel.models import Resource
 
@@ -9,7 +9,7 @@ import jwt
 
 # rest_framework
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 
 
@@ -24,4 +24,17 @@ class ResourceView(APIView):
         payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
         instance = Resource.objects.get(team_id=payload["user_id"])
         serializer = ResourceSerializer(instance)
+        return Response(serializer.data)
+
+
+class LeaderBoard(APIView):
+    permission_classes = [
+        AllowAny,
+    ]
+
+    def get(self, request, *args, **kwargs):
+        instance = Resource.objects.all()
+        serializer = LeaderBoardSerializer(
+            instance, many=True, context={"request": request}
+        )
         return Response(serializer.data)
