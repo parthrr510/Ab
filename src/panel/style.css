@@ -138,11 +138,14 @@
   }
 
   .component {
-    height: 78.7vh;
+    height: 89vh;
   }
   .arrow {
     height: 22px;
     margin-top: 3px;
+  }
+  body {
+    overflow: hidden;
   }
 }
 
@@ -158,7 +161,9 @@
   .side-nav {
     height: 95vh;
   }
-
+  .component {
+    height: 77vh;
+  }
   .team {
     margin-left: -0.5rem;
   }
@@ -200,6 +205,9 @@
   .side-nav {
     height: 95vh;
   }
+  .component {
+    height: 79vh;
+  }
   body {
     overflow: hidden;
   }
@@ -235,7 +243,9 @@
   .side-nav {
     height: 95vh;
   }
-
+  .component {
+    height: 81vh;
+  }
   body {
     overflow: hidden;
   }
@@ -269,6 +279,10 @@
   }
   .side-nav {
     height: 95vh;
+  }
+
+  .component {
+    height: 85vh;
   }
 
   body {
