@@ -25,8 +25,8 @@ export default function AlignItemsList() {
   return (
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="I" src="randomImage" className="ListItemAvatars" />
+        <ListItemAvatar className="ListItemAvatars">
+          <Avatar alt="I" src="randomImage" className="ListItemAvatar" />
         </ListItemAvatar>
         <ListItemText
           primary="India"
@@ -45,8 +45,8 @@ export default function AlignItemsList() {
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="A" src="randomImage" />
+        <ListItemAvatar className="ListItemAvatars">
+          <Avatar alt="A" src="randomImage" className="ListItemAvatar" />
         </ListItemAvatar>
         <ListItemText
           primary="America"
@@ -65,8 +65,8 @@ export default function AlignItemsList() {
       </ListItem>
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="C" src="randomImage" />
+        <ListItemAvatar className="ListItemAvatars">
+          <Avatar alt="C" src="randomImage" className="ListItemAvatar" />
         </ListItemAvatar>
         <ListItemText
           primary="China"

@@ -21,16 +21,38 @@
    width: 100px;
  } */
 
-@media only screen and (min-width: 1024px) and (max-width: 1220px) {
-}
-
-@media only screen and (min-width: 1221px) and (max-width: 1350px) {
-}
 @media only screen and (min-width: 1351px) and (max-width: 1600px) {
+  .MuiTypography-body1,
+  .MuiTypography-body2 {
+    font-size: 1.5rem !important;
+  }
+  .ListItemAvatar {
+    width: 4rem !important;
+    height: 4rem !important;
+    margin-right: 2rem !important;
+  }
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
+  .MuiTypography-body1,
+  .MuiTypography-body2 {
+    font-size: 1.7rem !important;
+  }
+  .ListItemAvatar {
+    width: 4.2rem !important;
+    height: 4.2rem !important;
+    margin-right: 2.1rem !important;
+  }
 }
 
 @media only screen and (min-width: 2001px) {
+  .MuiTypography-body1,
+  .MuiTypography-body2 {
+    font-size: 1.8rem !important;
+  }
+  .ListItemAvatar {
+    width: 4.3rem !important;
+    height: 4.3rem !important;
+    margin-right: 2.1rem !important;
+  }
 }

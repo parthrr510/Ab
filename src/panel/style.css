@@ -130,7 +130,7 @@
     height: 14.19vh;
   }
   .side-nav {
-    height: 113.5vh;
+    height: 106vh;
   }
 
   .team {
@@ -138,7 +138,7 @@
   }
 
   .component {
-    height: 78.5vh;
+    height: 83vh;
   }
   .arrow {
     height: 22px;
@@ -167,10 +167,10 @@
   }
 
   .side-nav {
-    height: 112.5vh;
+    height: 117.4vh;
   }
   .component {
-    height: 77vh;
+    height: 89vh;
   }
   .team {
     margin-left: -0.5rem;
@@ -209,10 +209,13 @@
   }
 
   .side-nav {
-    height: 119vh;
+    height: 110vh;
   }
   .component {
-    height: 79vh;
+    height: 82vh;
+  }
+  .lead {
+    font-size: 2.2rem;
   }
 }
 
@@ -244,10 +247,13 @@
   }
 
   .side-nav {
-    height: 122.7vh;
+    height: 110vh;
   }
   .component {
     height: 81vh;
+  }
+  .lead {
+    font-size: 2.5rem;
   }
 }
 
@@ -287,5 +293,8 @@
 
   body {
     overflow: hidden;
+  }
+  .lead {
+    font-size: 2.6rem;
   }
 }
