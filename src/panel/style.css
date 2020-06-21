@@ -138,7 +138,7 @@
   }
 
   .component {
-    height: 83vh;
+    height: 77.7vh;
   }
   .arrow {
     height: 22px;
@@ -167,7 +167,7 @@
   }
 
   .side-nav {
-    height: 120vh;
+    height: 112.9vh;
   }
   .component {
     height: 84vh;
@@ -183,7 +183,7 @@
   }
 }
 
-@media only screen and (min-width: 1351px) and (max-width: 1600px) {
+@media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
     font-size: 17px;
   }
@@ -209,7 +209,7 @@
   }
 
   .side-nav {
-    height: 110vh;
+    height: 114.4vh;
   }
   .component {
     height: 82vh;
@@ -219,7 +219,7 @@
   }
 }
 
-@media only screen and (min-width: 1601px) and (max-width: 2000px) {
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
   .navStyle {
     font-size: 22.5px;
   }
@@ -247,7 +247,7 @@
   }
 
   .side-nav {
-    height: 110vh;
+    height: 109.5vh;
   }
   .component {
     height: 81vh;
@@ -284,7 +284,7 @@
     font-size: 40px !important;
   }
   .side-nav {
-    height: 95vh;
+    height: 112.5vh;
   }
 
   .component {
