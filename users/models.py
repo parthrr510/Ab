@@ -73,7 +73,7 @@ class MyUser(AbstractBaseUser):
     continent = models.CharField(
         max_length=10, choices=continent_choices, blank=True, null=True
     )
-    flag = models.ImageField(upload_to="flags", blank=True, null=True)
+    flag = models.ImageField(upload_to="flags/", blank=True, null=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
@@ -87,6 +87,8 @@ class MyUser(AbstractBaseUser):
         return self.team_name
 
     def save(self, *args, **kwargs):
+        super().save()
+
         if self.flag:
             img = Image.open(self.flag.path)
         else:

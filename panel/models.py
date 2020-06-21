@@ -44,7 +44,7 @@ class Resource(models.Model):
 
     class Meta:
         ordering = [
-            "GDP",
+            "-GDP",
         ]
 
 
