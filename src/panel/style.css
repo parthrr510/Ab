@@ -27,7 +27,7 @@
     display: none;
     background-color: black;
   }
- 
+
   .error {
     display: block;
     text-align: center;
@@ -74,28 +74,28 @@
   /* color: #FF2482 !important; */
 }
 
-.msc-logo{
+.msc-logo {
   height: 60px;
   left: 0;
   top: 0;
   margin-left: -1rem;
 }
 
-.side-nav{
-  background-color: #2D3135;
-  border-right: 1px #8A8D92 solid;
+.side-nav {
+  background-color: #2d3135;
+  border-right: 1px #8a8d92 solid;
 }
 
-.team{
+.team {
   margin-left: -3rem;
-  color: #8A8D92;
+  color: #8a8d92;
 }
 
-.component{
+.component {
   height: 30.5rem;
 }
 
-.head-icons{
+.head-icons {
   float: right;
   color: #8a8d92;
   margin-right: 20px;
@@ -104,149 +104,174 @@
   font-size: 20px;
 }
 
-.arrow{
+.arrow {
   height: 25px;
   float: right;
   margin-right: 5px;
   margin-top: 8px;
 }
-.dashboard{
-  background-color: #2D3135 !important;
-  color: #8A8D92;
+.dashboard {
+  background-color: #2d3135 !important;
+  color: #8a8d92;
   /* height: 3rem; */
   font-size: 20px;
   text-align: left !important;
   padding-top: 5px;
- }
+}
 
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
-  .msc-logo{
+  .msc-logo {
     height: 2.7rem;
     /* margin-left: 1px; */
   }
 
-  .navStyle{
-    font-size: 9.4px;
+  .navStyle {
+    font-size: 9px;
     height: 14.19vh;
   }
-  .side-nav{
-    height: 96vh;
+  .side-nav {
+    height: 107vh;
   }
 
-  .team{
+  .team {
     margin-left: -0.5rem;
   }
 
-  .component{
+  .component {
     height: 78.7vh;
   }
-  .arrow{
+  .arrow {
     height: 22px;
     margin-top: 3px;
   }
-  
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
-  .msc-logo{
+  .msc-logo {
     height: 3rem;
   }
 
-  .navStyle{
+  .navStyle {
     font-size: 14px;
   }
 
-  .team{
+  .side-nav {
+    height: 95vh;
+  }
+
+  .team {
     margin-left: -0.5rem;
   }
-  .title{
+  .title {
     font-size: 45px;
   }
-  .dashboard{
+  .dashboard {
     font-size: 25px;
-   }
+  }
+  body {
+    overflow: hidden;
+  }
 }
 
 @media only screen and (min-width: 1351px) and (max-width: 1600px) {
-
-  .navStyle{
+  .navStyle {
     font-size: 17px;
   }
-  .team{
+  .team {
     font-size: 21px;
   }
-  .title{
+  .title {
     font-size: 55px;
   }
-  .msc-logo{
+  .msc-logo {
     height: 3.75rem;
   }
-  .head-icons{
+  .head-icons {
     height: 30px;
     font-size: 25px;
   }
-  .arrow{
+  .arrow {
     height: 30px;
   }
-  .dashboard{
+  .dashboard {
     font-size: 35px;
-   }
+  }
+
+  .side-nav {
+    height: 95vh;
+  }
+  body {
+    overflow: hidden;
+  }
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
-
-  .navStyle{
+  .navStyle {
     font-size: 22.5px;
   }
-  .team{
+  .team {
     font-size: 28px;
   }
-  .title{
+  .title {
     font-size: 65px;
   }
-  .msc-logo{
+  .msc-logo {
     height: 4.2rem;
   }
-  .head-icons{
+  .head-icons {
     height: 35px;
     font-size: 30px;
   }
-  .arrow{
+  .arrow {
     height: 35px;
   }
-  .dashboard{
+  .dashboard {
     font-size: 40px;
-   }
-   .icon {
+  }
+  .icon {
     font-size: 35px !important;
+  }
+
+  .side-nav {
+    height: 95vh;
+  }
+
+  body {
+    overflow: hidden;
   }
 }
 
 @media only screen and (min-width: 2001px) {
-
-  .navStyle{
+  .navStyle {
     font-size: 30px;
   }
-  .team{
+  .team {
     font-size: 32px;
   }
-  .title{
+  .title {
     font-size: 75px;
   }
-  .msc-logo{
+  .msc-logo {
     height: 5.6rem;
   }
-  .head-icons{
+  .head-icons {
     height: 45px;
     font-size: 35px;
   }
-  .arrow{
+  .arrow {
     height: 45px;
   }
-  .dashboard{
+  .dashboard {
     font-size: 45px;
-   }
-   .icon {
+  }
+  .icon {
     font-size: 40px !important;
+  }
+  .side-nav {
+    height: 95vh;
+  }
+
+  body {
+    overflow: hidden;
   }
 }
