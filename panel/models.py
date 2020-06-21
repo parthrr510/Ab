@@ -42,6 +42,11 @@ class Resource(models.Model):
     def save(self, **args):
         super().save()
 
+    class Meta:
+        ordering = [
+            "GDP",
+        ]
+
 
 class Trade(models.Model):
     from_team = models.ForeignKey(
