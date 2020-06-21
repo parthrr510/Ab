@@ -159,7 +159,7 @@
   }
 
   .side-nav {
-    height: 95vh;
+    height: 112.5vh;
   }
   .component {
     height: 77vh;
@@ -172,9 +172,6 @@
   }
   .dashboard {
     font-size: 25px;
-  }
-  body {
-    overflow: hidden;
   }
 }
 
@@ -204,14 +201,14 @@
   }
 
   .side-nav {
-    height: 95vh;
+    height: 119vh;
   }
   .component {
     height: 79vh;
   }
-  body {
+  /* body {
     overflow: hidden;
-  }
+  } */
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
@@ -242,13 +239,10 @@
   }
 
   .side-nav {
-    height: 95vh;
+    height: 122.7vh;
   }
   .component {
     height: 81vh;
-  }
-  body {
-    overflow: hidden;
   }
 }
 
