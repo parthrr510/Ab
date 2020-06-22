@@ -131,7 +131,7 @@
   }
 
   .navStyle {
-    font-size: 12px;
+    font-size: 0.75rem;
     height: 10vh;
     padding-bottom: 2rem;
   }
@@ -179,7 +179,7 @@
   }
 
   .navStyle {
-    font-size: 16px;
+    font-size: 1rem;
     height: 8vh;
     padding-bottom: 1.7rem;
   }
@@ -209,12 +209,12 @@
 
 @media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
-    font-size: 17px;
+    font-size: 1.01rem;
     height: 8vh;
     padding-bottom: 1.7rem;
   }
   .team {
-    font-size: 21px;
+    font-size: 1.3rem;
   }
   .title {
     font-size: 55px;
@@ -254,10 +254,12 @@
 
 @media only screen and (min-width: 1600px) and (max-width: 2000px) {
   .navStyle {
-    font-size: 22.5px;
+    font-size: 1.45rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
   .team {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .title {
     font-size: 65px;
@@ -272,18 +274,23 @@
   .arrow {
     height: 35px;
   }
-  .dashboard {
-    font-size: 40px;
-  }
+
   .icon {
     font-size: 35px !important;
   }
 
   .side-nav {
-    height: 109.5vh;
+    height: 100vh;
+  }
+  .dashboard {
+    font-size: 2.5rem;
+    height: 5.5vh;
+  }
+  .box-row {
+    height: 15vh;
   }
   .component {
-    height: 81vh;
+    height: 79.5vh;
   }
   .lead {
     font-size: 2.5rem;
