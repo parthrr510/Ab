@@ -93,7 +93,12 @@
 
 .component1 {
   height: 30.5rem;
-  background-color:#23252a;
+  background-color: #23252a;
+}
+
+.box-row {
+  background-color: #23252a;
+  padding-bottom: 1rem;
 }
 
 .head-icons {
@@ -114,12 +119,12 @@
 .dashboard1 {
   background-color: #2d3135 !important;
   color: #8a8d92;
-  /* height: 3rem; */
+  height: 6vh !important;
   font-size: 20px;
   text-align: left !important;
-  padding-top: 5px;
-  /* padding-bottom: 5px; */
+  padding-top: 0px;
 }
+
 .MuiAvatar-root{
     width: 50px !important;
     height: 30px !important;
@@ -143,20 +148,30 @@
   }
 
   .navStyle {
-    font-size: 9px;
-    height: 14.19vh;
+    font-size: 0.65rem;
+    height: 10vh;
+    padding-bottom: 2rem;
   }
+
   .side-nav1 {
-    height: 106vh;
+    height: 97vh;
+  }
+
+  .dashboard1 {
+    height: 4vh !important;
+  }
+
+  .box-row {
+    height: 23vh;
+  }
+  .component1 {
+    height: 93vh;
   }
 
   .team {
     margin-left: -0.5rem;
   }
 
-  .component1 {
-    height: 77.7vh;
-  }
   .arrow {
     height: 22px;
     margin-top: 3px;
@@ -177,17 +192,29 @@
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
   .msc-logo {
     height: 3rem;
+    padding-top: 0.3rem;
   }
 
   .navStyle {
-    font-size: 14px;
+    font-size: 1rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
 
   .side-nav1 {
-    height: 91.7vh ;
+    height: 95vh;
   }
+
+  .dashboard1 {
+    font-size: 2rem;
+    height: 8vh !important;
+  }
+  .box-row {
+    height: 23vh;
+  }
+
   .component1 {
-    height: 86.6vh ;
+    height: 87vh;
   }
   .team {
     margin-left: -0.5rem;
@@ -195,18 +222,16 @@
   .title {
     font-size: 45px;
   }
-  .dashboard1 {
-    font-size: 25px;
-  }
 }
 
 @media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
-    font-size: 17px;
-    height: 11.7vh;
+    font-size: 1.01rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
   .team {
-    font-size: 21px;
+    font-size: 1.3rem;
   }
   .title {
     font-size: 55px;
@@ -222,15 +247,24 @@
     height: 30px;
     margin-right: 0;
   }
-  .dashboard1 {
-    font-size: 35px;
-  }
 
   .side-nav1 {
-    height: 90.8vh ;
+    height: 94vh;
   }
+
+  .dashboard1 {
+    font-size: 2.25rem;
+    height: 7vh !important;
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+  }
+
+  .box-row {
+    height: 23vh;
+  }
+
   .component1 {
-    height: 83.9vh ;
+    height: 87vh;
   }
   .lead {
     font-size: 2.2rem;
@@ -239,10 +273,12 @@
 
 @media only screen and (min-width: 1600px) and (max-width: 2000px) {
   .navStyle {
-    font-size: 22px !important;
+    font-size: 1.45rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
   .team {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .title {
     font-size: 65px;
@@ -257,18 +293,25 @@
   .arrow {
     height: 35px;
   }
-  .dashboard1 {
-    font-size: 40px;
-  }
+
   .icon {
     font-size: 35px !important;
   }
 
   .side-nav1 {
-    height: 88.9vh ;
+    height: 95vh;
+  }
+  .dashboard1 {
+    font-size: 2.5rem;
+    height: 6vh !important;
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+  }
+  .box-row {
+    height: 23vh;
   }
   .component1 {
-    height: 81.5vh ;
+    height: 89vh;
   }
   .lead {
     font-size: 2.5rem;
@@ -296,7 +339,9 @@
     height: 45px;
   }
   .dashboard1 {
-    font-size: 45px;
+    font-size: 2.75rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
   }
   .icon {
     font-size: 40px !important;
@@ -306,7 +351,7 @@
   }
 
   .component1 {
-    height: 85vh;
+    height: 90vh;
   }
 
   body {
