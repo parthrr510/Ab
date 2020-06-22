@@ -287,6 +287,8 @@
   .dashboard {
     font-size: 2.5rem;
     height: 6vh !important;
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
   }
   .box-row {
     height: 23vh;
@@ -320,7 +322,9 @@
     height: 45px;
   }
   .dashboard {
-    font-size: 45px;
+    font-size: 2.75rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
   }
   .icon {
     font-size: 40px !important;
