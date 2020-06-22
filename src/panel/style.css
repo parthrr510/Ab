@@ -95,6 +95,11 @@
   height: 30.5rem;
 }
 
+.box-row {
+  background-color: #23252a;
+  padding-bottom: 1rem;
+}
+
 .head-icons {
   float: right;
   color: #8a8d92;
@@ -126,20 +131,30 @@
   }
 
   .navStyle {
-    font-size: 9px;
-    height: 14.19vh;
+    font-size: 12px;
+    height: 10vh;
+    padding-bottom: 2rem;
   }
+
   .side-nav {
-    height: 106vh;
+    height: 97vh;
+  }
+
+  .dashboard {
+    height: 5vh;
+  }
+
+  .box-row {
+    height: 16vh;
+  }
+  .component {
+    height: 76vh;
   }
 
   .team {
     margin-left: -0.5rem;
   }
 
-  .component {
-    height: 77.7vh;
-  }
   .arrow {
     height: 22px;
     margin-top: 3px;
@@ -160,17 +175,28 @@
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
   .msc-logo {
     height: 3rem;
+    padding-top: 0.3rem;
   }
 
   .navStyle {
-    font-size: 14px;
+    font-size: 16px;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
 
   .side-nav {
-    height: 112.9vh;
+    height: 95vh;
   }
+
+  .dashboard {
+    height: 4vh;
+  }
+  .box-row {
+    height: 15vh;
+  }
+
   .component {
-    height: 84vh;
+    height: 76vh;
   }
   .team {
     margin-left: -0.5rem;
