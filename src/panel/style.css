@@ -118,10 +118,10 @@
 .dashboard {
   background-color: #2d3135 !important;
   color: #8a8d92;
-  /* height: 3rem; */
+  height: 6vh !important;
   font-size: 20px;
   text-align: left !important;
-  padding-top: 5px;
+  padding-top: 0px;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
@@ -241,7 +241,7 @@
   }
 
   .box-row {
-    height: 17vh;
+    height: 20vh;
   }
 
   .component {

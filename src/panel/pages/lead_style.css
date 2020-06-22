@@ -111,7 +111,7 @@
   margin-right: 5px;
   margin-top: 8px;
 }
-.dashboard {
+.dashboard1 {
   background-color: #2d3135 !important;
   color: #8a8d92;
   /* height: 3rem; */
@@ -195,7 +195,7 @@
   .title {
     font-size: 45px;
   }
-  .dashboard {
+  .dashboard1 {
     font-size: 25px;
   }
 }
@@ -222,7 +222,7 @@
     height: 30px;
     margin-right: 0;
   }
-  .dashboard {
+  .dashboard1 {
     font-size: 35px;
   }
 
@@ -257,7 +257,7 @@
   .arrow {
     height: 35px;
   }
-  .dashboard {
+  .dashboard1 {
     font-size: 40px;
   }
   .icon {
@@ -295,7 +295,7 @@
   .arrow {
     height: 45px;
   }
-  .dashboard {
+  .dashboard1 {
     font-size: 45px;
   }
   .icon {
