@@ -23,7 +23,7 @@
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
 
   .alignleft{
-    font-size: 12px;
+    font-size: 10px;
   }
   .alignright {
     font-size: 12px;
@@ -33,7 +33,7 @@
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
 
   .alignleft{
-    font-size: 16px;
+    font-size: 14px;
   }
   .alignright {
     font-size: 16px;

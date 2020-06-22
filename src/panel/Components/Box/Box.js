@@ -5,8 +5,8 @@ import Progress from '../Progress/Progress';
 const Box = (props) =>{
     //MAX Will BE DEFINED AND THEN WILL BE REPLACED
     let maxbits=500;
-    let maxfood=1000;
-    let maxmed=600;
+    let maxfood=500;
+    let maxmed=500;
     let maxtech = 100;
 
     // let max=100; // General Will change after Finalizing
