@@ -160,7 +160,7 @@ function ComLeaderboard() {
             </Col>
             <Col sm={10} className="dv">
               <Row>
-                <Col sm={12} className="dashboard">
+                <Col sm={12} className="dashboard1">
                   Leaderboard
                 </Col>
               </Row>

@@ -156,33 +156,28 @@ class SideNav extends Component {
               </Nav>
             </Col>
             <Col sm={10} className="dv">
-              <Row>
-                <Col sm={12} className="dashboard">
+              <Row className="dashboard">
                   Dashboard
-                </Col>
               </Row>
 
               <Row className="box-row">
                 <Col
                   style={{
-                    paddingLeft: "0px",
-                    marginLeft: "1rem",
-                    marginTop: "1rem",
+                    marginLeft: "1rem"
                   }}
                 >
                   <Box res={this.state.resource} val={this.state.done}></Box>
                 </Col>
-                <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                <Col>
                   <Box res={this.state.food} val={this.state.donef}></Box>
                 </Col>
-                <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
+                <Col>
                   <Box res={this.state.medicine} val={this.state.donem}></Box>
                 </Col>
                 <Col
                   style={{
                     paddingLeft: "0px",
-                    marginRight: "2rem",
-                    marginTop: "1rem",
+                    marginRight: "2rem"
                   }}
                 >
                   <Box res={this.state.technology} val={this.state.donet}></Box>
