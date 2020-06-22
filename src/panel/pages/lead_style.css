@@ -8,7 +8,7 @@
 @font-face {
   font-family: alpha;
   /* prettier-ignore */
-  src: url(fonts/AlphaCentauri\ 500.ttf);
+  src: url(../fonts/AlphaCentauri\ 500.ttf);
 }
 
 .error {
@@ -81,7 +81,7 @@
   margin-left: -1rem;
 }
 
-.side-nav {
+.side-nav1 {
   background-color: #2d3135;
   border-right: 1px #8a8d92 solid;
 }
@@ -91,13 +91,9 @@
   color: #8a8d92;
 }
 
-.component {
+.component1 {
   height: 30.5rem;
-}
-
-.box-row {
-  background-color: #23252a;
-  padding-bottom: 1rem;
+  background-color:#23252a;
 }
 
 .head-icons {
@@ -122,6 +118,22 @@
   font-size: 20px;
   text-align: left !important;
   padding-top: 5px;
+  /* padding-bottom: 5px; */
+}
+.MuiAvatar-root{
+    width: 50px !important;
+    height: 30px !important;
+    margin: 4px 7px 0px 5px;
+    
+  }
+.flag{
+    height:40px;
+    width:60px;
+}
+.makeStyles-paper-2{
+    background-color: #2d3135 !important ;
+    margin-top: 20px !important;
+    border-radius: 0px !important;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
@@ -131,30 +143,20 @@
   }
 
   .navStyle {
-    font-size: 0.65rem;
-    height: 10vh;
-    padding-bottom: 2rem;
+    font-size: 9px;
+    height: 14.19vh;
   }
-
-  .side-nav {
-    height: 97vh;
-  }
-
-  .dashboard {
-    height: 5vh;
-  }
-
-  .box-row {
-    height: 16vh;
-  }
-  .component {
-    height: 76vh;
+  .side-nav1 {
+    height: 106vh;
   }
 
   .team {
     margin-left: -0.5rem;
   }
 
+  .component1 {
+    height: 77.7vh;
+  }
   .arrow {
     height: 22px;
     margin-top: 3px;
@@ -175,29 +177,17 @@
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
   .msc-logo {
     height: 3rem;
-    padding-top: 0.3rem;
   }
 
   .navStyle {
-    font-size: 1rem;
-    height: 8vh;
-    padding-bottom: 1.7rem;
+    font-size: 14px;
   }
 
-  .side-nav {
-    height: 95vh;
+  .side-nav1 {
+    height: 91.7vh ;
   }
-
-  .dashboard {
-    font-size: 2rem;
-    height: 4vh;
-  }
-  .box-row {
-    height: 15vh;
-  }
-
-  .component {
-    height: 76vh;
+  .component1 {
+    height: 86.6vh ;
   }
   .team {
     margin-left: -0.5rem;
@@ -205,16 +195,18 @@
   .title {
     font-size: 45px;
   }
+  .dashboard {
+    font-size: 25px;
+  }
 }
 
 @media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
-    font-size: 1.01rem;
-    height: 8vh;
-    padding-bottom: 1.7rem;
+    font-size: 17px;
+    height: 11.7vh;
   }
   .team {
-    font-size: 1.3rem;
+    font-size: 21px;
   }
   .title {
     font-size: 55px;
@@ -230,22 +222,15 @@
     height: 30px;
     margin-right: 0;
   }
-
-  .side-nav {
-    height: 94vh;
-  }
-
   .dashboard {
-    font-size: 2.25rem;
-    height: 5vh;
+    font-size: 35px;
   }
 
-  .box-row {
-    height: 17vh;
+  .side-nav1 {
+    height: 90.8vh ;
   }
-
-  .component {
-    height: 72vh;
+  .component1 {
+    height: 83.9vh ;
   }
   .lead {
     font-size: 2.2rem;
@@ -254,12 +239,10 @@
 
 @media only screen and (min-width: 1600px) and (max-width: 2000px) {
   .navStyle {
-    font-size: 1.45rem;
-    height: 8vh;
-    padding-bottom: 1.7rem;
+    font-size: 22px !important;
   }
   .team {
-    font-size: 1.75rem;
+    font-size: 28px;
   }
   .title {
     font-size: 65px;
@@ -274,23 +257,18 @@
   .arrow {
     height: 35px;
   }
-
+  .dashboard {
+    font-size: 40px;
+  }
   .icon {
     font-size: 35px !important;
   }
 
-  .side-nav {
-    height: 100vh;
+  .side-nav1 {
+    height: 88.9vh ;
   }
-  .dashboard {
-    font-size: 2.5rem;
-    height: 5.5vh;
-  }
-  .box-row {
-    height: 15vh;
-  }
-  .component {
-    height: 79.5vh;
+  .component1 {
+    height: 81.5vh ;
   }
   .lead {
     font-size: 2.5rem;
@@ -323,11 +301,11 @@
   .icon {
     font-size: 40px !important;
   }
-  .side-nav {
+  .side-nav1 {
     height: 112.5vh;
   }
 
-  .component {
+  .component1 {
     height: 85vh;
   }
 

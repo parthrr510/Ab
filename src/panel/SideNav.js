@@ -162,9 +162,7 @@ class SideNav extends Component {
                 </Col>
               </Row>
 
-              <Row
-                style={{ backgroundColor: "#23252a", paddingBottom: "1rem" }}
-              >
+              <Row className="box-row">
                 <Col
                   style={{
                     paddingLeft: "0px",

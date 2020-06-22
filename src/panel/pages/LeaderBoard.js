@@ -19,6 +19,7 @@ import mail from "../email.png";
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import flag from "../flag.PNG";
+import "./lead_style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,158 +49,123 @@ function ComLeaderboard() {
   const classes = useStyles();
   return (
     <div>
-      <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
-        <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
-          <img
-            src={logo}
-            style={{
-              height: "60px",
-              left: "0",
-              top: "0",
-              marginLeft: "-1rem",
-            }}
-          />
-          <img
-            src={arrow}
-            style={{
-              height: "27px",
-              float: "right",
-              marginRight: "5px",
-              marginTop: "12px",
-            }}
-          />
-        </Col>
-        <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
-          <Link to="/logout">
-            <p
-              style={{
-                float: "right",
-                color: "darkgrey",
-                marginRight: "20px",
-                marginTop: "10px",
-              }}
-            >
-              Logout
-            </p>
-          </Link>
+      <div className="container">
+          <div className="error">Please use our desktop site</div>
+         </div>
+         <div className="panel">
+          <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
+            <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
+              <img src={logo} className="msc-logo" />
+              <Link to="/logout" className="arrow">
+                <img src={arrow} className="arrow" />
+              </Link>
+            </Col>
+            <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
+              <Link to="/logout">
+                <p className="head-icons">Logout</p>
+              </Link>
 
-          <img
-            src={notepad}
-            style={{
-              height: "25px",
-              float: "right",
-              marginRight: "20px",
-              marginTop: "10px",
-            }}
-          />
+              <Link to="/logout">
+                <img src={notepad} className="head-icons" />
+              </Link>
 
-          <img
-            src={mail}
-            style={{
-              height: "25px",
-              float: "right",
-              marginRight: "20px",
-              marginTop: "10px",
-            }}
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col
-          sm={2}
-          style={{
-            backgroundColor: "#2D3135",
-            borderRight: "1px #8A8D92 solid",
-          }}
-        >
-          <Media style={{ marginTop: "3rem" }}>
-            <img
-              width={55}
-              height={55}
-              className="team"
-              src={team}
-              alt="Generic placeholder"
-              style={{
-                borderRadius: "50%",
-                marginLeft: "12px",
-              }}
-            />
-            <Media.Body style={{ marginLeft: "-3rem", color: "#8A8D92" }}>
-              <h5>Team 1</h5>
-              <p>Rank 1</p>
-            </Media.Body>
-          </Media>
-          <Nav className=" d-md-block  sidebar" style={{ paddingTop: "2rem" }}>
-            <div className="sidebar-sticky"></div>
-            <Nav.Item>
-              <Nav.Link href="/" className="navStyle">
-                <RiHome2Line className="icon" />
-                Home
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href="/leaderboard"
-                eventKey="link-1"
-                className="navStyle"
-              >
-                <AiOutlineTable className="icon" />
-                Leaderboard
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/updates" eventKey="link-2" className="navStyle">
-                <MdUpdate className="icon" />
-                Updates
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="/trading" eventKey="link-3" className="navStyle">
-                <FaHandshake className="icon" />
-                Trading
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href="/traderulebook"
-                eventKey="link-4"
-                className="navStyle"
-              >
-                <FaWindowMaximize className="icon" />
-                Trade Rulebook
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link
-                href="/discord"
-                eventKey="link-5"
-                className="navStyle"
-                style={{ paddingBottom: "3.5rem" }}
-              >
-                <FaDiscord className="icon" />
-                Discord
-              </Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Col>
-        <Col sm={10}>
-          <Row>
-            <Col
-              sm={12}
-              style={{
-                backgroundColor: "#2D3135",
-                color: "#8A8D92",
-                height: "3rem",
-                fontSize: "20px",
-                textAlign: "left",
-                paddingTop: "5px",
-              }}
-            >
-              Leaderboard
+              <Link to="/logout">
+                <img src={mail} className="head-icons" />
+              </Link>
+              <div className="title">ABHYUDAYA</div>
             </Col>
           </Row>
           <Row>
-            <Col sm={12}>
+            <Col sm={2} className="side-nav1">
+              <Media style={{ marginTop: "3rem" }}>
+                <img
+                  width={55}
+                  height={55}
+                  className="team"
+                  src={team}
+                  alt="Generic placeholder"
+                  style={{
+                    borderRadius: "50%",
+                    marginLeft: "12px",
+                  }}
+                />
+                <Media.Body className="team">
+                  <h5>Team 1</h5>
+                  <p>Rank 1</p>
+                </Media.Body>
+              </Media>
+              <Nav
+                className=" d-md-block  sidebar"
+                style={{ paddingTop: "2rem" }}
+              >
+                <div className="sidebar-sticky"></div>
+                <Nav.Item>
+                  <Nav.Link href="/" className="navStyle">
+                    <RiHome2Line className="icon" />
+                    Home
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/leaderboard"
+                    eventKey="link-1"
+                    className="navStyle"
+                  >
+                    <AiOutlineTable className="icon" />
+                    Leaderboard
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/updates"
+                    eventKey="link-2"
+                    className="navStyle"
+                  >
+                    <MdUpdate className="icon" />
+                    Updates
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/trading"
+                    eventKey="link-3"
+                    className="navStyle"
+                  >
+                    <FaHandshake className="icon" />
+                    Trading
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/traderulebook"
+                    eventKey="link-4"
+                    className="navStyle"
+                  >
+                    <FaWindowMaximize className="icon" />
+                    Trade Rulebook
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    href="/discord"
+                    eventKey="link-5"
+                    className="navStyle"
+                    style={{ paddingBottom: "44px" }}
+                  >
+                    <FaDiscord className="icon" />
+                    Discord
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col sm={10} className="dv">
+              <Row>
+                <Col sm={12} className="dashboard">
+                  Leaderboard
+                </Col>
+              </Row>
+          <Row>
+            <Col sm={12} className="component1">
               <div className={classes.root}>
                 <Paper className={classes.paper}>
                   <Grid
@@ -215,8 +181,8 @@ function ComLeaderboard() {
                         flexDirection: "row",
                       }}
                     >
-                      <Avatar variant="square" className={classes.avatar}>
-                        <img src={flag} />
+                      <Avatar variant="square" >
+                        <img src={flag} className="flag" />
                       </Avatar>
                       <Grid>
                         <Typography noWrap>COUNTRY NAME</Typography>
@@ -372,6 +338,7 @@ function ComLeaderboard() {
           </Row>
         </Col>
       </Row>
+      </div>
     </div>
   );
 }
