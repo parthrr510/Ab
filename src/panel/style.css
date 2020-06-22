@@ -189,6 +189,7 @@
   }
 
   .dashboard {
+    font-size: 2rem;
     height: 4vh;
   }
   .box-row {
@@ -204,14 +205,13 @@
   .title {
     font-size: 45px;
   }
-  .dashboard {
-    font-size: 25px;
-  }
 }
 
 @media only screen and (min-width: 1351px) and (max-width: 1599px) {
   .navStyle {
     font-size: 17px;
+    height: 8vh;
+    padding-bottom: 1.7rem;
   }
   .team {
     font-size: 21px;
@@ -230,15 +230,22 @@
     height: 30px;
     margin-right: 0;
   }
-  .dashboard {
-    font-size: 35px;
-  }
 
   .side-nav {
-    height: 113.5vh;
+    height: 94vh;
   }
+
+  .dashboard {
+    font-size: 2.25rem;
+    height: 5vh;
+  }
+
+  .box-row {
+    height: 17vh;
+  }
+
   .component {
-    height: 82vh;
+    height: 72vh;
   }
   .lead {
     font-size: 2.2rem;
