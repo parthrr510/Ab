@@ -141,14 +141,14 @@
   }
 
   .dashboard {
-    height: 5vh;
+    height: 3vh !important;
   }
 
   .box-row {
-    height: 16vh;
+    height: 10vh;
   }
   .component {
-    height: 76vh;
+    height: 84vh;
   }
 
   .team {
@@ -190,14 +190,14 @@
 
   .dashboard {
     font-size: 2rem;
-    height: 4vh;
+    height: 8vh !important;
   }
   .box-row {
-    height: 15vh;
+    height: 23vh;
   }
 
   .component {
-    height: 76vh;
+    height: 64vh;
   }
   .team {
     margin-left: -0.5rem;
@@ -237,15 +237,15 @@
 
   .dashboard {
     font-size: 2.25rem;
-    height: 5vh;
+    height: 4.5vh !important;
   }
 
   .box-row {
-    height: 20vh;
+    height: 13vh;
   }
 
   .component {
-    height: 72vh;
+    height: 76.5vh;
   }
   .lead {
     font-size: 2.2rem;
@@ -280,17 +280,17 @@
   }
 
   .side-nav {
-    height: 100vh;
+    height: 95vh;
   }
   .dashboard {
     font-size: 2.5rem;
-    height: 5.5vh;
+    height: 5vh !important;
   }
   .box-row {
-    height: 15vh;
+    height: 18vh;
   }
   .component {
-    height: 79.5vh;
+    height: 72vh;
   }
   .lead {
     font-size: 2.5rem;
