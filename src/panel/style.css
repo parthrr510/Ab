@@ -237,7 +237,8 @@
 
   .dashboard {
     font-size: 2.25rem;
-    height: 6vh !important;
+    height: 7vh !important;
+    padding-left: 3px;
   }
 
   .box-row {
@@ -245,7 +246,7 @@
   }
 
   .component {
-    height: 65vh;
+    height: 64vh;
   }
   .lead {
     font-size: 2.2rem;
