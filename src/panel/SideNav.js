@@ -25,16 +25,16 @@ import Updates from "./Components/Updates.js";
 class SideNav extends Component {
   state = {
     resource: "MSC BITS",
-    done: "70",
+    done: "100",
 
     food: "FOOD RESOURCES",
-    donef: "50",
+    donef: "150",
 
     medicine: "MEDICINES",
-    donem: "20",
+    donem: "80",
 
     technology: "TECHNOLOGY",
-    donet: "90",
+    donet: "75",
   };
   //For change in value function call when extracting data
   change = (res, value) => {

@@ -1,70 +1,73 @@
 .Box {
-    /* width: 18rem; */
-    /* height: 9rem; */
-    margin: 1.5rem 0rem 1.5rem 1.5rem;
-    text-align: left;
-    background-color: white;
-    color:black;
-    padding: 1rem;
-  }
-
-  
+  /* width: 18rem; */
+  /* height: 9rem; */
+  margin: 1.5rem 0rem 1.5rem 1.5rem;
+  text-align: left;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+}
 
 .alignleft {
-	float: left;
+  float: left;
 }
 .alignright {
-	float: right;
+  float: right;
 }
-.clear{
-  clear:both;
+.clear {
+  clear: both;
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
-
-  .alignleft{
-    font-size: 12px;
+  .alignleft {
+    font-size: 0.625rem;
   }
   .alignright {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
-
-  .alignleft{
-    font-size: 16px;
+  .alignleft {
+    font-size: 0.8rem;
   }
   .alignright {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
-@media only screen and (min-width: 1351px) and (max-width: 1600px) {
 
-  .alignleft{
-    font-size: 18px;
+@media only screen and (min-width: 1351px) and (max-width: 1375px) {
+  .alignleft {
+    font-size: 1rem;
   }
   .alignright {
-    font-size: 15px;
+    font-size: 0.95rem;
+  }
+}
+
+@media only screen and (min-width: 1376px) and (max-width: 1600px) {
+  .alignleft {
+    font-size: 1.125rem;
+  }
+  .alignright {
+    font-size: 0.925rem;
   }
 }
 
 @media only screen and (min-width: 1601px) and (max-width: 2000px) {
-
-  .alignleft{
-    font-size: 22px;
+  .alignleft {
+    font-size: 1.375rem;
   }
   .alignright {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
 
 @media only screen and (min-width: 2001px) {
-
-  .alignleft{
-    font-size: 30px;
+  .alignleft {
+    font-size: 1.875rem;
   }
   .alignright {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }
