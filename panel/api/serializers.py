@@ -40,7 +40,6 @@ class TradeSerializer(ModelSerializer):
     class Meta:
         model = Trade
         fields = [
-            "from_team",
             "to_team",
             "mscBits",
             "food",
