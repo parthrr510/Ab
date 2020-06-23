@@ -1,5 +1,5 @@
 # module level imports
-from panel.models import Resource
+from panel.models import Resource, Trade
 
 # rest_framework
 from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
@@ -33,4 +33,16 @@ class LeaderBoardSerializer(ModelSerializer):
             "continent",
             "flag",
             "GDP",
+        ]
+
+
+class TradeSerializer(ModelSerializer):
+    class Meta:
+        model = Trade
+        fields = [
+            "to_team",
+            "mscBits",
+            "food",
+            "technology",
+            "medicine",
         ]
