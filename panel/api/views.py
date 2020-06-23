@@ -2,11 +2,13 @@
 from .serializers import ResourceSerializer, LeaderBoardSerializer, TradeSerializer
 from .permissions import IsOwnerOrReadOnly
 from panel.models import Resource, Trade
+from users.models import MyUser
 
 # other imports
 from django.conf import settings
 import jwt
 from decimal import Decimal
+from django.core.mail import send_mail
 
 # rest_framework
 from rest_framework.views import APIView
@@ -57,6 +59,22 @@ def decResources(obj, user):
     resource.save()
 
 
+def trade_success(trade_from, trade_to):
+    arr = []
+    from_team = MyUser.objects.get(id=trade_from)
+    to_team = MyUser.objects.get(id=trade_to)
+    arr.append(from_team)
+    arr.append(to_team)
+    for team in arr:
+        subject = "Trade successful!"
+        message = f"Hello team {team.team_name},\n\nTrade has been performed successfully. If you have any doubts regarding the same, contact us on Discord.\n\nCheers,\nTeam MSC."
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [
+            team.email,
+        ]
+        send_mail(subject, message, email_from, recipient_list)
+
+
 class ResourceView(APIView):
     permission_classes = [IsAuthenticated, IsOwnerOrReadOnly]
 
@@ -92,3 +110,4 @@ class Trade(CreateAPIView):
         serializer.save(from_team_id=payload["user_id"])
         incResources(serializer.data)
         decResources(serializer.data, payload["user_id"])
+        trade_success(payload["user_id"], serializer.data["to_team"])
