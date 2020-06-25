@@ -22,6 +22,7 @@ export default function Trading() {
         <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
           <img
             src={logo}
+            alt="MSC_Logo"
             style={{
               height: "60px",
               left: "0",
@@ -31,6 +32,7 @@ export default function Trading() {
           />
           <img
             src={arrow}
+            alt="back"
             style={{
               height: "27px",
               float: "right",
@@ -55,6 +57,7 @@ export default function Trading() {
 
           <img
             src={notepad}
+            alt="Notepad"
             style={{
               height: "25px",
               float: "right",
@@ -65,6 +68,7 @@ export default function Trading() {
 
           <img
             src={mail}
+            alt="Notifications"
             style={{
               height: "25px",
               float: "right",
