@@ -1,6 +1,6 @@
 # module level imports
 from .serializers import ResourceSerializer, LeaderBoardSerializer, TradeSerializer
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly, FromMSC
 from panel.models import Resource, Trade
 from users.models import MyUser
 
@@ -111,3 +111,25 @@ class Trade(CreateAPIView):
         incResources(serializer.data)
         decResources(serializer.data, payload["user_id"])
         trade_success(payload["user_id"], serializer.data["to_team"])
+
+
+class Depreciate(APIView):
+    permission_classes = [
+        FromMSC,
+    ]
+
+    def get(self, request, *args, **kwargs):
+        resources = Resource.objects.all()
+        for resource in resources:
+            resource.mscBits = resource.mscBits - Decimal(0.12) * resource.mscBits
+            resource.food = resource.food - Decimal(0.15) * resource.food
+            resource.medicine = resource.medicine - Decimal(0.09) * resource.medicine
+            resource.GDP = (
+                resource.mscBits
+                + resource.food * (Decimal(0.75))
+                + resource.medicine * (Decimal(0.8))
+                + resource.technology * (Decimal(2))
+            )
+            resource.save()
+
+        return Response("Done")

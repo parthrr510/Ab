@@ -158,7 +158,6 @@ const Trading = () => {
                 style={{
                   marginLeft: "1rem",
                 }}
-              >
                 <Box res={bits.resource} val={bits.done}></Box>
               </Col>
               <Col>
