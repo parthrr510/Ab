@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.root {
+  width: 100%;
+}
+.line {
+  border-top: 1px dotted #223036;
+  padding: "0.7rem";
+}
