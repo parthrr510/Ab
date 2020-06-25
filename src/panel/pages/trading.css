@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix");
+/* @import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera") */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: alpha;
+  /* prettier-ignore */
+  src: url(../fonts/AlphaCentauri\ 500.ttf);
+}
+
+.error {
+  display: none;
+  color: #01c5c4;
+  font-size: 45px;
+  text-shadow: 5px 2px 8px #8a8d92;
+  font-family: alpha;
+  height: 100vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 1023px) {
+  .panel {
+    display: none;
+    background-color: black;
+  }
+
+  .error {
+    display: block;
+    text-align: center;
+    color: #ff2482;
+    font-family: "alpha";
+    /* margin-left: -100px; */
+  }
+}
+
+.title {
+  color: #ff2482;
+  text-align: center;
+  text-shadow: 10px 12px 8px rgb(31, 27, 4);
+  font-size: 35px;
+  font-weight: 300;
+  font-family: "alpha";
+  margin-right: 2rem;
+  width: 100rem;
+}
+
+.navStyle {
+  color: #8a8d92 !important;
+  padding: 1rem;
+  text-align: left !important;
+  font-family: "Muli", sans-serif;
+  padding-bottom: 51px;
+  /* background-color: red; */
+}
+
+.icon {
+  margin-right: 1rem;
+  border-right: 1px #8a8d92 solid !important;
+  padding-right: 0.5rem !important;
+  font-size: 30px !important;
+}
+
+.navStyle:hover {
+  box-shadow: 0px 0px 10px silver;
+  text-shadow: 0px 0px 15px silver;
+  color: #ff2482 !important;
+  border-left: 3px #ff2482 solid;
+}
+.icon:hover {
+  /* color: #FF2482 !important; */
+}
+
+.msc-logo {
+  height: 60px;
+  left: 0;
+  top: 0;
+  margin-left: -1rem;
+}
+
+.side-nav2 {
+  background-color: #2d3135;
+  border-right: 1px #8a8d92 solid;
+}
+
+.team {
+  margin-left: -3rem;
+  color: #8a8d92;
+}
+
+.component2 {
+  height: 30.5rem;
+  background-color: #23252a;
+}
+
+.box-row {
+  background-color: #23252a;
+  padding-bottom: 1rem;
+}
+
+.head-icons {
+  float: right;
+  color: #8a8d92;
+  margin-right: 20px;
+  margin-top: 10px;
+  height: 25px;
+  font-size: 20px;
+}
+
+.arrow {
+  height: 25px;
+  float: right;
+  margin-right: 5px;
+  margin-top: 8px;
+}
+.dashboard2 {
+  background-color: #2d3135 !important;
+  color: #8a8d92;
+  height: 6vh !important;
+  font-size: 20px;
+  text-align: left !important;
+  padding-top: 0px;
+}
+
+.trading {
+  background-color: #2d3135;
+  width: 75vw;
+  text-align: left;
+  margin: 0rem 0vw 2rem 3vw;
+  border: 1px black solid;
+  font-family: sans-serif;
+  color: #8a8d92;
+  /* line-height: 200%; */
+  height: 45vh;
+  padding-left: 1rem;
+}
+
+.btn1 {
+  margin-top: 15px;
+  /* border: 1px solid white; */
+  color: #8a8d92;
+  padding-left: 1rem !important;
+  padding-top: 0.5rem;
+  padding-right: 0rem !important;
+  padding-bottom: 0.5rem;
+  /* z-index: 20; */
+  background-color: #2d3135;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.trade {
+  text-align: center;
+  margin-top: 13vh;
+  font-weight: 600;
+  font-size: 2.1rem;
+  color: #eb4182;
+  word-spacing: 0.7rem;
+}
+
+.input {
+  background: transparent;
+  border: 1.5px solid #fff;
+  width: 18rem;
+  margin-top: 2vh;
+  margin-left: 25vw;
+  color: white;
+}
+
+.submit {
+  background-color: #a88ccd !important;
+  margin-top: 1.5vh !important;
+  width: 9rem;
+  margin-bottom: 1rem;
+  /* margin-left: -2rem !important; */
+}
+
+.trade-head {
+  margin-top: 15px;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1220px) {
+  .msc-logo {
+    height: 2.7rem;
+    /* margin-left: 1px; */
+  }
+
+  .navStyle {
+    font-size: 0.65rem;
+    height: 10vh;
+    padding-bottom: 2rem;
+  }
+
+  .side-nav2 {
+    height: 97vh;
+  }
+
+  .dashboard2 {
+    height: 4vh !important;
+  }
+
+  .box-row {
+    height: 23vh;
+  }
+  .component2 {
+    height: 70vh;
+  }
+
+  .team {
+    margin-left: -0.5rem;
+  }
+
+  .arrow {
+    height: 22px;
+    margin-top: 3px;
+  }
+}
+
+.lead {
+  color: #8a8d92;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+.lead:hover {
+  color: #8a8d92;
+}
+
+.btn1 {
+  padding-right: 0px;
+  /* margin-right: 20px; */
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 1350px) {
+  .msc-logo {
+    height: 3rem;
+    padding-top: 0.3rem;
+  }
+
+  .navStyle {
+    font-size: 1rem;
+    height: 11vh;
+    padding-bottom: 1.7rem;
+  }
+
+  .side-nav2 {
+    height: 95vh;
+  }
+
+  .dashboard2 {
+    font-size: 2rem;
+    height: 8vh !important;
+  }
+  .box-row {
+    height: 23vh;
+  }
+
+  .component2 {
+    height: 64vh;
+  }
+  .team {
+    margin-left: -0.5rem;
+  }
+  .title {
+    font-size: 45px;
+  }
+  .submit {
+    margin-left: -1vw !important;
+  }
+}
+
+@media only screen and (min-width: 1351px) and (max-width: 1599px) {
+  .navStyle {
+    font-size: 1.01rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
+  }
+  .team {
+    font-size: 1.3rem;
+  }
+  .title {
+    font-size: 55px;
+  }
+  .msc-logo {
+    height: 3.75rem;
+  }
+  .head-icons {
+    height: 30px;
+    font-size: 25px;
+  }
+  .arrow {
+    height: 30px;
+    margin-right: 0;
+  }
+
+  .side-nav2 {
+    height: 94vh;
+  }
+
+  .dashboard2 {
+    font-size: 2.25rem;
+    height: 7vh !important;
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+  }
+
+  .box-row {
+    height: 23vh;
+  }
+
+  .component2 {
+    height: 64vh;
+  }
+  .lead {
+    font-size: 2.2rem;
+  }
+  .submit {
+    margin-left: -1.5rem !important;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 2000px) {
+  .navStyle {
+    font-size: 1.45rem;
+    height: 8vh;
+    padding-bottom: 1.7rem;
+  }
+  .team {
+    font-size: 1.75rem;
+  }
+  .title {
+    font-size: 65px;
+  }
+  .msc-logo {
+    height: 4.2rem;
+  }
+  .head-icons {
+    height: 35px;
+    font-size: 30px;
+  }
+  .arrow {
+    height: 35px;
+  }
+
+  .icon {
+    font-size: 35px !important;
+  }
+
+  .side-nav2 {
+    height: 95vh;
+  }
+  .dashboard2 {
+    font-size: 2.5rem;
+    height: 6vh !important;
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+  }
+  .box-row {
+    height: 23vh;
+  }
+  .component2 {
+    height: 66vh;
+  }
+  .lead {
+    font-size: 2.5rem;
+  }
+  .input {
+    margin-left: 30vw;
+  }
+  .submit {
+    margin-left: 2.5vw !important;
+  }
+}
+
+@media only screen and (min-width: 2001px) {
+  .navStyle {
+    font-size: 30px;
+  }
+  .team {
+    font-size: 32px;
+  }
+  .title {
+    font-size: 75px;
+  }
+  .msc-logo {
+    height: 5.6rem;
+  }
+  .head-icons {
+    height: 45px;
+    font-size: 35px;
+  }
+  .arrow {
+    height: 45px;
+  }
+  .dashboard2 {
+    font-size: 2.75rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+  }
+  .icon {
+    font-size: 40px !important;
+  }
+  .side-nav2 {
+    height: 112.5vh;
+  }
+
+  .component2 {
+    height: 85vh;
+  }
+
+  body {
+    overflow: hidden;
+  }
+  .lead {
+    font-size: 2.6rem;
+  }
+  .trading {
+    font-size: 3rem;
+  }
+  .trade {
+    font-size: 4rem;
+  }
+  .trade-head {
+    font-size: 4rem;
+  }
+  .input {
+    margin-left: 31vw;
+  }
+  .submit {
+    margin-left: 2.5vw !important;
+  }
+}
