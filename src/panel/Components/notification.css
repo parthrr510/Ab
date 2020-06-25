@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|Alpha+Centauri|Varela+Round|Righteous|Montserrat|Creepster|Matrix|Kanit");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+}
+
+.line {
+  border-top: 1px dotted #223036;
+  padding: "0.7rem";
+}
+
+#Not_title {
+  color: white;
+  font-family: Kanit;
+  font-weight: 400;
+}
+
+#Not {
+  background-color: #2e3035;
+}
+
+.item {
+  display: flex;
+}
+
+.text {
+  font-family: Kanit;
+  font-weight: 200;
+}
