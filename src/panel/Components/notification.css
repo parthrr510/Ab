@@ -11,7 +11,7 @@
 
 .line {
   border-top: 1px dotted #223036;
-  padding: "0.7rem";
+  padding: 0.7rem;
 }
 
 #Not_title {
@@ -31,4 +31,5 @@
 .text {
   font-family: Kanit;
   font-weight: 200;
+  padding-left: 1.5rem;
 }
