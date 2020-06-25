@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 // import React, { useState } from "react";
-import { Row, Col, Nav } from "react-bootstrap";
+import { Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Media from "react-bootstrap/Media";
@@ -186,23 +186,47 @@ const Trading = () => {
                       <h4 className="trade-head">TRADING</h4>
                     </Col>
                     <Col sm={2}>
-                      <select className="btn1">
-                        <option value="">Resources</option>
-                        <option value="Msc Bits">Msc Bits</option>
-                        <option value="Food Resources">Food Resources</option>
-                        <option value="Medicines">Medicines</option>
-                        <option value="Technology">Technology</option>
-                      </select>{" "}
+                      <Dropdown>
+                        <Dropdown.Toggle
+                          id="dropdown-basic"
+                          className="btn1"
+                          variant="secondary"
+                        >
+                          Select Resource
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item value="MSC Bits">
+                            MSC Bits
+                          </Dropdown.Item>
+                          <Dropdown.Item value="Technology">
+                            Technology
+                          </Dropdown.Item>
+                          <Dropdown.Item value="Medicine">
+                            Medicine
+                          </Dropdown.Item>
+                          <Dropdown.Item value="Food Resources">
+                            Food Resources
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </Col>
                     <Col sm={1}></Col>
                     <Col sm={2}>
-                      <select className="btn1" block>
-                        <option value="">Country</option>
-                        <option value="Msc Bits">Msc Bits</option>
-                        <option value="Food Resources">Food Resources</option>
-                        <option value="Medicines">Medicines</option>
-                        <option value="Technology">Technology</option>
-                      </select>
+                      <Dropdown>
+                        <Dropdown.Toggle
+                          id="dropdown-basic"
+                          className="btn1"
+                          variant="secondary"
+                        >
+                          Country
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item value="India">India</Dropdown.Item>
+                          <Dropdown.Item value="LAX">LAX</Dropdown.Item>
+                          <Dropdown.Item value="UAE">UAE</Dropdown.Item>
+                          <Dropdown.Item value="Nepal">Nepal</Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </Col>
                     <Col sm={1}></Col>
                   </Row>
