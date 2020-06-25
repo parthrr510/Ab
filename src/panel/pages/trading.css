@@ -125,8 +125,8 @@
   padding-top: 0px;
 }
 
-.trading{
-    background-color: #2d3135;
+.trading {
+  background-color: #2d3135;
   width: 75vw;
   text-align: left;
   margin: 0rem 0vw 2rem 3vw;
@@ -141,23 +141,22 @@
 .btn1 {
   margin-top: 15px;
   /* border: 1px solid white; */
-  color:#8a8d92;
-  padding-left:  1rem !important;
+  color: #8a8d92;
+  padding-left: 1rem !important;
   padding-top: 0.5rem;
   padding-right: 0rem !important;
   padding-bottom: 0.5rem;
   /* z-index: 20; */
-  background-color: #2D3135;
+  background-color: #2d3135;
   border-radius: 10px 10px 10px 10px;
 }
-
 
 .trade {
   text-align: center;
   margin-top: 13vh;
   font-weight: 600;
   font-size: 2.1rem;
-  color: #EB4182;
+  color: #eb4182;
   word-spacing: 0.7rem;
 }
 
@@ -165,20 +164,20 @@
   background: transparent;
   border: 1.5px solid #fff;
   width: 18rem;
-  margin-top: 1.5vh;
+  margin-top: 2vh;
   margin-left: 25vw;
 }
 
 .submit {
-  background-color: #A88CCD !important;
+  background-color: #a88ccd !important;
   margin-top: 1.5vh !important;
   width: 9rem;
   margin-bottom: 1rem;
   /* margin-left: -2rem !important; */
 }
 
-.trade-head{
-     margin-top: 15px;
+.trade-head {
+  margin-top: 15px;
 }
 @media only screen and (min-width: 1024px) and (max-width: 1220px) {
   .msc-logo {
@@ -228,9 +227,9 @@
   color: #8a8d92;
 }
 
-.btn1{
-    padding-right:0px;
-    /* margin-right: 20px; */
+.btn1 {
+  padding-right: 0px;
+  /* margin-right: 20px; */
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {
@@ -266,8 +265,8 @@
   .title {
     font-size: 45px;
   }
-  .submit{
-      margin-left: -1vw !important;
+  .submit {
+    margin-left: -1vw !important;
   }
 }
 
@@ -316,8 +315,8 @@
   .lead {
     font-size: 2.2rem;
   }
-  .submit{
-      margin-left: -1.5rem !important;
+  .submit {
+    margin-left: -1.5rem !important;
   }
 }
 
@@ -366,16 +365,13 @@
   .lead {
     font-size: 2.5rem;
   }
-  .input{
-      margin-left: 30vw;
+  .input {
+    margin-left: 30vw;
   }
-  .submit{
-      margin-left: 2.5vw !important;
+  .submit {
+    margin-left: 2.5vw !important;
   }
-  
-
 }
-
 
 @media only screen and (min-width: 2001px) {
   .navStyle {
@@ -419,19 +415,19 @@
   .lead {
     font-size: 2.6rem;
   }
-  .trading{
-      font-size: 3rem;
+  .trading {
+    font-size: 3rem;
   }
-  .trade{
-      font-size: 4rem;
+  .trade {
+    font-size: 4rem;
   }
-  .trade-head{
-      font-size:4rem;
+  .trade-head {
+    font-size: 4rem;
   }
-  .input{
-      margin-left: 31vw; 
+  .input {
+    margin-left: 31vw;
   }
-  .submit{
-      margin-left: 2.5vw !important;
+  .submit {
+    margin-left: 2.5vw !important;
   }
 }
