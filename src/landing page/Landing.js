@@ -49,7 +49,12 @@ const Landing = ({ Auth: { user }, complicatedStuff }) => {
                   Get Started
                 </Button>
               </div>
-              <img id="scroll_icon" src={scroll} onClick={handleShow} />
+              <img
+                id="scroll_icon"
+                src={scroll}
+                onClick={handleShow}
+                alt="Scroll Icon"
+              />
               <Modal show={show} onHide={handleClose} className="rulebook">
                 <Modal.Header closeButton>
                   <Modal.Title>RuleBook</Modal.Title>
@@ -78,32 +83,36 @@ const Landing = ({ Auth: { user }, complicatedStuff }) => {
             </div>
           </div>
         </div>
-        <div className="d-flex align-item-end">
-          <div className="dropup">
-            <div className="dropbtn d-flex justify-content-start">
-              Contact Us
-            </div>
-            <div className="dropup-content">
-              <a href="https://instagram.com/msc_tiet?igshid=16huv4u0jf3ld">
-                <img
-                  src={insta_logo}
-                  style={{ height: "20px", width: "20px" }}
-                />
-              </a>
-              <a href="https://www.facebook.com/msctiet/">
-                <img src={fb_logo} style={{ height: "20px", width: "20px" }} />
-              </a>
-              <a href="https://github.com/MicrosoftStudentChapter">
-                {" "}
-                <img
-                  src={github_logo}
-                  style={{ height: "20px", width: "20px" }}
-                />
-              </a>
-            </div>
+      </section>
+      <div className="d-flex align-item-end" id="cnt">
+        <div className="dropup">
+          <div className="dropbtn d-flex justify-content-start">Contact Us</div>
+          <div className="dropup-content">
+            <a href="https://instagram.com/msc_tiet?igshid=16huv4u0jf3ld">
+              <img
+                src={insta_logo}
+                alt="Instagram"
+                style={{ height: "20px", width: "20px" }}
+              />
+            </a>
+            <a href="https://www.facebook.com/msctiet/">
+              <img
+                src={fb_logo}
+                alt="Facebook"
+                style={{ height: "20px", width: "20px" }}
+              />
+            </a>
+            <a href="https://github.com/MicrosoftStudentChapter">
+              {" "}
+              <img
+                src={github_logo}
+                alt="GitHub"
+                style={{ height: "20px", width: "20px" }}
+              />
+            </a>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
