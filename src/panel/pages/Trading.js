@@ -158,6 +158,7 @@ const Trading = () => {
                 style={{
                   marginLeft: "1rem",
                 }}
+              >
                 <Box res={bits.resource} val={bits.done}></Box>
               </Col>
               <Col>
@@ -190,7 +191,7 @@ const Trading = () => {
                         <option value="Msc Bits">Msc Bits</option>
                         <option value="Food Resources">Food Resources</option>
                         <option value="Medicines">Medicines</option>
-                        <option value="Technology">Technology</option> 
+                        <option value="Technology">Technology</option>
                       </select>{" "}
                     </Col>
                     <Col sm={1}></Col>
@@ -229,11 +230,9 @@ const Trading = () => {
           </Col>
         </Row>
       </div>
-      </div>
-
-    );
-  
-}
+    </div>
+  );
+};
 // const trading = {
 //   backgroundColor: "#2d3135",
 //   width: "66rem",
