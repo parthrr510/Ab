@@ -12,14 +12,11 @@ import { Link } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import { GrAnnounce } from "react-icons/gr";
-import update from "./updates.png";
-import trade from "./trade.png";
 import { AiOutlineTable } from "react-icons/ai";
 import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
 import Leaderboard from "./Components/Leaderboard.js";
-// import logo from './logo.svg';
 import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
 import Notifications from "./Components/Notifications";
@@ -59,9 +56,9 @@ const SideNav = () => {
       <div className="panel">
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
-            <img src={logo} className="msc-logo" />
+            <img src={logo} className="msc-logo" alt="" />
             <Link to="/logout" className="arrow">
-              <img src={arrow} className="arrow" />
+              <img src={arrow} className="arrow" alt="Back" />
             </Link>
           </Col>
           <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
@@ -69,10 +66,19 @@ const SideNav = () => {
               <p className="head-icons">Logout</p>
             </Link>
 
-            <img src={notepad} className="head-icons" onClick={handleShow} />
-              <Notifications show={show} setShow={setShow} handleClose={handleClose}/>
+            <img
+              src={notepad}
+              className="head-icons"
+              onClick={handleShow}
+              alt="Notepad"
+            />
+            <Notifications
+              show={show}
+              setShow={setShow}
+              handleClose={handleClose}
+            />
             <Link to="/logout">
-              <img src={mail} className="head-icons" />
+              <img src={mail} className="head-icons" alt="Notification" />
             </Link>
             <div className="title">ABHYUDAYA</div>
           </Col>

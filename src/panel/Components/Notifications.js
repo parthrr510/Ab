@@ -2,8 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import { MdNotificationsActive } from "react-icons/md";
-import Avatar from "@material-ui/core/Avatar";
-import team from "../team.PNG";
 import "./notification.css";
 
 const Notifications = ({ show, handleClose }) => {
