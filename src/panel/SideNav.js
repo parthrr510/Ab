@@ -7,6 +7,7 @@ import mail from "./email.png";
 import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
+import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
@@ -37,6 +38,11 @@ const SideNav = () => {
     resource: "TECHNOLOGY",
     donet: "75",
   });
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   //For change in value function call when extracting data
 
   //   setBits([{ resource: "res", done: "value" }]);
@@ -63,8 +69,8 @@ const SideNav = () => {
               <p className="head-icons">Logout</p>
             </Link>
 
-            <img src={notepad} className="head-icons" />
-
+            <img src={notepad} className="head-icons" onClick={handleShow} />
+              <Notifications show={show} setShow={setShow} handleClose={handleClose}/>
             <Link to="/logout">
               <img src={mail} className="head-icons" />
             </Link>

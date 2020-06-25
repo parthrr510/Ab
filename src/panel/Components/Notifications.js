@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import SideNav from "../SideNav";
 
 const Notifications = ({ show, handleClose }) => {
   return (
