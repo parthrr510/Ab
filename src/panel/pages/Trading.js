@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
+// import React, { useState } from "react";
 import { Row, Col, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
@@ -16,96 +17,58 @@ import mail from "../email.png";
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import { BsChevronLeft } from "react-icons/bs";
+import "./trading.css";
 
-class Trading extends Component {
-  state = {
-    resource: "MSC BITS",
-    done: "70",
-
-    food: "FOOD RESOURCES",
-    donef: "50",
-
-    medicine: "MEDICINES",
-    donem: "20",
-
-    technology: "TECHNOLOGY",
-    donet: "90",
-  };
+const Trading = () => {
+  const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
+  const [food, setFood] = useState({
+    resource: "FOOD RESOURCES",
+    donef: "150",
+  });
+  const [medicine, setMedicine] = useState({
+    resource: "MEDICINES",
+    donem: "80",
+  });
+  const [technology, setTech] = useState({
+    resource: "TECHNOLOGY",
+    donet: "75",
+  });
   //For change in value function call when extracting data
-  change = (res, value) => {
-    this.setState({
-      resource: res,
-      done: value,
-    });
-  };
-  render() {
-    return (
-      <div>
+
+  //   setBits([{ resource: "res", done: "value" }]);
+  //   setFood([{ resource: "res", done: "value" }]);
+  //   setMedicine([{ resource: "res", done: "value" }]);
+  //   setTech([{ resource: "res", done: "value" }]);
+  // };
+
+  return (
+    <div>
+      <div className="container">
+        <div className="error">Please use our desktop site</div>
+      </div>
+      <div className="panel">
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
-            <img
-              src={logo}
-              style={{
-                height: "60px",
-                left: "0",
-                top: "0",
-                marginLeft: "-1rem",
-              }}
-            />
-            <img
-              src={arrow}
-              style={{
-                height: "27px",
-                float: "right",
-                marginRight: "5px",
-                marginTop: "12px",
-              }}
-            />
+            <img src={logo} className="msc-logo" />
+            <Link to="/logout" className="arrow">
+              <img src={arrow} className="arrow" />
+            </Link>
           </Col>
           <Col sm={10} style={{ backgroundColor: "#2D3135" }}>
             <Link to="/logout">
-              <p
-                style={{
-                  float: "right",
-                  color: "darkgrey",
-                  marginRight: "20px",
-                  marginTop: "10px",
-                }}
-              >
-                Logout
-              </p>
+              <p className="head-icons">Logout</p>
             </Link>
 
-            <img
-              src={notepad}
-              style={{
-                height: "25px",
-                float: "right",
-                marginRight: "20px",
-                marginTop: "10px",
-              }}
-            />
+            <img src={notepad} className="head-icons" />
 
-            <img
-              src={mail}
-              style={{
-                height: "25px",
-                float: "right",
-                marginRight: "20px",
-                marginTop: "10px",
-              }}
-            />
+            <Link to="/logout">
+              <img src={mail} className="head-icons" />
+            </Link>
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
         <Row>
-          <Col
-            sm={2}
-            style={{
-              backgroundColor: "#2D3135",
-              borderRight: "1px #8A8D92 solid",
-            }}
-          >
+          <Col sm={2} className="side-nav2">
             <Media style={{ marginTop: "3rem" }}>
               <img
                 width={55}
@@ -118,7 +81,7 @@ class Trading extends Component {
                   marginLeft: "12px",
                 }}
               />
-              <Media.Body style={{ marginLeft: "-3rem", color: "#8A8D92" }}>
+              <Media.Body className="team">
                 <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
@@ -179,7 +142,7 @@ class Trading extends Component {
                   href="/discord"
                   eventKey="link-5"
                   className="navStyle"
-                  style={{ paddingBottom: "3.5rem" }}
+                  style={{ paddingBottom: "44px" }}
                 >
                   <FaDiscord className="icon" />
                   Discord
@@ -187,87 +150,77 @@ class Trading extends Component {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col sm={10}>
-            <Row>
-              <Col
-                sm={12}
-                style={{
-                  backgroundColor: "#2D3135",
-                  color: "#8A8D92",
-                  height: "3rem",
-                  fontSize: "20px",
-                  textAlign: "left",
-                  paddingTop: "5px",
-                }}
-              >
-                Dashboard
-              </Col>
-            </Row>
-            <Row
-              style={{ backgroundColor: "dark-grey", paddingBottom: "1rem" }}
-            >
+          <Col sm={10} className="dv">
+            <Row className="dashboard2">Dashboard</Row>
+
+            <Row className="box-row">
               <Col
                 style={{
-                  paddingLeft: "0px",
                   marginLeft: "1rem",
-                  marginTop: "1rem",
                 }}
               >
-                <Box res={this.state.resource} val={this.state.done}></Box>
+                <Box res={bits.resource} val={bits.done}></Box>
               </Col>
-              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
-                <Box res={this.state.food} val={this.state.donef}></Box>
+              <Col>
+                <Box res={food.resource} val={food.donef}></Box>
               </Col>
-              <Col style={{ paddingLeft: "0px", marginTop: "1rem" }}>
-                <Box res={this.state.medicine} val={this.state.donem}></Box>
+              <Col>
+                <Box res={medicine.resource} val={medicine.donem}></Box>
               </Col>
               <Col
                 style={{
                   paddingLeft: "0px",
                   marginRight: "2rem",
-                  marginTop: "1rem",
                 }}
               >
-                <Box res={this.state.technology} val={this.state.donet}></Box>
+                <Box res={technology.resource} val={technology.donet}></Box>
               </Col>
             </Row>
 
             <Row>
-              <Col sm={12}>
-                <div style={trading}>
+              <Col sm={12} className="component2  ">
+                <div className="trading">
                   <Row>
                     {" "}
                     <Col sm={6}>
-                      <h4 style={{ marginTop: "15px" }}>TRADING</h4>
+                      <h4 className="trade-head">TRADING</h4>
                     </Col>
                     <Col sm={2}>
-                      <Button variant="secondary" block style={btn}>
-                        Resources <BsChevronLeft />
-                      </Button>{" "}
+                      <select className="btn1">
+                        <option value="">Resources</option>
+                        <option value="Msc Bits">Msc Bits</option>
+                        <option value="Food Resources">Food Resources</option>
+                        <option value="Medicines">Medicines</option>
+                        <option value="Technology">Technology</option> 
+                      </select>{" "}
                     </Col>
                     <Col sm={1}></Col>
                     <Col sm={2}>
-                      <Button style={btn} block>
-                        Country <BsChevronLeft />
-                      </Button>
+                      <select className="btn1" block>
+                        <option value="">Country</option>
+                        <option value="Msc Bits">Msc Bits</option>
+                        <option value="Food Resources">Food Resources</option>
+                        <option value="Medicines">Medicines</option>
+                        <option value="Technology">Technology</option>
+                      </select>
                     </Col>
                     <Col sm={1}></Col>
                   </Row>
                   <Row>
-                    <Col sm={12} style={trade}>
+                    <Col sm={12} className="trade">
                       Enter the amount you wish to transfer:
                     </Col>
                   </Row>
                   <Row>
                     <Col sm={12}>
-                      <input type="number" style={input}></input>
+                      <input type="number" className="input"></input>
                     </Col>
                   </Row>
                   <Row>
                     <Col sm={5}></Col>
                     <Col sm={2}>
                       {" "}
-                      <Button style={submit}>Submit</Button>
+                      <Button className="submit">Submit</Button>
                     </Col>
                     <Col sm={5}></Col>
                   </Row>
@@ -277,50 +230,53 @@ class Trading extends Component {
           </Col>
         </Row>
       </div>
-    );
-  }
-}
-const trading = {
-  backgroundColor: "#2d3135",
-  width: "66rem",
+      </div>
 
-  textAlign: "left",
-  margin: "0rem 2rem 2rem 2rem",
-  border: "1px black solid",
-  fontFamily: "sans-serif",
-  color: "white",
-  lineHeight: "200%",
-  paddingLeft: "1rem",
-};
-const btn = {
-  marginTop: "15px",
-  border: "1px solid white",
-  color: "#fff",
-  paddingLeft: "1.5rem ",
-  paddingTop: "0.5rem",
-  paddingRight: "1.5rem",
-  paddingBottom: "0.5rem",
-  zIndex: "5",
-};
-const trade = {
-  textAlign: "center",
-  marginTop: "3rem",
-  fontWeight: "600",
-  fontSize: "26px",
-  color: "#EB4182",
-  wordSpacing: "0.7rem",
-};
-const input = {
-  background: "transparent",
-  border: "1.5px solid #fff",
-  width: "18rem",
-  marginTop: "2rem",
-  marginLeft: "23rem",
-};
-const submit = {
-  backgroundColor: "#A88CCD",
-  marginTop: "1.5rem",
-  width: "9rem",
-  marginBottom: "1rem",
-};
+    );
+  
+}
+// const trading = {
+//   backgroundColor: "#2d3135",
+//   width: "66rem",
+
+//   textAlign: "left",
+//   margin: "0rem 2rem 2rem 2rem",
+//   border: "1px black solid",
+//   fontFamily: "sans-serif",
+//   color: "white",
+//   lineHeight: "200%",
+//   paddingLeft: "1rem",
+// };
+// const btn = {
+//   marginTop: "15px",
+//   border: "1px solid white",
+//   color: "#fff",
+//   paddingLeft: "1.5rem ",
+//   paddingTop: "0.5rem",
+//   paddingRight: "1.5rem",
+//   paddingBottom: "0.5rem",
+//   zIndex: "20",
+//   backgroundColor: "#2D3135"
+// };
+// const trade = {
+//   textAlign: "center",
+//   marginTop: "3rem",
+//   fontWeight: "600",
+//   fontSize: "26px",
+//   color: "#EB4182",
+//   wordSpacing: "0.7rem",
+// };
+// const input = {
+//   background: "transparent",
+//   border: "1.5px solid #fff",
+//   width: "18rem",
+//   marginTop: "2rem",
+//   marginLeft: "23rem",
+// };
+// const submit = {
+//   backgroundColor: "#A88CCD",
+//   marginTop: "1.5rem",
+//   width: "9rem",
+//   marginBottom: "1rem",
+// };
 export default Trading;
