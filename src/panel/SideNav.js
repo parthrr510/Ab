@@ -19,6 +19,7 @@ import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
 import Leaderboard from "./Components/Leaderboard.js";
+import TradeRulebook from "./pages/TradeRulebook";
 // import logo from './logo.svg';
 import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
@@ -38,11 +39,17 @@ const SideNav = () => {
     resource: "TECHNOLOGY",
     donet: "75",
   });
+  //for notifications
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //for trade rulebook
+  const [showBook, setShowBook] = useState(false);
+
+  const handleCloseBook = () => setShowBook(false);
+  const handleShowBook = () => setShowBook(true);
   //For change in value function call when extracting data
 
   //   setBits([{ resource: "res", done: "value" }]);
@@ -70,7 +77,11 @@ const SideNav = () => {
             </Link>
 
             <img src={notepad} className="head-icons" onClick={handleShow} />
-              <Notifications show={show} setShow={setShow} handleClose={handleClose}/>
+            <Notifications
+              show={show}
+              setShow={setShow}
+              handleClose={handleClose}
+            />
             <Link to="/logout">
               <img src={mail} className="head-icons" />
             </Link>
@@ -139,13 +150,18 @@ const SideNav = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  href="/traderulebook"
                   eventKey="link-4"
                   className="navStyle"
+                  onClick={handleShowBook}
                 >
                   <FaWindowMaximize className="icon" />
                   Trade Rulebook
                 </Nav.Link>
+                <TradeRulebook
+                  showBook={showBook}
+                  setShowBook={setShowBook}
+                  handleCloseBook={handleCloseBook}
+                />
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
