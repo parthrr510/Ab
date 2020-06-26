@@ -13,11 +13,13 @@ import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import logo from "../msc_logo.png";
 import notepad from "../note.png";
-import mail from "../email.png";
+
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import { BsChevronLeft } from "react-icons/bs";
 import "./trading.css";
+import Notifications from "../Components/Notifications";
+import TradeRulebook from "../pages/TradeRulebook";
 
 const Trading = () => {
   const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
@@ -41,6 +43,18 @@ const Trading = () => {
   //   setTech([{ resource: "res", done: "value" }]);
   // };
 
+  //for notifications
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  //for trade rulebook
+  const [showBook, setShowBook] = useState(false);
+
+  const handleCloseBook = () => setShowBook(false);
+  const handleShowBook = () => setShowBook(true);
+
   return (
     <div>
       <div className="container">
@@ -50,7 +64,7 @@ const Trading = () => {
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img src={logo} className="msc-logo" />
-            <Link to="/logout" className="arrow">
+            <Link to="/panel" className="arrow">
               <img src={arrow} className="arrow" />
             </Link>
           </Col>
@@ -59,11 +73,19 @@ const Trading = () => {
               <p className="head-icons">Logout</p>
             </Link>
 
-            <img src={notepad} className="head-icons" />
+            <img
+              src={notepad}
+              className="head-icons"
+              onClick={handleShow}
+              alt="Notepad"
+            />
 
-            <Link to="/logout">
-              <img src={mail} className="head-icons" />
-            </Link>
+            <Notifications
+              show={show}
+              setShow={setShow}
+              handleClose={handleClose}
+            />
+
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
@@ -129,13 +151,18 @@ const Trading = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  href="/traderulebook"
                   eventKey="link-4"
                   className="navStyle"
+                  onClick={handleShowBook}
                 >
                   <FaWindowMaximize className="icon" />
                   Trade Rulebook
                 </Nav.Link>
+                <TradeRulebook
+                  showBook={showBook}
+                  setShowBook={setShowBook}
+                  handleCloseBook={handleCloseBook}
+                />
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
