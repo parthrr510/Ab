@@ -4,7 +4,6 @@ import Route from "./Route";
 import LeaderBoard from "../panel/pages/LeaderBoard";
 import Updates from "../panel/pages/Updates";
 import Trading from "../panel/pages/Trading";
-
 import Discord from "../panel/pages/Discord";
 import Landing from "../landing page/Landing";
 import SideNav from "../panel/SideNav";
