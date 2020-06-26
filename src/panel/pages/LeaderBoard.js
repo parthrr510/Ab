@@ -15,12 +15,13 @@ import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import logo from "../msc_logo.png";
 import notepad from "../note.png";
-import mail from "../email.png";
+
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import flag from "../flag.PNG";
 import "./lead_style.css";
 import Notifications from "../Components/Notifications";
+import TradeRulebook from "../pages/TradeRulebook";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -92,9 +93,6 @@ function ComLeaderboard() {
               handleClose={handleClose}
             />
 
-            <Link to="/logout">
-              <img src={mail} className="head-icons" alt="Notifications" />
-            </Link>
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
@@ -160,13 +158,19 @@ function ComLeaderboard() {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  href="/traderulebook"
+              
                   eventKey="link-4"
                   className="navStyle"
+                  onClick={handleShowBook}
                 >
                   <FaWindowMaximize className="icon" />
                   Trade Rulebook
                 </Nav.Link>
+                <TradeRulebook
+                  showBook={showBook}
+                  setShowBook={setShowBook}
+                  handleCloseBook={handleCloseBook}
+                />
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link

@@ -13,12 +13,13 @@ import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import logo from "../msc_logo.png";
 import notepad from "../note.png";
-import mail from "../email.png";
+
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import { BsChevronLeft } from "react-icons/bs";
 import "./trading.css";
 import Notifications from "../Components/Notifications";
+import TradeRulebook from "../pages/TradeRulebook";
 
 const Trading = () => {
   const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
@@ -87,9 +88,7 @@ const Trading = () => {
               handleClose={handleClose}
             />
 
-            <Link to="/logout">
-              <img src={mail} className="head-icons" />
-            </Link>
+            
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
@@ -155,13 +154,19 @@ const Trading = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  href="/traderulebook"
+                  
                   eventKey="link-4"
                   className="navStyle"
+                  onClick={handleShowBook}
                 >
                   <FaWindowMaximize className="icon" />
                   Trade Rulebook
                 </Nav.Link>
+                <TradeRulebook
+                  showBook={showBook}
+                  setShowBook={setShowBook}
+                  handleCloseBook={handleCloseBook}
+                />
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link

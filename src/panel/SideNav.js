@@ -3,7 +3,7 @@ import { Row, Col, Nav } from "react-bootstrap";
 import Media from "react-bootstrap/Media";
 import logo from "./msc_logo.png";
 import notepad from "./note.png";
-import mail from "./email.png";
+
 import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
@@ -90,9 +90,7 @@ const SideNav = () => {
               setShow={setShow}
               handleClose={handleClose}
             />
-            <Link to="/logout">
-              <img src={mail} className="head-icons" alt="Notification" />
-            </Link>
+            
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
