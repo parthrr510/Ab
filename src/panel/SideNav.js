@@ -121,7 +121,7 @@ const SideNav = () => {
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
-                <Nav.Link href="/" className="navStyle">
+                <Nav.Link href="/panel"  eventKey="link-1" className="navStyle">
                   <RiHome2Line className="icon" />
                   Home
                 </Nav.Link>

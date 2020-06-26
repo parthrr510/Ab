@@ -18,6 +18,7 @@ import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import { BsChevronLeft } from "react-icons/bs";
 import "./trading.css";
+import Notifications from "../Components/Notifications";
 
 const Trading = () => {
   const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
@@ -41,6 +42,20 @@ const Trading = () => {
   //   setTech([{ resource: "res", done: "value" }]);
   // };
 
+  
+  //for notifications
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  //for trade rulebook
+  const [showBook, setShowBook] = useState(false);
+
+  const handleCloseBook = () => setShowBook(false);
+  const handleShowBook = () => setShowBook(true);
+
+
   return (
     <div>
       <div className="container">
@@ -59,7 +74,18 @@ const Trading = () => {
               <p className="head-icons">Logout</p>
             </Link>
 
-            <img src={notepad} className="head-icons" />
+            <img
+              src={notepad}
+              className="head-icons"
+              onClick={handleShow}
+              alt="Notepad"
+            />
+
+            <Notifications
+              show={show}
+              setShow={setShow}
+              handleClose={handleClose}
+            />
 
             <Link to="/logout">
               <img src={mail} className="head-icons" />
