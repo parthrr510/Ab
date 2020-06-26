@@ -1,11 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class Updates extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Updates</h1>
-      </div>
-    );
-  }
-}
+const Updates = () => {
+  return (
+    <div>
+      <h1>Updates</h1>
+    </div>
+  );
+};
+export default Updates;
