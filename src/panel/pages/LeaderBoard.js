@@ -71,7 +71,7 @@ function ComLeaderboard() {
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img src={logo} className="msc-logo" alt="MSC_Logo" />
-            <Link to="/logout" className="arrow">
+            <Link to="/panel" className="arrow">
               <img src={arrow} className="arrow" alt="back" />
             </Link>
           </Col>
@@ -158,7 +158,6 @@ function ComLeaderboard() {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-              
                   eventKey="link-4"
                   className="navStyle"
                   onClick={handleShowBook}

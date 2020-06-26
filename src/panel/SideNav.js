@@ -3,7 +3,6 @@ import { Row, Col, Nav } from "react-bootstrap";
 import Media from "react-bootstrap/Media";
 import logo from "./msc_logo.png";
 import notepad from "./note.png";
-
 import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
@@ -67,7 +66,7 @@ const SideNav = () => {
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img src={logo} className="msc-logo" alt="" />
-            <Link to="/logout" className="arrow">
+            <Link to="/panel" className="arrow">
               <img src={arrow} className="arrow" alt="Back" />
             </Link>
           </Col>
@@ -75,8 +74,6 @@ const SideNav = () => {
             <Link to="/logout">
               <p className="head-icons">Logout</p>
             </Link>
-
-
 
             <img
               src={notepad}
@@ -90,7 +87,7 @@ const SideNav = () => {
               setShow={setShow}
               handleClose={handleClose}
             />
-            
+
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
@@ -119,7 +116,7 @@ const SideNav = () => {
             >
               <div className="sidebar-sticky"></div>
               <Nav.Item>
-                <Nav.Link href="/panel"  eventKey="link-1" className="navStyle">
+                <Nav.Link href="/panel" eventKey="link-1" className="navStyle">
                   <RiHome2Line className="icon" />
                   Home
                 </Nav.Link>

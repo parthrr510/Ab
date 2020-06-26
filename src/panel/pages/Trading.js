@@ -43,7 +43,6 @@ const Trading = () => {
   //   setTech([{ resource: "res", done: "value" }]);
   // };
 
-  
   //for notifications
   const [show, setShow] = useState(false);
 
@@ -56,7 +55,6 @@ const Trading = () => {
   const handleCloseBook = () => setShowBook(false);
   const handleShowBook = () => setShowBook(true);
 
-
   return (
     <div>
       <div className="container">
@@ -66,7 +64,7 @@ const Trading = () => {
         <Row style={{ borderBottom: "1px #8A8D92 solid" }}>
           <Col sm={2} style={{ backgroundColor: "#2D3135" }} className="logo">
             <img src={logo} className="msc-logo" />
-            <Link to="/logout" className="arrow">
+            <Link to="/panel" className="arrow">
               <img src={arrow} className="arrow" />
             </Link>
           </Col>
@@ -88,7 +86,6 @@ const Trading = () => {
               handleClose={handleClose}
             />
 
-            
             <div className="title">ABHYUDAYA</div>
           </Col>
         </Row>
@@ -154,7 +151,6 @@ const Trading = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  
                   eventKey="link-4"
                   className="navStyle"
                   onClick={handleShowBook}
