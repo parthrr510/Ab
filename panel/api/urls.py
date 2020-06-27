@@ -11,4 +11,9 @@ urlpatterns = [
         name="depriciate",
     ),
     path("questions/", views.QuestionView.as_view(), name="question"),
+    path(
+        "questions/submit/<int:question>/",
+        views.SubmissionView.as_view(),
+        name="submit",
+    ),
 ]
