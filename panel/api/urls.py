@@ -10,4 +10,5 @@ urlpatterns = [
         views.Depreciate.as_view(),
         name="depriciate",
     ),
+    path("questions/", views.QuestionView.as_view(), name="question"),
 ]

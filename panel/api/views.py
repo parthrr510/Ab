@@ -1,7 +1,12 @@
 # module level imports
-from .serializers import ResourceSerializer, LeaderBoardSerializer, TradeSerializer
+from .serializers import (
+    ResourceSerializer,
+    LeaderBoardSerializer,
+    TradeSerializer,
+    QuestionGETSerializer,
+)
 from .permissions import IsOwnerOrReadOnly, FromMSC
-from panel.models import Resource, Trade
+from panel.models import Resource, Trade, Question, Submission
 from users.models import MyUser
 
 # other imports
@@ -145,3 +150,24 @@ class Depreciate(APIView):
             resource.save()
 
         return Response("Done")
+
+
+class QuestionView(APIView):
+    permission_classes = [
+        IsAuthenticated,
+    ]
+
+    def get(self, request, *args, **kwargs):
+        payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
+        questions = Question.objects.all()
+        exclude_list = []
+        for question in questions:
+            if Submission.objects.filter(
+                team_id=payload["user_id"], isCorrect=True, question=question.update_no
+            ).exists():
+                exclude_list.append(question.update_no)
+        questions = Question.objects.filter().exclude(update_no__in=exclude_list)
+        serializer = QuestionGETSerializer(
+            questions, many=True, context={"request": request}
+        )
+        return Response(serializer.data)
