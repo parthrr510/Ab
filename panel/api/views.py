@@ -1,7 +1,13 @@
 # module level imports
-from .serializers import ResourceSerializer, LeaderBoardSerializer, TradeSerializer
+from .serializers import (
+    ResourceSerializer,
+    LeaderBoardSerializer,
+    TradeSerializer,
+    QuestionGETSerializer,
+    SubmissionSerializer,
+)
 from .permissions import IsOwnerOrReadOnly, FromMSC
-from panel.models import Resource, Trade
+from panel.models import Resource, Trade, Question, Submission
 from users.models import MyUser
 
 # other imports
@@ -9,6 +15,8 @@ from django.conf import settings
 import jwt
 from decimal import Decimal
 from django.core.mail import send_mail
+
+# from django.utils import timezone
 
 # rest_framework
 from rest_framework.views import APIView
@@ -145,3 +153,165 @@ class Depreciate(APIView):
             resource.save()
 
         return Response("Done")
+
+
+class QuestionView(APIView):
+    permission_classes = [
+        IsAuthenticated,
+    ]
+
+    def get(self, request, *args, **kwargs):
+        payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
+        questions = Question.objects.all()
+        exclude_list = []
+        for question in questions:
+            if Submission.objects.filter(
+                team_id=payload["user_id"], isCorrect=True, question=question.update_no
+            ).exists():
+                exclude_list.append(question.update_no)
+        questions = Question.objects.filter().exclude(update_no__in=exclude_list)
+        serializer = QuestionGETSerializer(
+            questions, many=True, context={"request": request}
+        )
+        return Response(serializer.data)
+
+
+class SubmissionView(APIView):
+
+    permission_classes = [
+        IsAuthenticated,
+    ]
+
+    def post(self, request, question, *args, **kwargs):
+        payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
+        data = request.data
+        resource = Resource.objects.get(team_id=payload["user_id"])
+        questions = Question.objects.get(update_no=question)
+        team = MyUser.objects.get(id=payload["user_id"])
+        if team.continent == questions.region or questions.region == "Global":
+            if Submission.objects.filter(
+                team_id=payload["user_id"], isCorrect=True, question=questions.update_no
+            ).exists():
+                return Response("You have already submitted the correct answer!")
+            else:
+                if data["submission"] == questions.answer:
+                    if Submission.objects.filter(
+                        team_id=payload["user_id"], question=questions.update_no
+                    ).exists():
+                        submission = Submission.objects.get(
+                            team_id=payload["user_id"], question=questions.update_no
+                        )
+                        submission.isCorrect = True
+                        resource.rate_mscb = (
+                            resource.rate_mscb
+                            - questions.rate_mscb
+                            - submission.additional_rate_mscBits
+                        )
+                        resource.rate_food = (
+                            resource.rate_food
+                            - questions.rate_food
+                            - submission.additional_rate_food
+                        )
+                        resource.rate_technology = (
+                            resource.rate_technology
+                            - questions.rate_technology
+                            - submission.additional_rate_technology
+                        )
+                        resource.rate_medicine = (
+                            resource.rate_medicine
+                            - questions.rate_medicine
+                            - submission.additional_rate_medicine
+                        )
+                        # submission.timestamp = timezone.now
+                        submission.additional_rate_mscBits = Decimal(0.00)
+                        submission.additional_rate_food = Decimal(0.00)
+                        submission.additional_rate_medicine = Decimal(0.00)
+                        submission.additional_rate_technology = Decimal(0.00)
+                        submission.save()
+                        resource.save()
+                    else:
+                        submission = Submission.objects.get(
+                            team_id=payload["user_id"], question=questions.update_no
+                        )
+                        resource.rate_mscb = (
+                            resource.rate_mscb
+                            - questions.rate_mscb
+                            - submission.additional_rate_mscBits
+                        )
+                        resource.rate_food = (
+                            resource.rate_food
+                            - questions.rate_food
+                            - submission.additional_rate_food
+                        )
+                        resource.rate_technology = (
+                            resource.rate_technology
+                            - questions.rate_technology
+                            - submission.additional_rate_technology
+                        )
+                        resource.rate_medicine = (
+                            resource.rate_medicine
+                            - questions.rate_medicine
+                            - submission.additional_rate_medicine
+                        )
+                        resource.save()
+                        serializer = SubmissionSerializer(data=data)
+                        if serializer.is_valid():
+                            serializer.save(
+                                team_id=team, question=questions, isCorrect=True
+                            )
+                            return Response(serializer.data)
+
+                else:
+                    if Submission.objects.filter(
+                        team_id=payload["user_id"], question=questions.update_no
+                    ).exists():
+                        submission = Submission.objects.get(
+                            team_id=payload["user_id"], question=questions.update_no
+                        )
+                        submission.submission = data["submission"]
+                        submission.additional_rate_mscBits = (
+                            submission.additional_rate_mscBits + Decimal(0.5)
+                        )
+                        submission.additional_rate_food = (
+                            submission.additional_rate_food + Decimal(0.5)
+                        )
+                        submission.additional_rate_technology = (
+                            submission.additional_rate_technology + Decimal(0.5)
+                        )
+                        submission.additional_rate_medicine = (
+                            submission.additional_rate_medicine + Decimal(0.5)
+                        )
+                        resource.rate_mscb += submission.additional_rate_mscBits
+                        resource.rate_food += submission.additional_rate_food
+                        resource.rate_medicine += submission.additional_rate_medicine
+                        resource.rate_technology += (
+                            submission.additional_rate_technology
+                        )
+                        resource.save()
+                        # submission.timestamp = timezone.now
+                        submission.save()
+                    else:
+                        serializer = SubmissionSerializer(data=data)
+                        if serializer.is_valid():
+                            serializer.save(
+                                team_id=team,
+                                question=questions,
+                                isCorrect=False,
+                                additional_rate_mscBits=Decimal(0.5),
+                                additional_rate_food=Decimal(0.5),
+                                additional_rate_technology=Decimal(0.5),
+                                additional_rate_medicine=Decimal(0.5),
+                            )
+                            submission = Submission.objects.get(
+                                team_id=payload["user_id"], question=questions.update_no
+                            )
+                            resource.rate_mscb += submission.additional_rate_mscBits
+                            resource.rate_food += submission.additional_rate_food
+                            resource.rate_medicine += (
+                                submission.additional_rate_medicine
+                            )
+                            resource.rate_technology += (
+                                submission.additional_rate_technology
+                            )
+                            resource.save()
+                            return Response(serializer.data)
