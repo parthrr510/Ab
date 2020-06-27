@@ -186,8 +186,9 @@ body {
   margin-top: -5rem;
 }
 
-.modal-body{
-  background-color: burlywood;
+.rulebook{
+  height: 60vh;
+  width: 30vw;
 }
 
 @keyframes jackpots {

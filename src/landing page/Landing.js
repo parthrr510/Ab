@@ -62,14 +62,11 @@ const Landing = ({ Auth: { user }, complicatedStuff }) => {
                   <Modal.Title>RuleBook</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <Iframe src={Pdf} frameborder="0"></Iframe>
+                <Iframe src={Pdf} className="rulebook" frameborder="0"></Iframe>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
                   <Button variant="primary" onClick={handleClose}>
-                    XYZ
+                    Close
                   </Button>
                 </Modal.Footer>
               </Modal>
