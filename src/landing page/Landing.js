@@ -10,7 +10,7 @@ import fb_logo from "./fb_logo_final.png";
 import insta_logo from "./insta_logo.png";
 import github_logo from "./github_logo_2.png";
 import { connect } from "react-redux";
-import { complicatedStuff } from "../redux/actions";
+import { complicatedStuff } from "../redux/actions/authActions";
 
 const Landing = ({ Auth: { user }, complicatedStuff }) => {
   const [show, setShow] = useState(false);
