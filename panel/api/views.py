@@ -116,14 +116,26 @@ class Trade(CreateAPIView):
 class Depreciate(APIView):
     permission_classes = [
         FromMSC,
+        AllowAny,
     ]
 
     def get(self, request, *args, **kwargs):
         resources = Resource.objects.all()
         for resource in resources:
-            resource.mscBits = resource.mscBits - Decimal(0.12) * resource.mscBits
-            resource.food = resource.food - Decimal(0.15) * resource.food
-            resource.medicine = resource.medicine - Decimal(0.09) * resource.medicine
+            resource.mscBits = (
+                resource.mscBits - resource.rate_mscb * Decimal(0.01) * resource.mscBits
+            )
+            resource.food = (
+                resource.food - resource.rate_food * Decimal(0.01) * resource.food
+            )
+            resource.medicine = (
+                resource.medicine
+                - resource.rate_medicine * Decimal(0.01) * resource.medicine
+            )
+            resource.technology = (
+                resource.technology
+                - resource.rate_technology * Decimal(0.01) * resource.technology
+            )
             resource.GDP = (
                 resource.mscBits
                 + resource.food * (Decimal(0.75))
