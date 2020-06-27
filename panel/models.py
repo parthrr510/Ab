@@ -35,6 +35,18 @@ class Resource(models.Model):
         max_digits=5,
         decimal_places=2,
     )
+    rate_mscb = models.DecimalField(
+        "rate_mscb", default=0.14, max_digits=4, decimal_places=2
+    )
+    rate_medicine = models.DecimalField(
+        "rate_medicine", default=0.08, max_digits=4, decimal_places=2
+    )
+    rate_food = models.DecimalField(
+        "rate_food", default=0.17, max_digits=4, decimal_places=2
+    )
+    rate_technology = models.DecimalField(
+        "rate_technology", default=0.00, max_digits=4, decimal_places=2
+    )
 
     def __str__(self):
         return f"Resources for team {self.team.team_name}"
