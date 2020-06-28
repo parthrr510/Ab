@@ -13,9 +13,8 @@ import { connect } from "react-redux";
 
 import { complicatedStuff } from "../redux/actions/authActions";
 
-import Iframe from 'react-iframe';
-import Pdf from './abhyudaya_2.pdf';
-
+import Iframe from "react-iframe";
+import Pdf from "./Rule_Book_Final.pdf";
 
 const Landing = ({ Auth: { user }, complicatedStuff }) => {
   const [show, setShow] = useState(false);
@@ -65,7 +64,11 @@ const Landing = ({ Auth: { user }, complicatedStuff }) => {
                   <Modal.Title>RuleBook</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <Iframe src={Pdf} className="rulebook" frameborder="0"></Iframe>
+                  <Iframe
+                    src={Pdf}
+                    className="rulebook"
+                    frameborder="0"
+                  ></Iframe>
                 </Modal.Body>
                 <Modal.Footer>
                   <Button variant="primary" onClick={handleClose}>
