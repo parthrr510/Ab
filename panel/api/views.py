@@ -117,9 +117,14 @@ class Trade(CreateAPIView):
     def perform_create(self, serializer):
         payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
         serializer.save(from_team_id=payload["user_id"])
+        from_team = MyUser.objects.get(id=payload["user_id"])
+        to_team = MyUser.objects.get(id=serializer.data["to_team"])
         incResources(serializer.data)
         decResources(serializer.data, payload["user_id"])
         trade_success(payload["user_id"], serializer.data["to_team"])
+        Notification.objects.create(
+            notification=f"Trade between {from_team.country_name} to {to_team.country_name} was completed successfully!"
+        )
 
 
 class Depreciate(APIView):
