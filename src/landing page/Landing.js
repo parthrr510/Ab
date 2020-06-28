@@ -10,7 +10,12 @@ import fb_logo from "./fb_logo_final.png";
 import insta_logo from "./insta_logo.png";
 import github_logo from "./github_logo_2.png";
 import { connect } from "react-redux";
+
 import { complicatedStuff } from "../redux/actions/authActions";
+
+import Iframe from 'react-iframe';
+import Pdf from './abhyudaya_2.pdf';
+
 
 const Landing = ({ Auth: { user }, complicatedStuff }) => {
   const [show, setShow] = useState(false);
@@ -55,28 +60,16 @@ const Landing = ({ Auth: { user }, complicatedStuff }) => {
                 onClick={handleShow}
                 alt="Scroll Icon"
               />
-              <Modal show={show} onHide={handleClose} className="rulebook">
+              <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title>RuleBook</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+                <Iframe src={Pdf} className="rulebook" frameborder="0"></Iframe>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
                   <Button variant="primary" onClick={handleClose}>
-                    XYZ
+                    Close
                   </Button>
                 </Modal.Footer>
               </Modal>

@@ -1,5 +1,5 @@
 # module level imports
-from panel.models import Resource, Trade
+from panel.models import Resource, Trade, Question, Submission
 
 # rest_framework
 from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
@@ -45,4 +45,25 @@ class TradeSerializer(ModelSerializer):
             "food",
             "technology",
             "medicine",
+        ]
+
+
+class QuestionGETSerializer(ModelSerializer):
+    class Meta:
+        model = Question
+        fields = [
+            "update_no",
+            "region",
+            "update",
+            "image",
+            "question",
+            "pdf",
+        ]
+
+
+class SubmissionSerializer(ModelSerializer):
+    class Meta:
+        model = Submission
+        fields = [
+            "submission",
         ]

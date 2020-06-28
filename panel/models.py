@@ -101,3 +101,49 @@ class Trade(models.Model):
 
     def __str__(self):
         return f"Trade from {self.from_team} to {self.to_team}"
+
+
+class Question(models.Model):
+    region_choices = (
+        ("Asia", "Asia"),
+        ("Europe", "Europe"),
+        ("America", "America"),
+        ("Global", "Global"),
+    )
+    update_no = models.IntegerField(primary_key=True)
+    region = models.CharField(max_length=10, choices=region_choices)
+    update = models.TextField()
+    image = models.ImageField(upload_to="question/", blank=True, null=True)
+    question = models.TextField()
+    pdf = models.FileField(upload_to="files", blank=True, null=True)
+    answer = models.CharField(max_length=40)
+    rate_mscb = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    rate_food = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    rate_technology = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+    rate_medicine = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
+
+    def __str__(self):
+        return f"Question for {self.update_no}"
+
+
+class Submission(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    team_id = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    submission = models.CharField(max_length=40, null=False)
+    timestamp = models.DateTimeField(default=timezone.now)
+    isCorrect = models.BooleanField(default=False)
+    additional_rate_mscBits = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0.00
+    )
+    additional_rate_food = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0.00
+    )
+    additional_rate_technology = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0.00
+    )
+    additional_rate_medicine = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0.00
+    )
+
+    def __str__(self):
+        return f"Submission for {self.question} by {self.team_id}"
