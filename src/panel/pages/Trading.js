@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import React, { useState } from "react";
 import { Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -13,35 +13,33 @@ import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import logo from "../msc_logo.png";
 import notepad from "../note.png";
-
 import arrow from "../back-arrow.png";
 import team from "../team.PNG";
 import { BsChevronLeft } from "react-icons/bs";
 import "./trading.css";
 import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
+import { connect } from "react-redux";
+import { updateResources } from "../../redux/actions";
+import PropTypes from "prop-types";
 
-const Trading = () => {
-  const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
-  const [food, setFood] = useState({
-    resource: "FOOD RESOURCES",
-    donef: "150",
+const Trading = ({
+  resource: { mscBits, food, technology, medicine },
+  updateResources,
+}) => {
+  const [nameBits, setBits] = useState({ resources: "MSC BITS" });
+  const [nameFood, setFood] = useState({
+    resources: "FOOD RESOURCES",
   });
-  const [medicine, setMedicine] = useState({
-    resource: "MEDICINES",
-    donem: "80",
+  const [nameMedicine, setMedicine] = useState({
+    resources: "MEDICINES",
   });
-  const [technology, setTech] = useState({
-    resource: "TECHNOLOGY",
-    donet: "75",
+  const [nameTechnology, setTech] = useState({
+    resources: "TECHNOLOGY",
   });
-  //For change in value function call when extracting data
-
-  //   setBits([{ resource: "res", done: "value" }]);
-  //   setFood([{ resource: "res", done: "value" }]);
-  //   setMedicine([{ resource: "res", done: "value" }]);
-  //   setTech([{ resource: "res", done: "value" }]);
-  // };
+  useEffect(() => {
+    updateResources();
+  }, []);
 
   //for notifications
   const [show, setShow] = useState(false);
@@ -186,13 +184,13 @@ const Trading = () => {
                   marginLeft: "1rem",
                 }}
               >
-                <Box res={bits.resource} val={bits.done}></Box>
+                <Box res={nameBits.resources} val={mscBits}></Box>
               </Col>
               <Col>
-                <Box res={food.resource} val={food.donef}></Box>
+                <Box res={nameFood.resources} val={food}></Box>
               </Col>
               <Col>
-                <Box res={medicine.resource} val={medicine.donem}></Box>
+                <Box res={nameMedicine.resources} val={medicine}></Box>
               </Col>
               <Col
                 style={{
@@ -200,7 +198,7 @@ const Trading = () => {
                   marginRight: "2rem",
                 }}
               >
-                <Box res={technology.resource} val={technology.donet}></Box>
+                <Box res={nameTechnology.resources} val={technology}></Box>
               </Col>
             </Row>
 
@@ -284,48 +282,11 @@ const Trading = () => {
     </div>
   );
 };
-// const trading = {
-//   backgroundColor: "#2d3135",
-//   width: "66rem",
 
-//   textAlign: "left",
-//   margin: "0rem 2rem 2rem 2rem",
-//   border: "1px black solid",
-//   fontFamily: "sans-serif",
-//   color: "white",
-//   lineHeight: "200%",
-//   paddingLeft: "1rem",
-// };
-// const btn = {
-//   marginTop: "15px",
-//   border: "1px solid white",
-//   color: "#fff",
-//   paddingLeft: "1.5rem ",
-//   paddingTop: "0.5rem",
-//   paddingRight: "1.5rem",
-//   paddingBottom: "0.5rem",
-//   zIndex: "20",
-//   backgroundColor: "#2D3135"
-// };
-// const trade = {
-//   textAlign: "center",
-//   marginTop: "3rem",
-//   fontWeight: "600",
-//   fontSize: "26px",
-//   color: "#EB4182",
-//   wordSpacing: "0.7rem",
-// };
-// const input = {
-//   background: "transparent",
-//   border: "1.5px solid #fff",
-//   width: "18rem",
-//   marginTop: "2rem",
-//   marginLeft: "23rem",
-// };
-// const submit = {
-//   backgroundColor: "#A88CCD",
-//   marginTop: "1.5rem",
-//   width: "9rem",
-//   marginBottom: "1rem",
-// };
-export default Trading;
+Trading.propTypes = {
+  resource: PropTypes.object.isRequired,
+};
+const mapStateToProps = (state) => ({
+  resource: state.resource,
+});
+export default connect(mapStateToProps, { updateResources })(Trading);
