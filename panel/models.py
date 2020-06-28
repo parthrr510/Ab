@@ -150,7 +150,7 @@ class Submission(models.Model):
 
 
 class Notification(models.Model):
-    notifications = models.CharField(max_length=100)
+    notification = models.CharField(max_length=100)
 
     def __str__(self):
         return f"Notification {self.id}"

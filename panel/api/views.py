@@ -5,9 +5,10 @@ from .serializers import (
     TradeSerializer,
     QuestionGETSerializer,
     SubmissionSerializer,
+    NotificationSerializer,
 )
 from .permissions import IsOwnerOrReadOnly, FromMSC
-from panel.models import Resource, Trade, Question, Submission
+from panel.models import Resource, Trade, Question, Submission, Notification
 from users.models import MyUser
 
 # other imports
@@ -20,7 +21,7 @@ from django.core.mail import send_mail
 
 # rest_framework
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 
@@ -315,3 +316,11 @@ class SubmissionView(APIView):
                             )
                             resource.save()
                             return Response(serializer.data)
+
+
+class NotificationView(ListAPIView):
+    queryset = Notification.objects.all()
+    permission_classes = [
+        IsAuthenticated,
+    ]
+    serializer_class = NotificationSerializer
