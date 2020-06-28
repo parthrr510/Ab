@@ -147,3 +147,10 @@ class Submission(models.Model):
 
     def __str__(self):
         return f"Submission for {self.question} by {self.team_id}"
+
+
+class Notification(models.Model):
+    notification = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Notification {self.id}"

@@ -5,9 +5,10 @@ from .serializers import (
     TradeSerializer,
     QuestionGETSerializer,
     SubmissionSerializer,
+    NotificationSerializer,
 )
 from .permissions import IsOwnerOrReadOnly, FromMSC
-from panel.models import Resource, Trade, Question, Submission
+from panel.models import Resource, Trade, Question, Submission, Notification
 from users.models import MyUser
 
 # other imports
@@ -20,7 +21,7 @@ from django.core.mail import send_mail
 
 # rest_framework
 from rest_framework.views import APIView
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 
@@ -116,9 +117,14 @@ class Trade(CreateAPIView):
     def perform_create(self, serializer):
         payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
         serializer.save(from_team_id=payload["user_id"])
+        from_team = MyUser.objects.get(id=payload["user_id"])
+        to_team = MyUser.objects.get(id=serializer.data["to_team"])
         incResources(serializer.data)
         decResources(serializer.data, payload["user_id"])
         trade_success(payload["user_id"], serializer.data["to_team"])
+        Notification.objects.create(
+            notification=f"Trade between {from_team.country_name} to {to_team.country_name} was completed successfully!"
+        )
 
 
 class Depreciate(APIView):
@@ -315,3 +321,11 @@ class SubmissionView(APIView):
                             )
                             resource.save()
                             return Response(serializer.data)
+
+
+class NotificationView(ListAPIView):
+    queryset = Notification.objects.all()
+    permission_classes = [
+        IsAuthenticated,
+    ]
+    serializer_class = NotificationSerializer

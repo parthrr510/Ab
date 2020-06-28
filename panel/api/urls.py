@@ -16,4 +16,5 @@ urlpatterns = [
         views.SubmissionView.as_view(),
         name="submit",
     ),
+    path("notifications/", views.NotificationView.as_view(), name="notifications"),
 ]
