@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Nav } from "react-bootstrap";
+import { connect } from "react-redux";
 import Media from "react-bootstrap/Media";
 import logo from "./msc_logo.png";
 import notepad from "./note.png";
 import arrow from "./back-arrow.png";
 import team from "./team.PNG";
 import "./style.css";
-import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
@@ -16,28 +16,30 @@ import { FaWindowMaximize } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
 import { MdUpdate } from "react-icons/md";
 import Leaderboard from "./Components/Leaderboard.js";
-
+import PropTypes from "prop-types";
 import TradeRulebook from "./pages/TradeRulebook";
-// import logo from './logo.svg';
-
 import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
 import Notifications from "./Components/Notifications";
+import { updateResources } from "../redux/actions";
 
-const SideNav = () => {
-  const [bits, setBits] = useState({ resource: "MSC BITS", done: "100" });
-  const [food, setFood] = useState({
-    resource: "FOOD RESOURCES",
-    donef: "150",
+const SideNav = ({
+  resource: { mscBits, food, technology, medicine },
+  updateResources,
+}) => {
+  const [nameBits, setBits] = useState({ resources: "MSC BITS" });
+  const [nameFood, setFood] = useState({
+    resources: "FOOD RESOURCES",
   });
-  const [medicine, setMedicine] = useState({
-    resource: "MEDICINES",
-    donem: "80",
+  const [nameMedicine, setMedicine] = useState({
+    resources: "MEDICINES",
   });
-  const [technology, setTech] = useState({
-    resource: "TECHNOLOGY",
-    donet: "75",
+  const [nameTechnology, setTech] = useState({
+    resources: "TECHNOLOGY",
   });
+  useEffect(() => {
+    updateResources();
+  }, []);
   //for notifications
   const [show, setShow] = useState(false);
 
@@ -188,13 +190,13 @@ const SideNav = () => {
                   marginLeft: "1rem",
                 }}
               >
-                <Box res={bits.resource} val={bits.done}></Box>
+                <Box res={nameBits.resources} val={mscBits}></Box>
               </Col>
               <Col>
-                <Box res={food.resource} val={food.donef}></Box>
+                <Box res={nameFood.resources} val={food}></Box>
               </Col>
               <Col>
-                <Box res={medicine.resource} val={medicine.donem}></Box>
+                <Box res={nameMedicine.resources} val={medicine}></Box>
               </Col>
               <Col
                 style={{
@@ -202,7 +204,7 @@ const SideNav = () => {
                   marginRight: "2rem",
                 }}
               >
-                <Box res={technology.resource} val={technology.donet}></Box>
+                <Box res={nameTechnology.resources} val={technology}></Box>
               </Col>
             </Row>
             <Row className="component">
@@ -233,5 +235,11 @@ const SideNav = () => {
     </div>
   );
 };
+SideNav.propTypes = {
+  resource: PropTypes.object.isRequired,
+};
+const mapStateToProps = (state) => ({
+  resource: state.resource,
+});
 
-export default SideNav;
+export default connect(mapStateToProps, { updateResources })(SideNav);

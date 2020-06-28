@@ -1,1 +1,4 @@
 export const COMPLICATED_STUFF = "COMPLICATED_STUFF";
+export const UPDATE_RESOURCE = "UPDATE_RESOURCE";
+
+export const GET_ERROR = "GET_ERROR";
