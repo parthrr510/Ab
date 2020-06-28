@@ -21,7 +21,7 @@ import TradeRulebook from "./pages/TradeRulebook";
 import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
 import Notifications from "./Components/Notifications";
-import { updateResources } from "../redux/actions/ResourceActions";
+import { updateResources } from "../redux/actions";
 
 const SideNav = ({
   resource: { mscBits, food, technology, medicine },
