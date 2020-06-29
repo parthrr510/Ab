@@ -223,7 +223,7 @@ const Leaderboard = ({ leader, leaderData }) => {
                         <Typography noWrap>{leader.continent}</Typography>
                       </Grid>
                       <Grid>
-                        <Typography>GDP: {leader.GDP} BITS</Typography>
+                        <Typography>GDP- {leader.GDP} BITS</Typography>
                       </Grid>
                     </Grid>
                   </Paper>
