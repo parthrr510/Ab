@@ -1,7 +1,7 @@
-import { UPDATE_RESOURCE, GET_ERROR } from "../types";
+import { GET_NOTIFICATIONS, GET_ERROR } from "../types";
 import axios from "axios";
 
-export const updateResources = () => async (dispatch) => {
+export const getNotifications = () => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
@@ -11,12 +11,12 @@ export const updateResources = () => async (dispatch) => {
 
   try {
     const res = await axios.get(
-      "http://localhost:8000/api/panel/resources/",
+      "http://127.0.0.1:8000/api/panel/notifications/",
       config
     );
-
+    console.log(res.data);
     dispatch({
-      type: UPDATE_RESOURCE,
+      type: GET_NOTIFICATIONS,
       payload: res.data,
     });
   } catch (err) {
