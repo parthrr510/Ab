@@ -66,6 +66,10 @@ def activate(request, uidb64, token):
         user.is_active = True
         user.email_confirmed = True
         user.save()
-        return redirect("register")
+        return redirect("registered")
     else:
         return render(request, "users/account_activation_invalid.html")
+
+
+def post_activation(request):
+    return render(request, "users/post_registeration.html")

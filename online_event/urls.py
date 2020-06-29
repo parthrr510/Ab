@@ -29,6 +29,7 @@ urlpatterns = [
         user_views.account_activation_sent,
         name="account_activation_sent",
     ),
+    path("registered/", user_views.post_activation, name="registered"),
     path("activate/<uidb64>/<token>/", user_views.activate, name="activate"),
     path(
         "api/token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"
