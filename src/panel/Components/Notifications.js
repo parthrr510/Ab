@@ -21,7 +21,10 @@ const Notifications = ({
       <Modal show={show} onHide={handleClose} style={{ borderRadius: "50px" }}>
         <Modal.Header closeButton id="Not">
           <Modal.Title id="Not_title">
-            <MdNotificationsActive onClick={() => getNotifications()} />{" "}
+            <MdNotificationsActive
+              onClick={() => getNotifications()}
+              style={{ cursor: "pointer" }}
+            />{" "}
             Notifications
           </Modal.Title>
         </Modal.Header>
@@ -36,14 +39,6 @@ const Notifications = ({
                   <hr className="line" />
                 </div>
               ))}
-
-            {/* <li className="item">
-              <p className="text">Any Random Notification</p>
-            </li>
-            <hr className="line" />
-            <li className="item">
-              <p className="text">Any Random Notification</p> */}
-            {/* </li> */}
           </ul>
         </Modal.Body>
       </Modal>

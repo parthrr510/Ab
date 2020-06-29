@@ -22,10 +22,13 @@ import Box from "./Components/Box/Box.js";
 import Updates from "./Components/Updates.js";
 import Notifications from "./Components/Notifications";
 import { updateResources } from "../redux/actions";
+import { leaderData } from "../redux/actions";
 
 const SideNav = ({
   resource: { mscBits, food, technology, medicine },
   updateResources,
+  leader,
+  leaderData,
 }) => {
   const [nameBits, setBits] = useState({ resources: "MSC BITS" });
   const [nameFood, setFood] = useState({
@@ -39,6 +42,7 @@ const SideNav = ({
   });
   useEffect(() => {
     updateResources();
+    leaderData();
   }, []);
   //for notifications
   const [show, setShow] = useState(false);
@@ -100,7 +104,7 @@ const SideNav = ({
                 width={55}
                 height={55}
                 className="team"
-                src={team}
+                src={leader.flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -108,8 +112,8 @@ const SideNav = ({
                 }}
               />
               <Media.Body className="team">
-                <h5>Team 1</h5>
-                <p>Rank 1</p>
+                <h5>{leader.country}</h5>
+                <p>{leader.continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -237,9 +241,13 @@ const SideNav = ({
 };
 SideNav.propTypes = {
   resource: PropTypes.object.isRequired,
+  leader: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({
   resource: state.resource,
+  leader: state.leader,
 });
 
-export default connect(mapStateToProps, { updateResources })(SideNav);
+export default connect(mapStateToProps, { updateResources, leaderData })(
+  SideNav
+);
