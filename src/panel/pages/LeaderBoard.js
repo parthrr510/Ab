@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Media from "react-bootstrap/Media";
@@ -15,13 +15,13 @@ import { RiHome2Line } from "react-icons/ri";
 import { FaDiscord } from "react-icons/fa";
 import logo from "../msc_logo.png";
 import notepad from "../note.png";
-
 import arrow from "../back-arrow.png";
-import team from "../team.PNG";
-import flag from "../flag.PNG";
 import "./lead_style.css";
 import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
+import { connect } from "react-redux";
+import { leaderData } from "../../redux/actions/LeaderActions";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     width: "5rem",
   },
 }));
-function ComLeaderboard() {
+const Leaderboard = ({ leader, leaderData }) => {
   const classes = useStyles();
 
   //for notifications
@@ -55,6 +55,10 @@ function ComLeaderboard() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    leaderData();
+  }, []);
 
   //for trade rulebook
   const [showBook, setShowBook] = useState(false);
@@ -103,7 +107,7 @@ function ComLeaderboard() {
                 width={55}
                 height={55}
                 className="team"
-                src={team}
+                src={leader.flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -111,8 +115,8 @@ function ComLeaderboard() {
                 }}
               />
               <Media.Body className="team">
-                <h5>Team 1</h5>
-                <p>Rank 1</p>
+                <h5>{leader.country}</h5>
+                <p>{leader.continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -208,18 +212,18 @@ function ComLeaderboard() {
                         }}
                       >
                         <Avatar variant="square">
-                          <img src={flag} className="flag" alt="" />
+                          <img src={leader.flag} className="flag" alt="" />
                         </Avatar>
                         <Grid>
-                          <Typography noWrap>COUNTRY NAME</Typography>
+                          <Typography noWrap>{leader.country}</Typography>
                         </Grid>
                       </Grid>
 
                       <Grid item>
-                        <Typography noWrap>RANK 6</Typography>
+                        <Typography noWrap>{leader.continent}</Typography>
                       </Grid>
                       <Grid>
-                        <Typography>GDP-X BITS</Typography>
+                        <Typography>GDP: {leader.GDP} BITS</Typography>
                       </Grid>
                     </Grid>
                   </Paper>
@@ -367,5 +371,12 @@ function ComLeaderboard() {
       </div>
     </div>
   );
-}
-export default ComLeaderboard;
+};
+Leaderboard.propTypes = {
+  leader: PropTypes.array.isRequired,
+};
+const mapStateToProps = (state) => ({
+  leader: state.leader,
+});
+
+export default connect(mapStateToProps, { leaderData })(Leaderboard);
