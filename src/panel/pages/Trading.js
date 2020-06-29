@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import React, { useState } from "react";
 import { Row, Col, Nav, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
@@ -21,11 +20,14 @@ import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
 import { connect } from "react-redux";
 import { updateResources } from "../../redux/actions";
+import { leaderData } from "../../redux/actions";
 import PropTypes from "prop-types";
 
 const Trading = ({
   resource: { mscBits, food, technology, medicine },
   updateResources,
+  leader,
+  leaderData,
 }) => {
   const [nameBits, setBits] = useState({ resources: "MSC BITS" });
   const [nameFood, setFood] = useState({
@@ -39,6 +41,7 @@ const Trading = ({
   });
   useEffect(() => {
     updateResources();
+    leaderData();
   }, []);
 
   //for notifications
@@ -94,7 +97,7 @@ const Trading = ({
                 width={55}
                 height={55}
                 className="team"
-                src={team}
+                src={leader.flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -102,8 +105,8 @@ const Trading = ({
                 }}
               />
               <Media.Body className="team">
-                <h5>Team 1</h5>
-                <p>Rank 1</p>
+                <h5>{leader.country}</h5>
+                <p>{leader.continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -285,8 +288,12 @@ const Trading = ({
 
 Trading.propTypes = {
   resource: PropTypes.object.isRequired,
+  leader: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({
   resource: state.resource,
+  leader: state.leader,
 });
-export default connect(mapStateToProps, { updateResources })(Trading);
+export default connect(mapStateToProps, { updateResources, leaderData })(
+  Trading
+);
