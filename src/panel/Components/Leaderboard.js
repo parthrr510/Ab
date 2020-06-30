@@ -31,30 +31,40 @@ const AlignItemsList = ({ rankings: { rankings }, globalRankings }) => {
   return (
     <List className={classes.root}>
       {rankings &&
-        rankings.map((rank, index) => (
-          <div>
-            <ListItem alignItems="flex-start">
-              <ListItemAvatar className="ListItemAvatars">
-                <Avatar alt="I" src={rank.flag} className="ListItemAvatar" />
-              </ListItemAvatar>
-              <ListItemText
-                primary={rank.country}
-                secondary={
-                  <React.Fragment>
-                    <Typography
-                      component="span"
-                      variant="body2"
-                      className={classes.inline}
-                    >
-                      Rank {index + 1}
-                    </Typography>
-                  </React.Fragment>
-                }
-              />
-            </ListItem>
-            <Divider variant="inset" component="li" />
-          </div>
-        ))}
+        rankings.map((rank, index) => {
+          if (index < 3) {
+            return (
+              <div>
+                <ListItem alignItems="flex-start">
+                  <ListItemAvatar className="ListItemAvatars">
+                    <Avatar
+                      alt="I"
+                      src={rank.flag}
+                      className="ListItemAvatar"
+                    />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={rank.country}
+                    secondary={
+                      <React.Fragment>
+                        <Typography
+                          component="span"
+                          variant="body2"
+                          className={classes.inline}
+                        >
+                          Rank {index + 1}
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </div>
+            );
+          } else {
+            return <div></div>;
+          }
+        })}
 
       {/* <ListItem alignItems="flex-start">
         <ListItemAvatar className="ListItemAvatars">
