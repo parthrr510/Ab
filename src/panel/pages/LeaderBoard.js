@@ -21,6 +21,7 @@ import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
 import { connect } from "react-redux";
 import { leaderData } from "../../redux/actions/LeaderActions";
+import { globalRankings } from "../../redux/actions/RankingActions";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +48,12 @@ const useStyles = makeStyles((theme) => ({
     width: "5rem",
   },
 }));
-const Leaderboard = ({ leader, leaderData }) => {
+const Leaderboard = ({
+  leader,
+  leaderData,
+  rankings: { rankings },
+  globalRankings,
+}) => {
   const classes = useStyles();
 
   //for notifications
@@ -58,6 +64,7 @@ const Leaderboard = ({ leader, leaderData }) => {
 
   useEffect(() => {
     leaderData();
+    globalRankings();
   }, []);
 
   //for trade rulebook
@@ -228,7 +235,39 @@ const Leaderboard = ({ leader, leaderData }) => {
                     </Grid>
                   </Paper>
                   <p className={classes.heading}>GLOBAL RANKINGS</p>
-                  <Paper className={classes.paper}>
+
+                  {rankings &&
+                    rankings.map((rank, index) => (
+                      <Paper className={classes.paper}>
+                        <Grid
+                          container
+                          wrap="nowrap"
+                          spacing={1}
+                          style={{ justifyContent: "space-between" }}
+                        >
+                          <Grid
+                            item
+                            style={{ display: "flex", flexDirection: "row" }}
+                          >
+                            <Avatar variant="square" className={classes.avatar}>
+                              <img src={rank.flag} alt="I" />
+                            </Avatar>
+                            <Grid>
+                              <Typography noWrap>{rank.country}</Typography>
+                            </Grid>
+                          </Grid>
+
+                          <Grid item>
+                            <Typography noWrap>RANK {index + 1}</Typography>
+                          </Grid>
+                          <Grid>
+                            <Typography>GDP-{rank.GDP} BITS</Typography>
+                          </Grid>
+                        </Grid>
+                      </Paper>
+                    ))}
+
+                  {/* <Paper className={classes.paper}>
                     <Grid
                       container
                       wrap="nowrap"
@@ -335,34 +374,7 @@ const Leaderboard = ({ leader, leaderData }) => {
                         <Typography>GDP-X BITS</Typography>
                       </Grid>
                     </Grid>
-                  </Paper>
-                  <Paper className={classes.paper}>
-                    <Grid
-                      container
-                      wrap="nowrap"
-                      spacing={1}
-                      style={{ justifyContent: "space-between" }}
-                    >
-                      <Grid
-                        item
-                        style={{ display: "flex", flexDirection: "row" }}
-                      >
-                        <Avatar variant="square" className={classes.avatar}>
-                          W
-                        </Avatar>
-                        <Grid>
-                          <Typography noWrap>COUNTRY NAME</Typography>
-                        </Grid>
-                      </Grid>
-
-                      <Grid item>
-                        <Typography noWrap>RANK 6</Typography>
-                      </Grid>
-                      <Grid>
-                        <Typography>GDP-X BITS</Typography>
-                      </Grid>
-                    </Grid>
-                  </Paper>
+                  </Paper> */}
                 </div>
               </Col>
             </Row>
@@ -374,9 +386,13 @@ const Leaderboard = ({ leader, leaderData }) => {
 };
 Leaderboard.propTypes = {
   leader: PropTypes.array.isRequired,
+  rankings: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({
   leader: state.leader,
+  rankings: state.rankings,
 });
 
-export default connect(mapStateToProps, { leaderData })(Leaderboard);
+export default connect(mapStateToProps, { leaderData, globalRankings })(
+  Leaderboard
+);
