@@ -1,0 +1,80 @@
+@font-face {
+    font-family: alpha;
+    /* prettier-ignore */
+    src: url(../fonts/AlphaCentauri\ 500.ttf);
+  }
+
+.update{
+    /* background-color: #2d3135; */
+    background-color: #23252a;
+    min-height: 100vh;
+}
+.card{
+    /* border: 2px rgb(207, 45, 45) solid; */
+    background-color: #2d3135;
+    margin-bottom: 4rem;
+}
+
+.update-head{
+    text-align: center !important;
+    font-size: 3rem;
+    color: #FF2482;
+    width: 100%;
+    font-family: alpha;
+    padding-bottom: 1rem;
+}
+#updates{
+    min-height: 40vh;
+    /* border-bottom: 2px black solid; */
+    width: 100%;
+    text-align: justify !important;
+    color: #8a8d92 ;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+#question{
+    min-height: 40vh;
+    /* border-bottom: 2px black solid; */
+    width: 100%;
+    text-align: justify !important;
+    color: #8a8d92 ;
+    padding-top: 1rem;
+    padding-left: 1rem;
+
+}
+#image{
+    min-height:40vh;
+    /* border-bottom: 2px black solid; */
+    width: 100%;
+    /* border-bottom: 2px black solid; */
+    color: #8a8d92 ;
+    padding-top: 1rem;
+
+}
+#pdf{
+    min-height:8vh;
+    width: 100%;
+    /* border-bottom: 2px black solid; */
+    color: #8a8d92 ;
+    padding-top: 1rem;
+
+
+}
+#input-box{
+    width: 50%;
+    color: #8a8d92 ;
+    padding-top: 1rem;
+    background: transparent;
+    border-bottom: 2px #FF2482 solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+#submit-btn{
+    width: 25%;
+    margin-top: 0.5rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    height: 2.5rem;
+}
