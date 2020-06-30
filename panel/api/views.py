@@ -6,6 +6,7 @@ from .serializers import (
     QuestionGETSerializer,
     SubmissionSerializer,
     NotificationSerializer,
+    TeamSerializer,
 )
 from .permissions import IsOwnerOrReadOnly, FromMSC
 from panel.models import Resource, Trade, Question, Submission, Notification
@@ -329,3 +330,11 @@ class NotificationView(ListAPIView):
         IsAuthenticated,
     ]
     serializer_class = NotificationSerializer
+
+
+class TeamListAPIView(ListAPIView):
+    queryset = MyUser.objects.all()
+    permission_classes = [
+        IsAuthenticated,
+    ]
+    serializer_class = TeamSerializer

@@ -1,5 +1,6 @@
 # module level imports
 from panel.models import Resource, Trade, Question, Submission, Notification
+from users.models import MyUser
 
 # rest_framework
 from rest_framework.serializers import ModelSerializer, CharField, SerializerMethodField
@@ -74,4 +75,15 @@ class NotificationSerializer(ModelSerializer):
         model = Notification
         fields = [
             "notification",
+        ]
+
+
+class TeamSerializer(ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = [
+            "id",
+            "team_name",
+            "country_name",
+            "continent",
         ]
