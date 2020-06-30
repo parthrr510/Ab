@@ -1,7 +1,7 @@
-import { UPDATE_RESOURCE, GET_ERROR } from "../types";
+import { TRADING_COUNTRIES, GET_ERROR } from "../types";
 import axios from "axios";
 
-export const updateResources = () => async (dispatch) => {
+export const tradingCountries = (tradeData) => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
@@ -10,13 +10,14 @@ export const updateResources = () => async (dispatch) => {
   };
 
   try {
-    const res = await axios.get(
-      "http://localhost:8000/api/panel/resources/",
+    const res = await axios.post(
+      "http://127.0.0.1:8000/api/panel/trade/",
+      tradeData,
       config
     );
 
     dispatch({
-      type: UPDATE_RESOURCE,
+      type: TRADING_COUNTRIES,
       payload: res.data,
     });
   } catch (err) {
