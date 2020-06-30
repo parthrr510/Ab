@@ -18,4 +18,5 @@ urlpatterns = [
     ),
     path("notifications/", views.NotificationView.as_view(), name="notifications"),
     path("teams/", views.TeamListAPIView.as_view(), name="teams"),
+    path("my-team/", views.MyTeamAPIView.as_view(), name="my-teams"),
 ]

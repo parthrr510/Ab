@@ -338,3 +338,13 @@ class TeamListAPIView(ListAPIView):
         IsAuthenticated,
     ]
     serializer_class = TeamSerializer
+
+
+class MyTeamAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        payload = jwt_decoder(self.request.headers["Authorization"].split()[1])
+        user = Resource.objects.get(team_id=payload["user_id"])
+        serializer = LeaderBoardSerializer(user, context={"request": request})
+        return Response(serializer.data)
