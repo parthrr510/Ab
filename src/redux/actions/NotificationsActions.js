@@ -5,7 +5,7 @@ export const getNotifications = () => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNTI1MTI2LCJqdGkiOiJkNDlmZWMzZTUzODQ0NTFkYWEwN2ZjMmRjYTkyZGI3NyIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.DWD1tRIaC_YCA3dZaYBIo72bVPFnHK8aGKSRpPbf2Cs",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNTMzMDk5LCJqdGkiOiI0MjE5ZmRkZWM2M2Q0YzNjOTY0ZGQxZDUyYjBkM2JkZCIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.RamS8Fb-P5BpgLvvdVgq7bb0ObH5T65hgZUInaaRVI4",
     },
   };
 
