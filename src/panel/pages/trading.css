@@ -149,6 +149,7 @@
   /* z-index: 20; */
   background-color: #2d3135;
   border-radius: 10px 10px 10px 10px;
+  width: 100%;
 }
 
 .trade {
@@ -228,9 +229,8 @@
   color: #8a8d92;
 }
 
-.btn1 {
-  padding-right: 0px;
-  /* margin-right: 20px; */
+.btn1:hover {
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 1350px) {

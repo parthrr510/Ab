@@ -256,6 +256,7 @@ const Trading = ({
                       <select
                         name="resources"
                         id="resources"
+                        className="btn1"
                         label="Select Resources"
                         value={name}
                         onChange={assign}
@@ -272,6 +273,7 @@ const Trading = ({
                       <select
                         name="countries"
                         id="countries"
+                        className="btn1"
                         label="Country"
                         value={name}
                         onChange={assignCountry}
