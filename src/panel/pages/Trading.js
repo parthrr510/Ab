@@ -305,7 +305,6 @@ const Trading = ({
                       <Button className="submit" onClick={getValue}>
                         Submit
                       </Button>
-                      {console.log(body)}
                     </Col>
                     <Col sm={5}></Col>
                   </Row>
