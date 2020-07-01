@@ -54,7 +54,7 @@ const Trading = ({
   useEffect(() => {
     updateResources();
     leaderData();
-    tradingCountries();
+    // tradingCountries();
   }, []);
 
   // const assign = (value, e) => {
@@ -75,10 +75,11 @@ const Trading = ({
     setInputTrade(e.target.value);
     console.log(e.target.value);
   };
-  const handleSelect = (e, value) => {
-    console.log(e, value);
-    setName(e);
+  const getValue = () => {
+    setBody({ ...body, [name]: inputTrade });
+    tradingCountries(body);
   };
+
   //for notifications
   const [show, setShow] = useState(false);
 
@@ -249,32 +250,6 @@ const Trading = ({
                       <h4 className="trade-head">TRADING</h4>
                     </Col>
                     <Col sm={2}>
-                      {/* <Dropdown>
-                        <Dropdown.Toggle
-                          id="dropdown-basic"
-                          className="btn1"
-                          variant="secondary"
-                        >
-                          Select Resource
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          <Dropdown.Item
-                            value="MSC Bits"
-                            onSelect={handleSelect}
-                          >
-                            MSC Bits
-                          </Dropdown.Item>
-                          <Dropdown.Item value="Technology">
-                            Technology
-                          </Dropdown.Item>
-                          <Dropdown.Item value="Medicine">
-                            Medicine
-                          </Dropdown.Item>
-                          <Dropdown.Item value="Food Resources">
-                            Food Resources
-                          </Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown> */}
                       <select
                         name="resources"
                         id="resources"
@@ -291,21 +266,6 @@ const Trading = ({
                     </Col>
                     <Col sm={1}></Col>
                     <Col sm={2}>
-                      {/* <Dropdown>
-                        <Dropdown.Toggle
-                          id="dropdown-basic"
-                          className="btn1"
-                          variant="secondary"
-                        >
-                          Country
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                          <Dropdown.Item value="India">India</Dropdown.Item>
-                          <Dropdown.Item value="LAX">LAX</Dropdown.Item>
-                          <Dropdown.Item value="UAE">UAE</Dropdown.Item>
-                          <Dropdown.Item value="Nepal">Nepal</Dropdown.Item>
-                        </Dropdown.Menu>
-                      </Dropdown> */}
                       <select
                         name="countries"
                         id="countries"
@@ -342,7 +302,10 @@ const Trading = ({
                     <Col sm={5}></Col>
                     <Col sm={2}>
                       {" "}
-                      <Button className="submit">Submit</Button>
+                      <Button className="submit" onClick={getValue}>
+                        Submit
+                      </Button>
+                      {console.log(body)}
                     </Col>
                     <Col sm={5}></Col>
                   </Row>
