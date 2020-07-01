@@ -9,7 +9,7 @@ import TradingReducer from "./TradingReducer";
 export default combineReducers({
   //reducers!!
   resource: ResourceReducer,
-  leader: LeaderReducer,
+  team: LeaderReducer,
   notifications: NotificationsReducer,
   rankings: RankingReducer,
   trade: TradingReducer,

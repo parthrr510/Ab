@@ -13,10 +13,10 @@ export default (state = initialState, action) => {
     case LEADERBOARD_DATA:
       return {
         ...state,
-        country: action.payload[0].country,
-        continent: action.payload[0].continent,
-        flag: action.payload[0].flag,
-        GDP: action.payload[0].GDP,
+        country: action.payload.country,
+        continent: action.payload.continent,
+        flag: action.payload.flag,
+        GDP: action.payload.GDP,
       };
     case GET_ERROR:
       return {
