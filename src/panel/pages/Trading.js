@@ -76,8 +76,7 @@ const Trading = ({
     console.log(e.target.value);
   };
   const getValue = () => {
-    setBody({ ...body, [name]: inputTrade });
-    tradingCountries(body);
+    setBody({ ...body, [name]: inputTrade }, () => tradingCountries(body));
   };
 
   //for notifications
@@ -305,7 +304,6 @@ const Trading = ({
                       <Button className="submit" onClick={getValue}>
                         Submit
                       </Button>
-                      {console.log(body)}
                     </Col>
                     <Col sm={5}></Col>
                   </Row>
