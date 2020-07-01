@@ -27,7 +27,7 @@ import PropTypes from "prop-types";
 const Trading = ({
   resource: { mscBits, food, technology, medicine },
   updateResources,
-  leader,
+  team: { country, continent, flag, GDP },
   leaderData,
   trade,
   tradingCountries,
@@ -136,7 +136,7 @@ const Trading = ({
                 width={55}
                 height={55}
                 className="team"
-                src={leader.flag}
+                src={flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -144,8 +144,8 @@ const Trading = ({
                 }}
               />
               <Media.Body className="team">
-                <h5>{leader.country}</h5>
-                <p>{leader.continent}</p>
+                <h5>{country}</h5>
+                <p>{continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -323,11 +323,10 @@ const Trading = ({
 
 Trading.propTypes = {
   resource: PropTypes.object.isRequired,
-  leader: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({
   resource: state.resource,
-  leader: state.leader,
+  team: state.team,
   trade: state.trade,
 });
 export default connect(mapStateToProps, {

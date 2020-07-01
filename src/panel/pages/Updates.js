@@ -19,15 +19,20 @@ import arrow from "../back-arrow.png";
 import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
 import "./update.css";
-import team from "../team.PNG";
 
-const Updates = ({}) => {
+import { connect } from "react-redux";
+import { leaderData } from "../../redux/actions/LeaderActions";
+
+const Updates = ({ team: { country, continent, flag, GDP }, leaderData }) => {
   //for notifications
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    leaderData();
+  }, []);
   //for trade rulebook
   const [showBook, setShowBook] = useState(false);
 
@@ -74,7 +79,7 @@ const Updates = ({}) => {
                 width={55}
                 height={55}
                 className="team"
-                src={team}
+                src={flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -82,8 +87,8 @@ const Updates = ({}) => {
                 }}
               />
               <Media.Body className="team">
-                <h5>Team 1</h5>
-                <p>Rank 1</p>
+                <h5>{country}</h5>
+                <p>{continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -200,4 +205,7 @@ const Updates = ({}) => {
     </div>
   );
 };
-export default Updates;
+const mapStateToProps = (state) => ({
+  team: state.team,
+});
+export default connect(mapStateToProps, { leaderData })(Updates);
