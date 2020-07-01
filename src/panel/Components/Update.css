@@ -23,16 +23,26 @@
   text-align: left;
 }
 
-@media only screen and (min-width: 1024px) {
-
-  .Update{
+@media only screen and (min-width: 1023px) {
+  .Update {
     width: 52vw;
   }
 }
 
-/* @media only screen and (min-width: 1221px) and (max-width: 1320px) {
-
-  .Update{
-    width: 52vw;
+@media only screen and (min-width: 1024px) and (max-width: 1220px) {
+  .Update {
+    height: 68vh;
   }
-} */
+}
+
+@media only screen and (min-width: 1221px) and (max-width: 2000px) {
+  .Update {
+    height: 50vh;
+  }
+}
+
+@media only screen and (min-width: 2001px) {
+  .Update {
+    height: 70vh;
+  }
+}
