@@ -65,9 +65,7 @@ class QuestionGETSerializer(ModelSerializer):
 class SubmissionSerializer(ModelSerializer):
     class Meta:
         model = Submission
-        fields = [
-            "submission",
-        ]
+        fields = ["submission", "isCorrect"]
 
 
 class NotificationSerializer(ModelSerializer):

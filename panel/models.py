@@ -115,7 +115,7 @@ class Question(models.Model):
     update = models.TextField()
     image = models.ImageField(upload_to="question/", blank=True, null=True)
     question = models.TextField()
-    pdf = models.FileField(upload_to="files", blank=True, null=True)
+    pdf = models.URLField(max_length=200, blank=True, null=True)
     answer = models.CharField(max_length=40)
     rate_mscb = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
     rate_food = models.DecimalField(max_digits=5, decimal_places=2, default=0.00)
