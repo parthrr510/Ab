@@ -202,7 +202,7 @@ const Leaderboard = ({
               </Col>
             </Row>
             <Row>
-              <Col sm={12} className="component1">
+              <Col sm={12} className="component1 content-section">
                 <div className={classes.root}>
                   <Paper className={classes.paper}>
                     <Grid
