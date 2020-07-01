@@ -77,8 +77,11 @@ const Trading = ({
   };
   const getValue = () => {
     setBody({ ...body, [name]: inputTrade });
-    tradingCountries(body);
+    setInputTrade(" ");
   };
+  useEffect(() => {
+    tradingCountries(body);
+  }, [body]);
 
   //for notifications
   const [show, setShow] = useState(false);
@@ -305,7 +308,6 @@ const Trading = ({
                       <Button className="submit" onClick={getValue}>
                         Submit
                       </Button>
-                      {console.log(body)}
                     </Col>
                     <Col sm={5}></Col>
                   </Row>
