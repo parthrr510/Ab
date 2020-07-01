@@ -26,18 +26,12 @@ import team from "../team.PNG";
 
 // import ScrollArea from 'react-scrollbar';
 
-const Updates = ({
-  
-}) => {
-
-
+const Updates = ({}) => {
   //for notifications
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  
 
   //for trade rulebook
   const [showBook, setShowBook] = useState(false);
@@ -45,8 +39,6 @@ const Updates = ({
   const handleCloseBook = () => setShowBook(false);
   const handleShowBook = () => setShowBook(true);
   return (
-    
-
     <div>
       <div className="container">
         <div className="error">Please use our desktop site</div>
@@ -95,7 +87,7 @@ const Updates = ({
                 }}
               />
               <Media.Body className="team">
-              <h5>Team 1</h5>
+                <h5>Team 1</h5>
                 <p>Rank 1</p>
               </Media.Body>
             </Media>
@@ -176,51 +168,50 @@ const Updates = ({
             </Row>
             <Row>
               <Col sm={12} className="component4">
-              <div>
-      <Row >
-      
-        <Col sm={12} className="card">
-        {/* <ReactScrollbar> */}
-        {/* <ScrollArea
+                <div>
+                  <Row>
+                    <Col sm={12} className="card content-section">
+                      {/* <ReactScrollbar> */}
+                      {/* <ScrollArea
         
         speed={0.8}
             // className="area"
             contentClassName="content"
             horizontal={false}
         > */}
-        <Row>
-          <div id="updates">UPDATE</div>
-        </Row>
-        <Row>
-          <div id="question">QUESTION</div>
-        </Row>
-        <Row>
-          <div id="image">Upload IMAGE Here</div>
-        </Row>
-        <Row>
-          <div id="pdf">Upload PDF here</div>
-        </Row>
-        <Row>
-          <Col sm={6} style={{paddingTop:"1rem", paddingBottom:"5rem"}}>
-          <input type="text" id="input-box"></input>
-          </Col>
-          <Col sm={6} style={{paddingTop:"1rem"}}>
-          <input type="submit" id="submit-btn"></input>
-          </Col>
-          
-        </Row>
-        {/* </ScrollArea> */}
-        {/* </ReactScrollbar> */}
-        </Col>
-        
-
-      </Row>
-    </div>
+                      <Row>
+                        <div id="updates">UPDATE</div>
+                      </Row>
+                      <Row>
+                        <div id="question">QUESTION</div>
+                      </Row>
+                      <Row>
+                        <div id="image">Upload IMAGE Here</div>
+                      </Row>
+                      <Row>
+                        <div id="pdf">Upload PDF here</div>
+                      </Row>
+                      <Row>
+                        <Col
+                          sm={6}
+                          style={{ paddingTop: "1rem", paddingBottom: "5rem" }}
+                        >
+                          <input type="text" id="input-box"></input>
+                        </Col>
+                        <Col sm={6} style={{ paddingTop: "1rem" }}>
+                          <input type="submit" id="submit-btn"></input>
+                        </Col>
+                      </Row>
+                      {/* </ScrollArea> */}
+                      {/* </ReactScrollbar> */}
+                    </Col>
+                  </Row>
+                </div>
               </Col>
             </Row>
-            </Col>
-            </Row>
-            </div>
+          </Col>
+        </Row>
+      </div>
     </div>
   );
 };
