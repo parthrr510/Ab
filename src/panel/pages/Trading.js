@@ -21,6 +21,7 @@ import TradeRulebook from "../pages/TradeRulebook";
 import { connect } from "react-redux";
 import { updateResources } from "../../redux/actions";
 import { leaderData } from "../../redux/actions";
+import { tradingCountries } from "../../redux/actions";
 import PropTypes from "prop-types";
 
 const Trading = ({
@@ -28,6 +29,8 @@ const Trading = ({
   updateResources,
   leader,
   leaderData,
+  trade,
+  tradingCountries,
 }) => {
   const [nameBits, setBits] = useState({ resources: "MSC BITS" });
   const [nameFood, setFood] = useState({
@@ -39,11 +42,43 @@ const Trading = ({
   const [nameTechnology, setTech] = useState({
     resources: "TECHNOLOGY",
   });
+  const [body, setBody] = useState({
+    to_team: null,
+    mscBits: null,
+    food: null,
+    technology: null,
+    medicine: null,
+  });
+
+  const [name, setName] = useState("");
   useEffect(() => {
     updateResources();
     leaderData();
+    tradingCountries();
   }, []);
 
+  // const assign = (value, e) => {
+  //   setName(value, e);
+  //   console.log(value, e);
+  // };
+  const assign = (e) => {
+    setName(e.target.value);
+    console.log(e.target.value);
+  };
+  const assignCountry = (e) => {
+    setName(e.target.value);
+    console.log(e.target.value);
+  };
+
+  const [inputTrade, setInputTrade] = useState("");
+  const onChangeHandler = (e) => {
+    setInputTrade(e.target.value);
+    console.log(e.target.value);
+  };
+  const handleSelect = (e, value) => {
+    console.log(e, value);
+    setName(e);
+  };
   //for notifications
   const [show, setShow] = useState(false);
 
@@ -214,7 +249,7 @@ const Trading = ({
                       <h4 className="trade-head">TRADING</h4>
                     </Col>
                     <Col sm={2}>
-                      <Dropdown>
+                      {/* <Dropdown>
                         <Dropdown.Toggle
                           id="dropdown-basic"
                           className="btn1"
@@ -223,7 +258,10 @@ const Trading = ({
                           Select Resource
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                          <Dropdown.Item value="MSC Bits">
+                          <Dropdown.Item
+                            value="MSC Bits"
+                            onSelect={handleSelect}
+                          >
                             MSC Bits
                           </Dropdown.Item>
                           <Dropdown.Item value="Technology">
@@ -236,11 +274,24 @@ const Trading = ({
                             Food Resources
                           </Dropdown.Item>
                         </Dropdown.Menu>
-                      </Dropdown>
+                      </Dropdown> */}
+                      <select
+                        name="resources"
+                        id="resources"
+                        label="Select Resources"
+                        value={name}
+                        onChange={assign}
+                      >
+                        <option value="">Resources</option>
+                        <option value="mscBits">MSC Bits</option>
+                        <option value="food">Food Resources</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="technology">Technology</option>
+                      </select>
                     </Col>
                     <Col sm={1}></Col>
                     <Col sm={2}>
-                      <Dropdown>
+                      {/* <Dropdown>
                         <Dropdown.Toggle
                           id="dropdown-basic"
                           className="btn1"
@@ -254,7 +305,20 @@ const Trading = ({
                           <Dropdown.Item value="UAE">UAE</Dropdown.Item>
                           <Dropdown.Item value="Nepal">Nepal</Dropdown.Item>
                         </Dropdown.Menu>
-                      </Dropdown>
+                      </Dropdown> */}
+                      <select
+                        name="countries"
+                        id="countries"
+                        label="Country"
+                        value={name}
+                        onChange={assignCountry}
+                      >
+                        <option value="">Country</option>
+                        <option value="India">India</option>
+                        <option value="LAX">LAX</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Nepal">Nepal</option>
+                      </select>
                     </Col>
                     <Col sm={1}></Col>
                   </Row>
@@ -265,7 +329,13 @@ const Trading = ({
                   </Row>
                   <Row>
                     <Col sm={12}>
-                      <input type="number" className="input"></input>
+                      <input
+                        type="number"
+                        className="input"
+                        name={name}
+                        value={inputTrade}
+                        onChange={onChangeHandler}
+                      ></input>
                     </Col>
                   </Row>
                   <Row>
@@ -293,7 +363,10 @@ Trading.propTypes = {
 const mapStateToProps = (state) => ({
   resource: state.resource,
   leader: state.leader,
+  trade: state.trade,
 });
-export default connect(mapStateToProps, { updateResources, leaderData })(
-  Trading
-);
+export default connect(mapStateToProps, {
+  updateResources,
+  leaderData,
+  tradingCountries,
+})(Trading);
