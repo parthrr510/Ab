@@ -27,7 +27,7 @@ import { leaderData } from "../redux/actions";
 const SideNav = ({
   resource: { mscBits, food, technology, medicine },
   updateResources,
-  leader,
+  team: { country, continent, flag, GDP },
   leaderData,
 }) => {
   const [nameBits, setBits] = useState({ resources: "MSC BITS" });
@@ -104,7 +104,7 @@ const SideNav = ({
                 width={55}
                 height={55}
                 className="team"
-                src={leader.flag}
+                src={flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -112,8 +112,8 @@ const SideNav = ({
                 }}
               />
               <Media.Body className="team">
-                <h5>{leader.country}</h5>
-                <p>{leader.continent}</p>
+                <h5>{country}</h5>
+                <p>{continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -241,11 +241,10 @@ const SideNav = ({
 };
 SideNav.propTypes = {
   resource: PropTypes.object.isRequired,
-  leader: PropTypes.array.isRequired,
 };
 const mapStateToProps = (state) => ({
   resource: state.resource,
-  leader: state.leader,
+  team: state.team,
 });
 
 export default connect(mapStateToProps, { updateResources, leaderData })(
