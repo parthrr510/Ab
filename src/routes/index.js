@@ -17,7 +17,7 @@ const Routes = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/panel" component={SideNav} />
         <Route exact path="/leaderboard" component={LeaderBoard} />
-        <Route exact path="/updtes" component={Updates} />
+        <Route exact path="/updates" component={Updates} />
         <Route exact path="/trading" component={Trading} />
 
         <Route exact path="/discord" component={Discord} />
