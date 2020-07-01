@@ -3,7 +3,7 @@ import "./Update.css";
 
 const Updates = () => {
   return (
-    <div className="Update">
+    <div className="Update content-section">
       <h1>UPDATES</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit Voluptatum

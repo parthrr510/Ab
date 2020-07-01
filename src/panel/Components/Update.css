@@ -1,5 +1,5 @@
 .Update {
-  background-color: #2d3135;
+  background-color: ;
   width: 44rem;
   /* height:32.5rem; */
   text-align: left;
@@ -22,6 +22,39 @@
   font-weight: bold;
   text-align: left;
 }
+/* SCROLL BAR */
+.content-section {
+  background: #23252a;
+  padding: 10px 20px;
+  border: 1px solid rgba(47, 48, 53, 0.8);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: auto;
+  /* max-height: 75vh; */
+}
+/* SETTING SCROLL BAR */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.2);
+}
 
 @media only screen and (min-width: 1023px) {
   .Update {
@@ -33,16 +66,25 @@
   .Update {
     height: 68vh;
   }
+  .content-section {
+    height: 68vh;
+  }
 }
 
 @media only screen and (min-width: 1221px) and (max-width: 2000px) {
   .Update {
     height: 50vh;
   }
+  .content-section {
+    height: 50vh;
+  }
 }
 
 @media only screen and (min-width: 2001px) {
   .Update {
+    height: 70vh;
+  }
+  .content-section {
     height: 70vh;
   }
 }
