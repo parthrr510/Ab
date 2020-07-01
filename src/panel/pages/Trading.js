@@ -76,8 +76,12 @@ const Trading = ({
     console.log(e.target.value);
   };
   const getValue = () => {
-    setBody({ ...body, [name]: inputTrade }, () => tradingCountries(body));
+    setBody({ ...body, [name]: inputTrade });
+    setInputTrade(" ");
   };
+  useEffect(() => {
+    tradingCountries(body);
+  }, [body]);
 
   //for notifications
   const [show, setShow] = useState(false);
