@@ -5,7 +5,7 @@ export const tradingCountries = (body) => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNjE0MTk0LCJqdGkiOiIzOWJkZjdiNDJhOWQ0NzVjOWFhYmY4NWU2ZThiNzk3OSIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.QkDB9p1LEdGOF9FrTGj0kXG61K8qac-ZMtoaFRFDvk4",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNjI4MjQyLCJqdGkiOiIxODgzYmYzYzU4MWM0YmVjOWNmZWRiZDg4ODFmOTNiMiIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.ch3BDc_Rlc9QvWmz8g0mIxd5YgiZm5xhQVOnpOUmJM4",
     },
   };
   console.log(body);

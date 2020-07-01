@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const Leaderboard = ({
-  leader,
+  team: { country, continent, flag, GDP },
   leaderData,
   rankings: { rankings },
   globalRankings,
@@ -114,7 +114,7 @@ const Leaderboard = ({
                 width={55}
                 height={55}
                 className="team"
-                src={leader.flag}
+                src={flag}
                 alt="Generic placeholder"
                 style={{
                   borderRadius: "50%",
@@ -122,8 +122,8 @@ const Leaderboard = ({
                 }}
               />
               <Media.Body className="team">
-                <h5>{leader.country}</h5>
-                <p>{leader.continent}</p>
+                <h5>{country}</h5>
+                <p>{continent}</p>
               </Media.Body>
             </Media>
             <Nav
@@ -219,18 +219,18 @@ const Leaderboard = ({
                         }}
                       >
                         <Avatar variant="square">
-                          <img src={leader.flag} className="flag" alt="" />
+                          <img src={flag} className="flag" alt="" />
                         </Avatar>
                         <Grid>
-                          <Typography noWrap>{leader.country}</Typography>
+                          <Typography noWrap>{country}</Typography>
                         </Grid>
                       </Grid>
 
                       <Grid item>
-                        <Typography noWrap>{leader.continent}</Typography>
+                        <Typography noWrap>{continent}</Typography>
                       </Grid>
                       <Grid>
-                        <Typography>GDP- {leader.GDP} BITS</Typography>
+                        <Typography>GDP- {GDP} BITS</Typography>
                       </Grid>
                     </Grid>
                   </Paper>
@@ -275,12 +275,12 @@ const Leaderboard = ({
     </div>
   );
 };
-Leaderboard.propTypes = {
-  leader: PropTypes.array.isRequired,
-  rankings: PropTypes.array.isRequired,
-};
+// Leaderboard.propTypes = {
+//   leader: PropTypes.object.isRequired,
+//   rankings: PropTypes.array.isRequired,
+// };
 const mapStateToProps = (state) => ({
-  leader: state.leader,
+  team: state.team,
   rankings: state.rankings,
 });
 
