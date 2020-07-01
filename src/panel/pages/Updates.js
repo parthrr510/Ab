@@ -19,12 +19,7 @@ import arrow from "../back-arrow.png";
 import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
 import "./update.css";
-// import 'react-perfect-scrollbar/dist/css/styles.css';
-// import PerfectScrollbar from 'react-perfect-scrollbar';
-// import ReactScrollbar from 'react-scrollbar-js';
 import team from "../team.PNG";
-
-// import ScrollArea from 'react-scrollbar';
 
 const Updates = ({}) => {
   //for notifications
@@ -171,14 +166,6 @@ const Updates = ({}) => {
                 <div>
                   <Row>
                     <Col sm={12} className="card content-section">
-                      {/* <ReactScrollbar> */}
-                      {/* <ScrollArea
-        
-        speed={0.8}
-            // className="area"
-            contentClassName="content"
-            horizontal={false}
-        > */}
                       <Row>
                         <div id="updates">UPDATE</div>
                       </Row>
@@ -202,8 +189,6 @@ const Updates = ({}) => {
                           <input type="submit" id="submit-btn"></input>
                         </Col>
                       </Row>
-                      {/* </ScrollArea> */}
-                      {/* </ReactScrollbar> */}
                     </Col>
                   </Row>
                 </div>
