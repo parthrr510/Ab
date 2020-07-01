@@ -229,6 +229,18 @@ class SubmissionView(APIView):
                             - questions.rate_medicine
                             - submission.additional_rate_medicine
                         )
+                        if questions.region == "Global":
+                            print("here")
+                            resource.mscBits += Decimal(0.2) * resource.mscBits
+                            resource.food += Decimal(0.2) * resource.food
+                            resource.technology += Decimal(0.02) * resource.technology
+                            resource.medicine += Decimal(0.2) * resource.medicine
+                            resource.GDP = (
+                                resource.mscBits
+                                + resource.food * (Decimal(0.75))
+                                + resource.medicine * (Decimal(0.8))
+                                + resource.technology * (Decimal(2))
+                            )
                         # submission.timestamp = timezone.now
                         submission.additional_rate_mscBits = Decimal(0.00)
                         submission.additional_rate_food = Decimal(0.00)
@@ -236,7 +248,16 @@ class SubmissionView(APIView):
                         submission.additional_rate_technology = Decimal(0.00)
                         submission.save()
                         resource.save()
+                        return Response("Correct answer!!")
                     else:
+                        serializer = SubmissionSerializer(data=data)
+                        if serializer.is_valid():
+                            serializer.save(
+                                team_id=team,
+                                question=questions,
+                                isCorrect=True,
+                                submission=data["submission"],
+                            )
                         submission = Submission.objects.get(
                             team_id=payload["user_id"], question=questions.update_no
                         )
@@ -260,13 +281,19 @@ class SubmissionView(APIView):
                             - questions.rate_medicine
                             - submission.additional_rate_medicine
                         )
-                        resource.save()
-                        serializer = SubmissionSerializer(data=data)
-                        if serializer.is_valid():
-                            serializer.save(
-                                team_id=team, question=questions, isCorrect=True
+                        if questions.region == "Global":
+                            resource.mscBits += Decimal(0.2) * resource.mscBits
+                            resource.food += Decimal(0.2) * resource.food
+                            resource.technology += Decimal(0.02) * resource.technology
+                            resource.medicine += Decimal(0.2) * resource.medicine
+                            resource.GDP = (
+                                resource.mscBits
+                                + resource.food * (Decimal(0.75))
+                                + resource.medicine * (Decimal(0.8))
+                                + resource.technology * (Decimal(2))
                             )
-                            return Response(serializer.data)
+                        resource.save()
+                        return Response(serializer.data)
 
                 else:
                     if Submission.objects.filter(
@@ -297,6 +324,7 @@ class SubmissionView(APIView):
                         resource.save()
                         # submission.timestamp = timezone.now
                         submission.save()
+                        return Response("Incorrect Answer!")
                     else:
                         serializer = SubmissionSerializer(data=data)
                         if serializer.is_valid():
