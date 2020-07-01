@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from import_export.admin import ImportExportMixin, ImportExportModelAdmin
+from import_export import resources
 
 from .forms import UserCreationFormForAdmin
 from .models import MyUser, Member
@@ -9,11 +11,25 @@ from .models import MyUser, Member
 # Register your models here.
 
 
+class UserResource(resources.ModelResource):
+    class Meta:
+        model = MyUser
+
+
+class MemberResource(resources.ModelResource):
+    class Meta:
+        model = Member
+
+
 class MemberInline(admin.TabularInline):
     model = Member
 
 
-class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
+class UserAdmin(
+    ImportExportMixin, BaseUserAdmin, admin.ModelAdmin,
+):
+    resource_class = UserResource
+
     add_form = UserCreationFormForAdmin
 
     list_display = ("team_name", "email", "is_admin")
@@ -61,8 +77,12 @@ class UserAdmin(BaseUserAdmin, admin.ModelAdmin):
     ]
 
 
+class MemberAdmin(ImportExportModelAdmin):
+    resource_class = MemberResource
+
+
 admin.site.register(MyUser, UserAdmin)
-admin.site.register(Member)
+admin.site.register(Member, MemberAdmin)
 
 
 admin.site.unregister(Group)
