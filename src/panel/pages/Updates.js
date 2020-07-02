@@ -34,6 +34,18 @@ const Updates = ({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [name, setName] = useState("");
+  const [inputAns, setInputAns] = useState("");
+
+  const onChangeHandler = (e) => {
+    setInputAns(e.target.value);
+    console.log(e.target.value);
+  };
+  // const getValue = () => {
+  //   setBody({ ...body, [name]: inputTrade });
+  //   tradingCountries(body);
+  // };
+
   useEffect(() => {
     leaderData();
     getQuestions();
@@ -41,7 +53,9 @@ const Updates = ({
   const [ques, setQues] = useState(0);
 
   const nextQuestion = () => {
-    setQues(ques + 1);
+    if (ques < questions.length - 1) {
+      setQues(ques + 1);
+    }
   };
   //for trade rulebook
   const [showBook, setShowBook] = useState(false);
@@ -215,15 +229,25 @@ const Updates = ({
                                     paddingBottom: "5rem",
                                   }}
                                 >
-                                  <input type="text" id="input-box"></input>
+                                  <input
+                                    type="text"
+                                    id="input-box"
+                                    name={name}
+                                    value={inputAns}
+                                    onChange={onChangeHandler}
+                                  ></input>
                                 </Col>
                                 <Col sm={6} style={{ paddingTop: "1rem" }}>
                                   <input type="submit" id="submit-btn"></input>
                                 </Col>
                               </Row>
-                              <button type="button" onClick={nextQuestion}>
-                                Next Question
-                              </button>
+                              {ques < questions.length - 1 ? (
+                                <button type="button" onClick={nextQuestion}>
+                                  Next Question
+                                </button>
+                              ) : (
+                                <div></div>
+                              )}
                             </Col>
                           );
                         } else {
