@@ -44,10 +44,11 @@ const Updates = ({
     setInputAns(e.target.value);
     console.log(e.target.value);
   };
-  // const getValue = () => {
-  //   setBody({ ...body, [name]: inputTrade });
-  //   tradingCountries(body);
-  // };
+  const getAns = (update) => {
+    setName({ ...name, submission: inputAns });
+    submitAns(inputAns, update);
+    setInputAns("");
+  };
 
   useEffect(() => {
     leaderData();
@@ -235,13 +236,16 @@ const Updates = ({
                                   <input
                                     type="text"
                                     id="input-box"
-                                    name={name}
                                     value={inputAns}
                                     onChange={onChangeHandler}
                                   ></input>
                                 </Col>
                                 <Col sm={6} style={{ paddingTop: "1rem" }}>
-                                  <input type="submit" id="submit-btn"></input>
+                                  <input
+                                    type="submit"
+                                    id="submit-btn"
+                                    onClick={() => getAns(question.update_no)}
+                                  ></input>
                                 </Col>
                               </Row>
                               {ques < questions.length - 1 ? (
