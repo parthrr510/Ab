@@ -1,16 +1,16 @@
-import { SUBMIT_ANS, GET_ERROR } from "../types";
+import { GET_UPDATES, GET_ERROR } from "../types";
 
 const initialState = {
-  ans: null,
+  updates: null,
   err: null,
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case SUBMIT_ANS:
+    case GET_UPDATES:
       return {
         ...state,
-        ans: action.payload,
+        updates: action.payload,
       };
     case GET_ERROR:
       return {
