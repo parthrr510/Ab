@@ -22,12 +22,15 @@ import "./update.css";
 import { connect } from "react-redux";
 import { leaderData } from "../../redux/actions/LeaderActions";
 import { getQuestions } from "../../redux/actions/QuesActions";
+import { submitAns } from "../../redux/actions/SubmitansActions";
 
 const Updates = ({
   team: { country, continent, flag, GDP },
   leaderData,
   questions: { questions },
   getQuestions,
+  ans,
+  submitAns,
 }) => {
   //for notifications
   const [show, setShow] = useState(false);
@@ -41,10 +44,11 @@ const Updates = ({
     setInputAns(e.target.value);
     console.log(e.target.value);
   };
-  // const getValue = () => {
-  //   setBody({ ...body, [name]: inputTrade });
-  //   tradingCountries(body);
-  // };
+  const getAns = (update) => {
+    setName({ ...name, submission: inputAns });
+    submitAns(inputAns, update);
+    setInputAns("");
+  };
 
   useEffect(() => {
     leaderData();
@@ -232,13 +236,16 @@ const Updates = ({
                                   <input
                                     type="text"
                                     id="input-box"
-                                    name={name}
                                     value={inputAns}
                                     onChange={onChangeHandler}
                                   ></input>
                                 </Col>
                                 <Col sm={6} style={{ paddingTop: "1rem" }}>
-                                  <input type="submit" id="submit-btn"></input>
+                                  <input
+                                    type="submit"
+                                    id="submit-btn"
+                                    onClick={() => getAns(question.update_no)}
+                                  ></input>
                                 </Col>
                               </Row>
                               {ques < questions.length - 1 ? (
@@ -267,5 +274,10 @@ const Updates = ({
 const mapStateToProps = (state) => ({
   team: state.team,
   questions: state.questions,
+  ans: state.ans,
 });
-export default connect(mapStateToProps, { leaderData, getQuestions })(Updates);
+export default connect(mapStateToProps, {
+  leaderData,
+  getQuestions,
+  submitAns,
+})(Updates);

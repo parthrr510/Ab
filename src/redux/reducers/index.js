@@ -6,6 +6,7 @@ import NotificationsReducer from "./NotificationsReducer";
 import RankingReducer from "./RankingReducer";
 import TradingReducer from "./TradingReducer";
 import QuesReducer from "./QuesReducer";
+import SubmitansReducer from "./SubmitansReducer";
 //combine multiple reducers
 export default combineReducers({
   //reducers!!
@@ -15,5 +16,6 @@ export default combineReducers({
   rankings: RankingReducer,
   trade: TradingReducer,
   questions: QuesReducer,
+  ans: SubmitansReducer,
   Auth: AuthReducer,
 });
