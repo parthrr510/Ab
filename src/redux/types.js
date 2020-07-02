@@ -7,3 +7,4 @@ export const GLOBAL_RANKINGS = "GLOBAL_RANKINGS";
 export const TRADING_COUNTRIES = "TRADING_COUNTRIES";
 export const GET_QUESTIONS = "GET_QUESTIONS";
 export const SUBMIT_ANS = "SUBMIT_ANS";
+export const GET_UPDATES = "GET_UPDATES";

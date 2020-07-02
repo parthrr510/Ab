@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Update.css";
+import { connect } from "react-redux";
+import { getUpdates } from "../../redux/actions/UpdatesActions";
 
-const Updates = () => {
+const Updates = ({ updates: { updates }, getUpdates }) => {
+  useEffect(() => {
+    getUpdates();
+  }, []);
   return (
     <div className="Update content-section">
       <h1>UPDATES</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit Voluptatum
-        quidem ratione iusto. Consectetur est corporis ea odio totam, nobis,
-        error, nihil consequatur porro exercitationem aliquam earum labore ad
-        tempora. Placeat!
-      </p>
+      {updates && updates.map((data) => <div> {data.update}</div>)}
     </div>
   );
 };
-export default Updates;
+const mapStateToProps = (state) => ({
+  updates: state.updates,
+});
+export default connect(mapStateToProps, { getUpdates })(Updates);
