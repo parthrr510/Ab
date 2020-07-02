@@ -5,7 +5,7 @@ export const leaderData = () => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzA0NDg3LCJqdGkiOiI5ZDQ0YTgzOGFmMDA0MGRlYmVkZWM1MDk3ZjBhZDcyYyIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.EeJe87xeQXoFIZ0UAaJ_7gLnz2989XbZkvwlplVzS74",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNzE3NzI4LCJqdGkiOiIzNzYzZmRkMjU5YTM0YTc4OTk5NjFhYThhNzk1MTIxYyIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.pwLNh8fL_YGiLUXRD-q6iN3Lgy0NZUMUCYJM9sByAuw",
     },
   };
   try {
