@@ -1,11 +1,11 @@
 import { GET_QUESTIONS, GET_ERROR } from "../types";
 import axios from "axios";
 
-export const getNotifications = () => async (dispatch) => {
+export const getQuestions = () => async (dispatch) => {
   const config = {
     headers: {
       Authorization:
-        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNjI4MjQyLCJqdGkiOiIxODgzYmYzYzU4MWM0YmVjOWNmZWRiZDg4ODFmOTNiMiIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.ch3BDc_Rlc9QvWmz8g0mIxd5YgiZm5xhQVOnpOUmJM4",
+        "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkzNjkyNjAwLCJqdGkiOiI1MDU4YjQzZjNkNDE0YWMzYjllZmEzMzNlOTA4MzI0NCIsInVzZXJfaWQiOiI2Zjg4ZDhiOC1kNTQ5LTQ3NzgtYjI4My0yZTAzZTYzOGQzY2IifQ.EUVTFcKYsK1JZdVWJlzTC8P75QiVwl1e_1rI3LU08g8",
     },
   };
 

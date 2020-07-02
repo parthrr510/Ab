@@ -19,23 +19,32 @@ import arrow from "../back-arrow.png";
 import Notifications from "../Components/Notifications";
 import TradeRulebook from "../pages/TradeRulebook";
 import "./update.css";
-
 import { connect } from "react-redux";
 import { leaderData } from "../../redux/actions/LeaderActions";
+import { getQuestions } from "../../redux/actions/QuesActions";
 
-const Updates = ({ team: { country, continent, flag, GDP }, leaderData }) => {
+const Updates = ({
+  team: { country, continent, flag, GDP },
+  leaderData,
+  questions: { questions },
+  getQuestions,
+}) => {
   //for notifications
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(() => {
     leaderData();
+    getQuestions();
   }, []);
+  const [ques, setQues] = useState(0);
+
+  const nextQuestion = () => {
+    setQues(ques + 1);
+  };
   //for trade rulebook
   const [showBook, setShowBook] = useState(false);
-
   const handleCloseBook = () => setShowBook(false);
   const handleShowBook = () => setShowBook(true);
   return (
@@ -170,31 +179,57 @@ const Updates = ({ team: { country, continent, flag, GDP }, leaderData }) => {
               <Col sm={12} className="component4">
                 <div>
                   <Row>
-                    <Col sm={12} className="card content-section">
-                      <Row>
-                        <div id="updates">UPDATE</div>
-                      </Row>
-                      <Row>
-                        <div id="question">QUESTION</div>
-                      </Row>
-                      <Row>
-                        <div id="image">Upload IMAGE Here</div>
-                      </Row>
-                      <Row>
-                        <div id="pdf">Upload PDF here</div>
-                      </Row>
-                      <Row>
-                        <Col
-                          sm={6}
-                          style={{ paddingTop: "1rem", paddingBottom: "5rem" }}
-                        >
-                          <input type="text" id="input-box"></input>
-                        </Col>
-                        <Col sm={6} style={{ paddingTop: "1rem" }}>
-                          <input type="submit" id="submit-btn"></input>
-                        </Col>
-                      </Row>
-                    </Col>
+                    {questions &&
+                      questions.map((question, index) => {
+                        if (ques === index) {
+                          return (
+                            <Col sm={12} className="card content-section">
+                              <Row>
+                                <div id="updates">
+                                  Update: {question.update}
+                                </div>
+                              </Row>
+                              <Row>
+                                <div id="question">
+                                  Question: {question.question}
+                                </div>
+                              </Row>
+                              {question.image && (
+                                <Row>
+                                  <div id="image">
+                                    Image: <img src={question.image} />
+                                  </div>
+                                </Row>
+                              )}
+                              {question.pdf && (
+                                <Row>
+                                  <div id="pdf">PDF: {question.pdf}</div>
+                                </Row>
+                              )}
+
+                              <Row>
+                                <Col
+                                  sm={6}
+                                  style={{
+                                    paddingTop: "1rem",
+                                    paddingBottom: "5rem",
+                                  }}
+                                >
+                                  <input type="text" id="input-box"></input>
+                                </Col>
+                                <Col sm={6} style={{ paddingTop: "1rem" }}>
+                                  <input type="submit" id="submit-btn"></input>
+                                </Col>
+                              </Row>
+                              <button type="button" onClick={nextQuestion}>
+                                Next Question
+                              </button>
+                            </Col>
+                          );
+                        } else {
+                          return <div></div>;
+                        }
+                      })}
                   </Row>
                 </div>
               </Col>
@@ -207,5 +242,6 @@ const Updates = ({ team: { country, continent, flag, GDP }, leaderData }) => {
 };
 const mapStateToProps = (state) => ({
   team: state.team,
+  questions: state.questions,
 });
-export default connect(mapStateToProps, { leaderData })(Updates);
+export default connect(mapStateToProps, { leaderData, getQuestions })(Updates);
