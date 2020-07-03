@@ -5,7 +5,7 @@ cfgv==3.1.0
 chardet==3.0.4
 defusedxml==0.6.0
 diff-match-patch==20181111
-distlib==0.3.0
+distlib==0.3.1
 Django==3.0.6
 django-cors-headers==3.3.0
 django-crispy-forms==1.9.1
