@@ -38,6 +38,7 @@ urlpatterns = [
         "api/token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"
     ),
     path("api/panel/", include("panel.api.urls")),
+    path("api/users/", include("users.api.urls")),
 ]
 
 
