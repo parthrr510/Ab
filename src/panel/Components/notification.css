@@ -33,3 +33,18 @@
   font-weight: 200;
   padding-left: 1.5rem;
 }
+
+.icon2{
+  /* margin-right: 1rem; */
+  /* border-right: 1px #8a8d92 solid !important; */
+  padding-right: 0.5rem !important;
+  font-size: 1.8rem !important;
+  color: #8a8d92 !important;
+  margin-left: 14.8rem;
+  margin-bottom: 0.8rem;
+  
+}
+
+.icon2:hover{
+  cursor: pointer;
+}
