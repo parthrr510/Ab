@@ -8,7 +8,6 @@ import { getNotifications } from "../../redux/actions/NotificationsActions";
 import PropTypes from "prop-types";
 import { GrRefresh } from "react-icons/gr";
 
-
 const Notifications = ({
   show,
   handleClose,
@@ -23,12 +22,12 @@ const Notifications = ({
       <Modal show={show} onHide={handleClose} style={{ borderRadius: "50px" }}>
         <Modal.Header closeButton id="Not">
           <Modal.Title id="Not_title">
-            <MdNotificationsActive
+            <MdNotificationsActive /> Notifications
+            <GrRefresh
+              className="icon2"
               onClick={() => getNotifications()}
               style={{ cursor: "pointer" }}
-            />{" "}
-            Notifications
-            <GrRefresh className="icon2" />
+            />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

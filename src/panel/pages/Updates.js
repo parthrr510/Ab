@@ -215,7 +215,7 @@ const Updates = ({
                               {question.image && (
                                 <Row>
                                   <div id="image">
-                                    Image: <img src={question.image} />
+                                    <img src={question.image} />
                                   </div>
                                 </Row>
                               )}
