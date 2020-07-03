@@ -1,4 +1,4 @@
-export * from "./authActions";
+export * from "./auth";
 export * from "./ResourceActions";
 export * from "./LeaderActions";
 export * from "./NotificationsActions";

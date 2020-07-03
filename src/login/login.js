@@ -1,12 +1,29 @@
 import React, { Component } from "react";
 import { Row, Col, Nav, Navbar, Form, Button } from "react-bootstrap";
-import Media from "react-bootstrap/Media";
-import { Link } from "react-router-dom";
+// import Media from "react-bootstrap/Media";
+// import { Link } from "react-router-dom";
 import logo from "../panel/msc_logo.png";
 import "./login.css";
 
-class Login extends Component {
+class LoginForm extends Component {
+  state = {
+    username: '',
+    password: ''
+  }
+  handleInputChange = (event) => {
+    const target = event.target,
+          value = target.value,
+          name = target.name
+    this.setState({
+      [name]: value
+    });
+  }
+  onSubmit = (event) => {
+    event.preventDefault()
+    this.props.onSubmit(this.state.username, this.state.password)
+  }
   render() {
+    const errors = this.props.errors || {}
     return (
       <div className="bgi">
         <Navbar collapseOnSelect expand="lg" bg="transparent" variant="dark">
@@ -33,12 +50,12 @@ class Login extends Component {
           <Row>
             <Col></Col>
             <Col md={6}>
-              <Form id="form">
+              <Form id="form" onSubmit={this.onSubmit}>
                 <h3>Login</h3>
                 <hr></hr>
                 <Form.Group className="form_field" controlId="formBasicEmail">
                   <Form.Label>Team Name</Form.Label>
-                  <Form.Control className="form_inpField" type="email" />
+                  <Form.Control className="form_inpField" type="text" error={errors.username} onChange={this.handleInputChange}/>
                 </Form.Group>
 
                 <Form.Group
@@ -46,7 +63,7 @@ class Login extends Component {
                   controlId="formBasicPassword"
                 >
                   <Form.Label>Password</Form.Label>
-                  <Form.Control className="form_inpField" type="password" />
+                  <Form.Control className="form_inpField" type="password" error={errors.password} onChange={this.handleInputChange} />
                 </Form.Group>
                 <Button className="form_inp sub_btn" type="submit">
                   Login
@@ -61,4 +78,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginForm;

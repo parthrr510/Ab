@@ -1,16 +1,32 @@
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunk from "redux-thunk";
-import rootReducer from "../reducers";
+import storage from 'redux-persist/es/storage'
+import apiMiddleware from '../../middleware';
+import { applyMiddleware, createStore } from 'redux'
+import { createFilter   } from 'redux-persist-transform-filter';
+import { persistReducer, persistStore } from 'redux-persist'
+import { routerMiddleware } from 'connected-react-router'
+import rootReducer from '../reducers'
 
-const intialState = {};
+export default (history) => {
+  const persistedFilter = createFilter(
+    'auth', ['access', 'refresh']
+  );
 
-const middleware = [thunk];
+  const reducer = persistReducer(
+    {
+      key: 'polls',
+      storage: storage,
+      whitelist: ['auth'],
+      transforms: [ persistedFilter]
+    },
+    rootReducer(history)
+  )
 
-const store = createStore(
-  rootReducer,
-  intialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+  const store = createStore(
+    reducer, {},
+    applyMiddleware(apiMiddleware, routerMiddleware(history))
+  )
 
-export default store;
+  persistStore(store)
+
+  return store
+}
