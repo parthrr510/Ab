@@ -6,6 +6,8 @@ import "./notification.css";
 import { connect } from "react-redux";
 import { getNotifications } from "../../redux/actions/NotificationsActions";
 import PropTypes from "prop-types";
+import { GrRefresh } from "react-icons/gr";
+
 
 const Notifications = ({
   show,
@@ -26,6 +28,7 @@ const Notifications = ({
               style={{ cursor: "pointer" }}
             />{" "}
             Notifications
+            <GrRefresh className="icon2" />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

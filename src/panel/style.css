@@ -108,6 +108,9 @@
   height: 25px;
   font-size: 20px;
 }
+.head-icons:hover{
+  cursor: pointer;
+}
 
 .arrow {
   height: 25px;
