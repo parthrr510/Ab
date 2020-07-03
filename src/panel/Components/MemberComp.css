@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Leckerli+One|AlphaCentauri|Varela+Round|Righteous|Montseerat|Creepster|Matrix|Lexend+Tera");
+
+#form2 {
+  background-color: rgba(47, 48, 53, 0.8);
+  box-shadow: 0 0 1.5rem #01c5c4;
+  -moz-box-shadow: 0 0 1.5rem #01c5c4;
+  -webkit-box-shadow: 0 0 1.5rem #01c5c4;
+  -o-box-shadow: 0 0 1.5rem #01c5c4;
+  border-radius: 0.3rem;
+  text-align: left;
+}
+
+.form_field2 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  color: #ff6666;
+  text-transform: uppercase;
+}
+
+.form_inpField2 {
+  background: transparent;
+  border-bottom: 1px solid #ff6666;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: #cbd5db;
+}
+
+.form_inpField2:focus {
+  background: transparent;
+  color: #cbd5db;
+  box-shadow: 0 0 0.4rem #01c5c4;
+  -moz-box-shadow: 0 0 0.4rem #01c5c4;
+  -webkit-box-shadow: 0 0 0.4rem #01c5c4;
+  -o-box-shadow: 0 0 0.4rem #01c5c4;
+}
+
+

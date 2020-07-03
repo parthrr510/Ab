@@ -8,6 +8,7 @@ import Discord from "../panel/pages/Discord";
 import Landing from "../landing page/Landing";
 import SideNav from "../panel/SideNav";
 import Login from "../login/login";
+import MemberDetails from "../panel/pages/MemberDetails";
 
 const Routes = () => {
   return (
@@ -19,7 +20,7 @@ const Routes = () => {
         <Route exact path="/leaderboard" component={LeaderBoard} />
         <Route exact path="/updates" component={Updates} />
         <Route exact path="/trading" component={Trading} />
-
+        <Route exact path="/memberdetails" component={MemberDetails} />
         <Route exact path="/discord" component={Discord} />
       </Switch>
     </div>
