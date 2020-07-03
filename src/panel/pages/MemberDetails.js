@@ -33,38 +33,42 @@ class MemberDetails extends Component {
           <Row>
             <Col></Col>
             <Col md={6}>
-              <Form id="form1">
-              <h3>Member Details</h3>
+              <Form id="form1" className="content-section1">
+                <h3>Member Details</h3>
                 <hr></hr>
-                  <fieldset>
-                {/* <p className="member_head">Member-1</p> */}
-                <legend className="member_head">Member 1</legend>
-                <Form.Group className="form_field1" controlId="formBasicName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control className="form_inpField1" type="text" />
-                </Form.Group>
+                <fieldset>
+                  {/* <p className="member_head">Member-1</p> */}
+                  <legend className="member_head">Member 1</legend>
+                  <Form.Group className="form_field1" controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control className="form_inpField1" type="text" />
+                  </Form.Group>
 
-                <Form.Group className="form_field1" controlId="formBasicContact">
-                  <Form.Label>Contact</Form.Label>
-                  <Form.Control className="form_inpField1" type="number" />
-                </Form.Group>
+                  <Form.Group
+                    className="form_field1"
+                    controlId="formBasicContact"
+                  >
+                    <Form.Label>Contact</Form.Label>
+                    <Form.Control className="form_inpField1" type="text" />
+                  </Form.Group>
 
-                <Form.Group className="form_field1" controlId="formBasicYear">
-                  <Form.Label>Year</Form.Label>
-                  <Form.Control className="form_inpField1" type="number" />
-                </Form.Group>
+                  <Form.Group className="form_field1" controlId="formBasicYear">
+                    <Form.Label>Year</Form.Label>
+                    <Form.Control className="form_inpField1" type="number" />
+                  </Form.Group>
 
-                <Form.Group className="form_field1" controlId="formBasicUniversity">
-                  <Form.Label>University</Form.Label>
-                  <Form.Control className="form_inpField1" type="text" />
-                </Form.Group>
-
+                  <Form.Group
+                    className="form_field1"
+                    controlId="formBasicUniversity"
+                  >
+                    <Form.Label>University</Form.Label>
+                    <Form.Control className="form_inpField1" type="text" />
+                  </Form.Group>
                 </fieldset>
-                
+
                 <Button className="form_inp sub_btn1" type="submit">
                   Submit
                 </Button>
-                
               </Form>
             </Col>
             <Col></Col>
