@@ -174,7 +174,7 @@ const SideNav = ({
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link
-                  href="/discord"
+                  href="https://discord.gg/zTpEPW8"
                   eventKey="link-5"
                   className="navStyle"
                   style={{ paddingBottom: "44px" }}
