@@ -57,6 +57,11 @@ class MemberDetails extends Component {
                     <Form.Control className="form_inpField1" type="number" />
                   </Form.Group>
 
+                  <Form.Group className="form_field1" controlId="formBasicId">
+                    <Form.Label>PUBG ID</Form.Label>
+                    <Form.Control className="form_inpField1" type="number" />
+                  </Form.Group>
+
                   <Form.Group
                     className="form_field1"
                     controlId="formBasicUniversity"

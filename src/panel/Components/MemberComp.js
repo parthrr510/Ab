@@ -24,6 +24,11 @@ class MemberComp extends Component {
                   <Form.Control className="form_inpField2" type="number" />
                 </Form.Group>
 
+                <Form.Group className="form_field1" controlId="formBasicId">
+                    <Form.Label>PUBG ID</Form.Label>
+                    <Form.Control className="form_inpField1" type="number" />
+                  </Form.Group>
+
                 <Form.Group className="form_field2" controlId="formBasicUniversity">
                   <Form.Label>University</Form.Label>
                   <Form.Control className="form_inpField2" type="text" />
